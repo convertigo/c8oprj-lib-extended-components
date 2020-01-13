@@ -1,0 +1,373 @@
+↓pagination [mobile.components.UICompVariable-1576586851223]: 
+  comment: 'boolean: true (default) or false'
+  value: true
+↓paginationPageSize [mobile.components.UICompVariable-1576586888439]: 
+  comment: 'integer: 10 by default'
+  value: 10
+↓rowSelection [mobile.components.UICompVariable-1576675213592]: 
+  comment: 'string: ''single'' (default) or ''multiple'''
+  value: '''single'''
+↓rowDeselection [mobile.components.UICompVariable-1576681911232]: 
+  comment: 'boolean: true (default) or false'
+  value: true
+↓defaultColDef [mobile.components.UICompVariable-1576575975686]: 
+  comment: 'default is {hide: false, editable: true, sortable: true, resizable: true, filter: true, checkboxSelection: false, singleClickEdit: false}'
+  value: '{hide: false, editable: true, sortable: true, resizable: true, filter: true, checkboxSelection: false, singleClickEdit: false}'
+↓columnDefs [mobile.components.UICompVariable-1576508755435]: 
+  comment: 'Array of columnDef {headerName: ''headerName'', field: ''fieldName''} objects'
+  value: '[]'
+↓rowData [mobile.components.UICompVariable-1576508723354]: 
+  comment: 'Array of row { fieldName1: ''value1'', fieldName2: ''value2'', fieldName3: true, ...} objects'
+  value: '[]'
+↓Tag [mobile.components.UIElement-1576595265364]: 
+  identifier: agGrid
+  tagName: ag-grid-angular
+  ↓Attr [mobile.components.UIAttribute-1576595371290]: 
+    attrName: class
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: plain:ag-theme-balham
+  ↓Attr1 [mobile.components.UIAttribute-1576595487026]: 
+    attrName: style
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: 'plain:width: 100%'
+  ↓Attr8 [mobile.components.UIAttribute-1578673947226]: 
+    attrName: domLayout
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: plain:autoHeight
+    comment: 'Don''t use Grid Auto Height when displaying large numbers of rows: eg >1,000 rows'
+  ↓Attr2 [mobile.components.UIAttribute-1576595635882]: 
+    attrName: '[pagination]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1576501532114.pagination
+  ↓Attr3 [mobile.components.UIAttribute-1576595700062]: 
+    attrName: '[paginationPageSize]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1576501532114.paginationPageSize
+  ↓Attr7 [mobile.components.UIAttribute-1576675319255]: 
+    attrName: '[rowSelection]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1576501532114.rowSelection
+  ↓Attr71 [mobile.components.UIAttribute-1576684915739]: 
+    attrName: '[rowDeselection]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1576501532114.rowDeselection
+  ↓Attr6 [mobile.components.UIAttribute-1576595795699]: 
+    attrName: '[defaultColDef]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1576501532114.defaultColDef
+  ↓Attr5 [mobile.components.UIAttribute-1576595764922]: 
+    attrName: '[columnDefs]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:[]
+  ↓Attr4 [mobile.components.UIAttribute-1576595735474]: 
+    attrName: '[rowData]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:[]
+  ↓Event [mobile.components.UIControlEvent-1576763247788]: 
+    attrName: (gridReady)
+    eventName: (gridReady)
+    ↓Log [mobile.components.UIDynamicAction-1576763340494]: 
+      beanData: '{"ionBean":"LogAction","message":"plain:gridReady event received"}'
+      ↓handleOnReady [mobile.components.UICustomAction-1576764238780]: 
+        actionValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                
+                		//console.log(props);
+                		let grid = props.stack["root"].scope.agGrid; // page["agGrid"];
+                        if (grid !== undefined) {
+                            //console.log(grid.columnDefs);
+                            //console.log(grid.rowData);
+                            
+                            // Now setColumnDefs 
+                            // this fix wrong column order after grid initialization (when some column contains image)
+                            grid.api.setColumnDefs([])
+                            grid.api.setColumnDefs(vars.columnDefs);
+                            page.c8o.log.debug(''[MB] gridApi.setColumnDefs() done'');
+                                       
+                            // Now setRowData
+                            grid.api.setRowData(vars.rowData);
+                            page.c8o.log.debug(''[MB] gridApi.setRowData() done'');
+                            
+                            // Set grid width & height
+                            var height = vars.height;
+                            var width = vars.width;
+                            var autoHeight = height == "" || height == "auto";
+                            grid.api.setDomLayout(autoHeight ? "autoHeight":"normal");
+                            grid._nativeElement.style.height = autoHeight ? "" : height;
+                            grid._nativeElement.style.width = width;
+                            page.c8o.log.debug(''[MB] gridApi sizing done'');
+                            
+                            // sizeColumnsToFit
+                            setTimeout(function() {
+                                grid.api.sizeColumnsToFit();
+                                page.c8o.log.debug(''[MB] gridApi.sizeColumnsToFit() done'');
+                            }, 1000);
+                        }
+                        
+                		resolve();
+                '
+        ↓columnDefs [mobile.components.UIControlVariable-1576774264164]: 
+          varValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:params1576501532114.columnDefs
+        ↓rowData [mobile.components.UIControlVariable-1576774337881]: 
+          varValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:params1576501532114.rowData
+        ↓width [mobile.components.UIControlVariable-1578908950357]: 
+          varValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:params1576501532114.width
+        ↓height [mobile.components.UIControlVariable-1578909011438]: 
+          varValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:params1576501532114.height
+  ↓Event1 [mobile.components.UIControlEvent-1576854126305]: 
+    attrName: (cellClicked)
+    eventName: (cellClicked)
+    ↓publishAgGridCellClicked [mobile.components.UIDynamicAction-1576856544149]: 
+      beanData: |
+        '{
+         "ionBean": "PublishEventAction",
+         "topic": "plain:agGridCellClicked",
+         "data": "script:$event"
+        }'
+  ↓Event2 [mobile.components.UIControlEvent-1576858211435]: 
+    attrName: (rowClicked)
+    eventName: (rowClicked)
+    ↓publishAgGridRowClicked [mobile.components.UIDynamicAction-1576858228077]: 
+      beanData: |
+        '{
+         "ionBean": "PublishEventAction",
+         "topic": "plain:agGridRowClicked",
+         "data": "script:$event"
+        }'
+  ↓Event3 [mobile.components.UIControlEvent-1576859282081]: 
+    attrName: (rowSelected)
+    eventName: (rowSelected)
+    ↓publishAgGridRowSelected [mobile.components.UIDynamicAction-1576859408081]: 
+      beanData: |
+        '{
+         "ionBean": "PublishEventAction",
+         "topic": "plain:agGridRowSelected",
+         "data": "script:$event"
+        }'
+  ↓Event4 [mobile.components.UIControlEvent-1577091949093]: 
+    attrName: (sortChanged)
+    eventName: (sortChanged)
+    ↓publishAgGridColumnSortChanged [mobile.components.UIDynamicAction-1577091972684]: 
+      beanData: |
+        '{
+         "ionBean": "PublishEventAction",
+         "topic": "plain:agGridColumnSortChanged",
+         "data": "script:$event"
+        }'
+↓PageEvent [mobile.components.UIPageEvent-1576770503244]: 
+  comment: Do not delete or disable !!
+  viewEvent: onCanEnter
+  ↓initialization [mobile.components.UICustomAction-1576770512147]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		    
+            		    // Install packages :
+            		    // Please have a look at all expert properties for this custom action
+            		    // They define which packages/plugins are needed to use agGrid component
+            		    // They will be installed if not already
+            
+            	        // Define global functions
+            	        if (page.global["agGridDisplayImage"] == undefined) {
+            	            page.c8o.log.debug(''[MB] defining global function : agGridDisplayImage'');
+            	            page.global["agGridDisplayImage"] = function(params) {
+            	                //console.log("agGridDisplayImage params", params);
+            	                var resultElement = document.createElement("span");
+            	                var imageElement = document.createElement("img");
+            	                if (params.data.src !== undefined) {
+            	                    imageElement.src = params.data.src;
+                                    //imageElement.src = "./assets/twitter_32x32.png";
+                                    //imageElement.src = "https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/images/sun.png";
+                                    //imageElement.src = "data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7"
+            	                }
+            	                resultElement.appendChild(imageElement);
+            	                return resultElement;
+            	            }
+            	        }
+            	        
+            	        /*
+            	        // headerComponent: ''header-class-name''
+            	        if (page.global["agGridImageComponent"] == undefined) {
+            	            page.c8o.log.debug(''[MB] defining global header component : agGridImageComponent'');
+            	            let agGridImageComponent = (function () {
+            	                function agGridImageComponent() {
+            	                    
+            	                }
+            
+            	                agGridImageComponent.prototype.init = function (agParams) {
+            	                    this.agParams = agParams;
+            	                    this.eGui = document.createElement(''div'');
+            	                    this.eGui.innerHTML = '''' +
+            	                        ''<div class="agGridImageComponentMenuButton"><i class="fa '' + this.agParams.menuIcon + ''"></i></div>'' +
+            	                        ''<div class="agGridImageComponentLabel">'' + this.agParams.displayName + ''</div>'' +
+            	                        ''<div class="customSortDownLabel inactive"><i class="fa fa-long-arrow-alt-down"></i></div>'' +
+            	                        ''<div class="customSortUpLabel inactive"><i class="fa fa-long-arrow-alt-up"></i></div>'' +
+            	                        ''<div class="customSortRemoveLabel inactive"><i class="fa fa-times"></i></div>'';
+            
+            	                    this.eMenuButton = this.eGui.querySelector(".agGridImageComponentMenuButton");
+            	                    this.eSortDownButton = this.eGui.querySelector(".customSortDownLabel");
+            	                    this.eSortUpButton = this.eGui.querySelector(".customSortUpLabel");
+            	                    this.eSortRemoveButton = this.eGui.querySelector(".customSortRemoveLabel");
+            
+            	                    if (this.agParams.enableMenu) {
+            	                        this.onMenuClickListener = this.onMenuClick.bind(this);
+            	                        this.eMenuButton.addEventListener(''click'', this.onMenuClickListener);
+            	                    } else {
+            	                        this.eGui.removeChild(this.eMenuButton);
+            	                    }
+            
+            	                    if (this.agParams.enableSorting) {
+            	                        this.onSortAscRequestedListener = this.onSortRequested.bind(this, ''asc'');
+            	                        this.eSortDownButton.addEventListener(''click'', this.onSortAscRequestedListener);
+            	                        this.onSortDescRequestedListener = this.onSortRequested.bind(this, ''desc'');
+            	                        this.eSortUpButton.addEventListener(''click'', this.onSortDescRequestedListener);
+            	                        this.onRemoveSortListener = this.onSortRequested.bind(this, '''');
+            	                        this.eSortRemoveButton.addEventListener(''click'', this.onRemoveSortListener);
+            
+            
+            	                        this.onSortChangedListener = this.onSortChanged.bind(this);
+            	                        this.agParams.column.addEventListener(''sortChanged'', this.onSortChangedListener);
+            	                        this.onSortChanged();
+            	                    } else {
+            	                        this.eGui.removeChild(this.eSortDownButton);
+            	                        this.eGui.removeChild(this.eSortUpButton);
+            	                        this.eGui.removeChild(this.eSortRemoveButton);
+            	                    }
+            	                };
+            
+            	                agGridImageComponent.prototype.onSortChanged = function () {
+            	                    function deactivate(toDeactivateItems) {
+            	                        toDeactivateItems.forEach(function (toDeactivate) {
+            	                            toDeactivate.className = toDeactivate.className.split('' '')[0]
+            	                        });
+            	                    }
+            
+            	                    function activate(toActivate) {
+            	                        toActivate.className = toActivate.className + " active";
+            	                    }
+            
+            	                    if (this.agParams.column.isSortAscending()) {
+            	                        deactivate([this.eSortUpButton, this.eSortRemoveButton]);
+            	                        activate(this.eSortDownButton)
+            	                    } else if (this.agParams.column.isSortDescending()) {
+            	                        deactivate([this.eSortDownButton, this.eSortRemoveButton]);
+            	                        activate(this.eSortUpButton)
+            	                    } else {
+            	                        deactivate([this.eSortUpButton, this.eSortDownButton]);
+            	                        activate(this.eSortRemoveButton)
+            	                    }
+            	                };
+            
+            	                agGridImageComponent.prototype.getGui = function () {
+            	                    return this.eGui;
+            	                };
+            
+            	                agGridImageComponent.prototype.onMenuClick = function () {
+            	                    this.agParams.showColumnMenu(this.eMenuButton);
+            	                };
+            
+            	                agGridImageComponent.prototype.onSortRequested = function (order, event) {
+            	                    this.agParams.setSort(order, event.shiftKey);
+            	                };
+            
+            	                agGridImageComponent.prototype.destroy = function () {
+            	                    if (this.onMenuClickListener) {
+            	                        this.eMenuButton.removeEventListener(''click'', this.onMenuClickListener)
+            	                    }
+            	                    this.eSortDownButton.removeEventListener(''click'', this.onSortRequestedListener);
+            	                    this.eSortUpButton.removeEventListener(''click'', this.onSortRequestedListener);
+            	                    this.eSortRemoveButton.removeEventListener(''click'', this.onSortRequestedListener);
+            	                    this.agParams.column.removeEventListener(''sortChanged'', this.onSortChangedListener);
+            	                };
+            	                
+            	                return agGridImageComponent;
+            	            })();
+            	            page.global["agGridImageComponent"] = agGridImageComponent;
+            	        }*/
+            	        
+            		    resolve();
+            		    
+            '
+    comment: Do not delete or disable !!
+    module_ng_imports: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: AgGridModule.withComponents([])
+    module_ts_imports: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: AgGridModule
+              - java.lang.String: 
+                - ↑value: ag-grid-angular
+    package_dependencies: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: ag-grid-community
+              - java.lang.String: 
+                - ↑value: 22.1.1
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: ag-grid-angular
+              - java.lang.String: 
+                - ↑value: 22.1.1
+↓width [mobile.components.UICompVariable-1578908462766]: 
+  comment: width value in % or px
+  value: '''100%'''
+↓height [mobile.components.UICompVariable-1578908488029]: 
+  comment: height is 'auto' or value in % or px
+  value: '''auto'''
