@@ -59,7 +59,7 @@ title: testAgGrid2
   tagName: ion-content
   ↓UseSharedComponent [mobile.components.UIUseShared-1576514849166]: 
     isEnabled: false
-    sharedcomponent: issue285_287.MobileApplication.Application.agGrid
+    sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.agGrid
     ↓pagination [mobile.components.UIControlVariable-1576684820417]: 
       varValue: 
         - xmlizable: 
@@ -98,7 +98,7 @@ title: testAgGrid2
           - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
           - MobileSmartSourceType: 'script:[{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 },{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 },{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 },{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 }]'
   ↓UseSharedComponent1 [mobile.components.UIUseShared-1576667583952]: 
-    sharedcomponent: issue285_287.MobileApplication.Application.agGrid
+    sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.agGrid
     ↓pagination [mobile.components.UIControlVariable-1576667594456]: 
       varValue: 
         - xmlizable: 

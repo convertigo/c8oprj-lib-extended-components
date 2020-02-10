@@ -89,7 +89,7 @@ title: testNgxInput1
                     		resolve();
                     '
       ↓UseSharedComponent3 [mobile.components.UIUseShared-1578497311688]: 
-        sharedcomponent: issue285_287.MobileApplication.Application.ngxTagInput
+        sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ngxTagInput
         ↓items [mobile.components.UIControlVariable-1578497311691]: 
           varValue: 
             - xmlizable: 

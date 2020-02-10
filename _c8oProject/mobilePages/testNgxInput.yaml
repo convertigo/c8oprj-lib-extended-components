@@ -45,7 +45,7 @@ title: testNgxInput
       beanData: '{"ionBean":"DivTag"}'
       tagName: div
       ↓UseSharedComponent [mobile.components.UIUseShared-1577114110541]: 
-        sharedcomponent: issue285_287.MobileApplication.Application.ngxTagInput
+        sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ngxTagInput
         ↓items [mobile.components.UIControlVariable-1577114114335]: 
           varValue: 
             - xmlizable: 
@@ -75,7 +75,7 @@ title: testNgxInput
       beanData: '{"ionBean":"DivTag"}'
       tagName: div
       ↓UseSharedComponent2 [mobile.components.UIUseShared-1577118252945]: 
-        sharedcomponent: issue285_287.MobileApplication.Application.ngxTagInput
+        sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ngxTagInput
         ↓items [mobile.components.UIControlVariable-1577118252948]: 
           varValue: 
             - xmlizable: 
@@ -95,7 +95,7 @@ title: testNgxInput
       beanData: '{"ionBean":"DivTag"}'
       tagName: div
       ↓UseSharedComponent1 [mobile.components.UIUseShared-1577116175478]: 
-        sharedcomponent: issue285_287.MobileApplication.Application.ngxTagInput
+        sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ngxTagInput
         ↓items [mobile.components.UIControlVariable-1577116175481]: 
           varValue: 
             - xmlizable: 
