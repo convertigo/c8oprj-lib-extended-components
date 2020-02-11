@@ -137,7 +137,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputEdited",
-         "data": "script:$event"
+         "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
   ↓Event1 [mobile.components.UIControlEvent-1578476895320]: 
     attrName: (onAdd)
@@ -147,7 +147,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputAdded",
-         "data": "script:$event"
+         "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
   ↓Event2 [mobile.components.UIControlEvent-1578476936409]: 
     attrName: (onRemove)
@@ -157,7 +157,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputRemoved",
-         "data": "script:$event"
+         "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
   ↓Event3 [mobile.components.UIControlEvent-1578476969204]: 
     attrName: (onSelect)
@@ -167,7 +167,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputSelected",
-         "data": "script:$event"
+         "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
   ↓Event4 [mobile.components.UIControlEvent-1578477001368]: 
     attrName: (onFocus)
@@ -177,7 +177,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputFocused",
-         "data": "script:$event"
+         "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
   ↓Event5 [mobile.components.UIControlEvent-1578477051957]: 
     attrName: (onBlur)
@@ -187,7 +187,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputBlured",
-         "data": "script:$event"
+         "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
   ↓Event6 [mobile.components.UIControlEvent-1578477155933]: 
     attrName: (onTextChange)
@@ -197,7 +197,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputChanged",
-         "data": "script:$event"
+         "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
   ↓Event7 [mobile.components.UIControlEvent-1578477210656]: 
     attrName: (onPaste)
@@ -207,7 +207,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputPasted",
-         "data": "script:$event"
+         "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
   ↓Event8 [mobile.components.UIControlEvent-1578477499388]: 
     attrName: (onValidationError)
@@ -217,7 +217,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputValidationError",
-         "data": "script:$event"
+         "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
 ↓items [mobile.components.UICompVariable-1577113952387]: 
   value: '[]'
@@ -241,3 +241,4 @@
   value: false
 ↓showAutoCompleteDropdownIfEmpty [mobile.components.UICompVariable-1577117650178]: 
   value: false
+↓ref [mobile.components.UICompVariable-1581442248082]: 
