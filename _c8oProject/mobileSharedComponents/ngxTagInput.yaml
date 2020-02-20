@@ -219,6 +219,16 @@
          "topic": "plain:ngxTagInputValidationError",
          "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
+  ↓Event81 [mobile.components.UIControlEvent-1582202540760]: 
+    attrName: (ngModelChange)
+    eventName: (ngModelChange)
+    ↓publishNgxTagInputValidationError [mobile.components.UIDynamicAction-1582202540763]: 
+      beanData: |
+        '{
+         "ionBean": "PublishEventAction",
+         "topic": "plain:ngxTagInputNgModelChange",
+         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+        }'
 ↓items [mobile.components.UICompVariable-1577113952387]: 
   value: '[]'
 ↓inputtext [mobile.components.UICompVariable-1578501199371]: 
