@@ -45,7 +45,7 @@
               - java.lang.String: 
                 - ↑value: ngx-chips
               - java.lang.String: 
-                - ↑value: 2.1.0
+                - ↑value: 2.0.2
 ↓Tag [mobile.components.UIElement-1577113818292]: 
   identifier: ngxTag
   tagName: tag-input
