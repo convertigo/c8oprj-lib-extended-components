@@ -1,7 +1,14 @@
 ↑convertigo: 7.7.0.m006
 ↓lib_ExtendedComponents [core.Project]: 
-  comment: 'issues 285: agGrid, 287: ngxTag'
+  comment: |
+    'Set of shared components you can use in your projects :
+    
+    - Grid : Display & Edit tabular data
+    - Chips : display / remove tags in input fields
+    
+    '
   corsOrigin: =Origin
+  version: 1.0
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓MobileApplication [core.MobileApplication]: 
     comment: Describes the mobile application global properties
