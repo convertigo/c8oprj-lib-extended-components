@@ -229,27 +229,6 @@
          "topic": "plain:ngxTagInputNgModelChange",
          "data": "script:{event: $event, ref:  params1577113184271.ref}"
         }'
-  ↓Style [mobile.components.UIStyle-1582204466124]: 
-    styleContent: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-        - com.twinsoft.convertigo.beans.common.FormatedContent: 
-          →: |
-            	width:100% !important;
-            	
-            	.ng-tns-c0-0{
-            		width:100% !important;
-            	}
-            	
-            	.ng2-tag-input__text-input{
-            		width:100% !important;
-            	}
-            	
-            	tag-input-form{
-            		width:100% !important;
-            	}
-            
-            
 ↓items [mobile.components.UICompVariable-1577113952387]: 
   value: '[]'
 ↓inputtext [mobile.components.UICompVariable-1578501199371]: 
