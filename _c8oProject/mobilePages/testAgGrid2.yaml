@@ -17,22 +17,22 @@ scriptContent:
         
 segment: path-to-testaggrid2
 title: testAgGrid2
-↓Header [mobile.components.UIDynamicElement-1491634212350]: 
+↓Header [ngx.components.UIDynamicElement-1491634212350]: 
   beanData: '{"ionBean":"Header"}'
   comment: Page header
   tagName: ion-header
-  ↓NavBar [mobile.components.UIDynamicElement-1491634231108]: 
-    beanData: '{"ionBean":"NavBar"}'
-    tagName: ion-navbar
-    ↓BarTitle [mobile.components.UIDynamicElement-1491634265317]: 
+  ↓NavBar [ngx.components.UIDynamicElement-1491634231108]: 
+    beanData: '{"ionBean":"DivTag"}'
+    tagName: div
+    ↓BarTitle [ngx.components.UIDynamicElement-1491634265317]: 
       beanData: '{"ionBean":"BarTitle"}'
       tagName: ion-title
-      ↓Text [mobile.components.UIText-1491634275121]: 
+      ↓Text [ngx.components.UIText-1491634275121]: 
         textValue: 
           - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
             - MobileSmartSourceType: plain:My First App
-    ↓Button [mobile.components.UIDynamicElement-1491634442029]: 
+    ↓Button [ngx.components.UIDynamicElement-1491634442029]: 
       beanData: |
         '{
          "ionBean": "Button",
@@ -41,143 +41,143 @@ title: testAgGrid2
         }'
       comment: A button to toggle the menu
       tagName: button
-      ↓Icon [mobile.components.UIDynamicElement-1491634475867]: 
+      ↓Icon [ngx.components.UIDynamicElement-1491634475867]: 
         beanData: '{"ionBean":"Icon","IconName":"plain:menu"}'
         tagName: ion-icon
-    ↓ButtonSet [mobile.components.UIDynamicElement-1491634611427]: 
+    ↓ButtonSet [ngx.components.UIDynamicElement-1491634611427]: 
       beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
       tagName: ion-buttons
-      ↓Button [mobile.components.UIDynamicElement-1491634621907]: 
+      ↓Button [ngx.components.UIDynamicElement-1491634621907]: 
         beanData: '{"ionBean":"Button","ButtonFormType":"plain:false"}'
         tagName: button
-        ↓Icon [mobile.components.UIDynamicElement-1491634637555]: 
+        ↓Icon [ngx.components.UIDynamicElement-1491634637555]: 
           beanData: '{"ionBean":"Icon","IconName":"plain:more"}'
           tagName: ion-icon
-↓Content [mobile.components.UIDynamicElement-1489674805352]: 
+↓Content [ngx.components.UIDynamicElement-1489674805352]: 
   beanData: '{"ionBean":"Content"}'
   comment: Page content
   tagName: ion-content
-  ↓UseSharedComponent [mobile.components.UIUseShared-1576514849166]: 
+  ↓UseSharedComponent [ngx.components.UIUseShared-1576514849166]: 
     isEnabled: false
     sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.agGrid
-    ↓pagination [mobile.components.UIControlVariable-1576684820417]: 
+    ↓pagination [ngx.components.UIControlVariable-1576684820417]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:true
-    ↓paginationPageSize [mobile.components.UIControlVariable-1576684820419]: 
+    ↓paginationPageSize [ngx.components.UIControlVariable-1576684820419]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:10
-    ↓rowSelection [mobile.components.UIControlVariable-1576684820421]: 
+    ↓rowSelection [ngx.components.UIControlVariable-1576684820421]: 
       comment: '''single'' or ''multiple'''
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:'single'
-    ↓rowDeselection [mobile.components.UIControlVariable-1576684820423]: 
+    ↓rowDeselection [ngx.components.UIControlVariable-1576684820423]: 
       comment: '''single'' or ''multiple'''
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:true
-    ↓defaultColDef [mobile.components.UIControlVariable-1576684820425]: 
+    ↓defaultColDef [ngx.components.UIControlVariable-1576684820425]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: 'script:{hide: false, editable: true, sortable: true, resizable: true, filter: true, checkboxSelection: false, singleClickEdit: false}'
-    ↓columnDefs [mobile.components.UIControlVariable-1576684820427]: 
+    ↓columnDefs [ngx.components.UIControlVariable-1576684820427]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: 'script:[{headerName: ''Make'', field: ''make'', cellEditor: ''agSelectCellEditor'', cellEditorParams: {values: [''Toyota'',''Ford'',''Porshe'',''BMW'',''Renault'',''VW'']}}, {headerName: ''Model'', field: ''model'', filter: ''agTextColumnFilter'', filterParams: {resetButton: true,applyButton: true,debounceMs: 200}}, {headerName: ''Price'', field: ''price'', cellEditor: ''agPopupTextCellEditor''}]'
-    ↓rowData [mobile.components.UIControlVariable-1576684820429]: 
+    ↓rowData [ngx.components.UIControlVariable-1576684820429]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: 'script:[{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 },{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 },{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 },{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 }]'
-  ↓UseSharedComponent1 [mobile.components.UIUseShared-1576667583952]: 
+  ↓UseSharedComponent1 [ngx.components.UIUseShared-1576667583952]: 
     sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.agGrid
-    ↓pagination [mobile.components.UIControlVariable-1576667594456]: 
+    ↓pagination [ngx.components.UIControlVariable-1576667594456]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:false
-    ↓paginationPageSize [mobile.components.UIControlVariable-1576667594458]: 
+    ↓paginationPageSize [ngx.components.UIControlVariable-1576667594458]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:10
-    ↓rowSelection [mobile.components.UIControlVariable-1576675290436]: 
+    ↓rowSelection [ngx.components.UIControlVariable-1576675290436]: 
       comment: '''single'' or ''multiple'''
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:'multiple'
-    ↓rowDeselection [mobile.components.UIControlVariable-1576681975602]: 
+    ↓rowDeselection [ngx.components.UIControlVariable-1576681975602]: 
       comment: '''single'' or ''multiple'''
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:true
-    ↓defaultColDef [mobile.components.UIControlVariable-1576667594460]: 
+    ↓defaultColDef [ngx.components.UIControlVariable-1576667594460]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: 'script:{hide: false, editable: false, sortable: true, resizable: true, filter: true, checkboxSelection: false, singleClickEdit: false, minWidth: 40}'
-    ↓columnDefs [mobile.components.UIControlVariable-1576667594462]: 
+    ↓columnDefs [ngx.components.UIControlVariable-1576667594462]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: 'script:[{headerName: ''Make'', field: ''make''}, {headerName: ''Model'', field: ''model''}, {headerName: ''Price'', field: ''price'', filter: ''agNumberColumnFilter''}, {headerName: '''', field: ''src'', headerClass: ''custom-header-weel'', cellRenderer: this.global[''agGridDisplayImage''], filter: false, sortable: true, maxWidth: 50}, {headerName: '''', field: ''valid'', checkboxSelection: true, headerCheckboxSelection: true, filter: false, sortable: false, maxWidth:40}]'
-    ↓rowData [mobile.components.UIControlVariable-1576667594464]: 
+    ↓rowData [ngx.components.UIControlVariable-1576667594464]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: 'script:[{ make: ''Toyota'', model: ''Celica'', price: 35000, src: ''./assets/twitter_32x32.png''},{ make: ''Ford'', model: ''Mondeo'', price: 32000, logo: ''''},{ make: ''Porsche'', model: ''Boxter'', price: 72000, logo: ''''},{ make: ''Toyota'', model: ''Celica'', price: 35000, logo: ''''},{ make: ''Ford'', model: ''Mondeo'', price: 32000, logo: ''''},{ make: ''Porsche'', model: ''Boxter'', price: 72000, logo: ''''},{ make: ''Toyota'', model: ''Celica'', price: 35000, logo: ''''},{ make: ''Ford'', model: ''Mondeo'', price: 32000, logo: ''''},{ make: ''Porsche'', model: ''Boxter'', price: 72000, logo: ''''},{ make: ''Toyota'', model: ''Celica'', price: 35000, logo: ''''},{ make: ''Ford'', model: ''Mondeo'', price: 32000, logo: ''''},{ make: ''Porsche'', model: ''Boxter'', price: 72000, logo: ''''}]'
-    ↓width [mobile.components.UIControlVariable-1578910115317]: 
+    ↓width [ngx.components.UIControlVariable-1578910115317]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:'100%'
-    ↓height [mobile.components.UIControlVariable-1578910115319]: 
+    ↓height [ngx.components.UIControlVariable-1578910115319]: 
       varValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:'auto'
-↓Footer [mobile.components.UIDynamicElement-1491634242460]: 
+↓Footer [ngx.components.UIDynamicElement-1491634242460]: 
   beanData: '{"ionBean":"Footer"}'
   comment: Page footer
   tagName: ion-footer
-  ↓ToolBar [mobile.components.UIDynamicElement-1491634317538]: 
+  ↓ToolBar [ngx.components.UIDynamicElement-1491634317538]: 
     beanData: '{"ionBean":"ToolBar"}'
     tagName: ion-toolbar
-    ↓ButtonSet [mobile.components.UIDynamicElement-1491634325595]: 
+    ↓ButtonSet [ngx.components.UIDynamicElement-1491634325595]: 
       beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:left"}'
       tagName: ion-buttons
-      ↓Button [mobile.components.UIDynamicElement-1491634332730]: 
+      ↓Button [ngx.components.UIDynamicElement-1491634332730]: 
         beanData: '{"ionBean":"Button","ButtonFormType":"plain:false"}'
         tagName: button
-        ↓Text [mobile.components.UIText-1491634340354]: 
+        ↓Text [ngx.components.UIText-1491634340354]: 
           textValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: plain:Action 1
-    ↓ButtonSet1 [mobile.components.UIDynamicElement-1491634373539]: 
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1491634373539]: 
       beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
       tagName: ion-buttons
-      ↓Button [mobile.components.UIDynamicElement-1491634376874]: 
+      ↓Button [ngx.components.UIDynamicElement-1491634376874]: 
         beanData: '{"ionBean":"Button","ButtonFormType":"plain:false"}'
         tagName: button
-        ↓Text [mobile.components.UIText-1491634383107]: 
+        ↓Text [ngx.components.UIText-1491634383107]: 
           textValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: plain:Action 2
-↓Subscribe_Handler [mobile.components.UIEventSubscriber-1576856996038]: 
+↓Subscribe_Handler [ngx.components.UIEventSubscriber-1576856996038]: 
   topic: agGridCellClicked
-  ↓handleCellClicked [mobile.components.UICustomAction-1576857263388]: 
+  ↓handleCellClicked [ngx.components.UICustomAction-1576857263388]: 
     actionValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -189,9 +189,9 @@ title: testAgGrid2
             		console.log("cell "+ event.rowIndex +":"+ event.column.colId + " clicked")
             		resolve();
             '
-↓Subscribe_Handler2 [mobile.components.UIEventSubscriber-1576859454081]: 
+↓Subscribe_Handler2 [ngx.components.UIEventSubscriber-1576859454081]: 
   topic: agGridRowSelected
-  ↓handleRowSelected [mobile.components.UICustomAction-1576859550832]: 
+  ↓handleRowSelected [ngx.components.UICustomAction-1576859550832]: 
     actionValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -202,9 +202,9 @@ title: testAgGrid2
             		console.log("selectedRows: ", page["agGrid"].api.getSelectedRows())
             		resolve();
             '
-↓Subscribe_Handler3 [mobile.components.UIEventSubscriber-1577092071179]: 
+↓Subscribe_Handler3 [ngx.components.UIEventSubscriber-1577092071179]: 
   topic: agGridColumnSortChanged
-  ↓handleColumnSorted [mobile.components.UICustomAction-1577092105459]: 
+  ↓handleColumnSorted [ngx.components.UICustomAction-1577092105459]: 
     actionValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent

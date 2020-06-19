@@ -23,15 +23,15 @@ componentScriptContent:
         /*Begin_c8o_AppFunction*/
         	/*End_c8o_AppFunction*/
         
-tplProjectName: mobilebuilder_tpl_7_7_0
-↓Menu [mobile.components.UIDynamicMenu-1500890597895]: 🗏 mobileMenus/Menu.yaml
-↓agGrid [mobile.components.UISharedComponent-1576501532114]: 🗏 mobileSharedComponents/agGrid.yaml
-↓ngxTagInput [mobile.components.UISharedComponent-1577113184271]: 🗏 mobileSharedComponents/ngxTagInput.yaml
-↓testAgGrid1 [mobile.components.PageComponent-1577112296926]: 🗏 mobilePages/testAgGrid1.yaml
-↓testAgGrid2 [mobile.components.PageComponent-1500538678074]: 🗏 mobilePages/testAgGrid2.yaml
-↓testNgxInput [mobile.components.PageComponent-1577114040810]: 🗏 mobilePages/testNgxInput.yaml
-↓testNgxInput1 [mobile.components.PageComponent-1578565185309]: 🗏 mobilePages/testNgxInput1.yaml
-↓Theme [mobile.components.UITheme-1491635018260]: 
+tplProjectName: mobilebuilder_tpl_7_9_0_Ionic5
+↓Menu [ngx.components.UIDynamicMenu-1500890597895]: 🗏 mobileMenus/Menu.yaml
+↓agGrid [ngx.components.UISharedComponent-1576501532114]: 🗏 mobileSharedComponents/agGrid.yaml
+↓ngxTagInput [ngx.components.UISharedComponent-1577113184271]: 🗏 mobileSharedComponents/ngxTagInput.yaml
+↓testAgGrid1 [ngx.components.PageComponent-1577112296926]: 🗏 mobilePages/testAgGrid1.yaml
+↓testAgGrid2 [ngx.components.PageComponent-1500538678074]: 🗏 mobilePages/testAgGrid2.yaml
+↓testNgxInput [ngx.components.PageComponent-1577114040810]: 🗏 mobilePages/testNgxInput.yaml
+↓testNgxInput1 [ngx.components.PageComponent-1578565185309]: 🗏 mobilePages/testNgxInput1.yaml
+↓Theme [ngx.components.UITheme-1491635018260]: 
   comment: Global color themes can be customized here
   styleContent: 
     - xmlizable: 
@@ -118,7 +118,7 @@ tplProjectName: mobilebuilder_tpl_7_7_0
           @import "roboto";
           @import "noto-sans";
           '
-↓Style [mobile.components.UIStyle-1491635462437]: 
+↓Style [ngx.components.UIStyle-1491635462437]: 
   comment: You can add some global application styles here
   styleContent: 
     - xmlizable: 

@@ -1,94 +1,94 @@
-↓pagination [mobile.components.UICompVariable-1576586851223]: 
+↓pagination [ngx.components.UICompVariable-1576586851223]: 
   comment: 'boolean: true (default) or false'
   value: true
-↓paginationPageSize [mobile.components.UICompVariable-1576586888439]: 
+↓paginationPageSize [ngx.components.UICompVariable-1576586888439]: 
   comment: 'integer: 10 by default'
   value: 10
-↓rowSelection [mobile.components.UICompVariable-1576675213592]: 
+↓rowSelection [ngx.components.UICompVariable-1576675213592]: 
   comment: 'string: ''single'' (default) or ''multiple'''
   value: '''single'''
-↓rowDeselection [mobile.components.UICompVariable-1576681911232]: 
+↓rowDeselection [ngx.components.UICompVariable-1576681911232]: 
   comment: 'boolean: true (default) or false'
   value: true
-↓defaultColDef [mobile.components.UICompVariable-1576575975686]: 
+↓defaultColDef [ngx.components.UICompVariable-1576575975686]: 
   comment: 'default is {hide: false, editable: true, sortable: true, resizable: true, filter: true, checkboxSelection: false, singleClickEdit: false}'
   value: '{hide: false, editable: true, sortable: true, resizable: true, filter: true, checkboxSelection: false, singleClickEdit: false}'
-↓columnDefs [mobile.components.UICompVariable-1576508755435]: 
+↓columnDefs [ngx.components.UICompVariable-1576508755435]: 
   comment: 'Array of columnDef {headerName: ''headerName'', field: ''fieldName''} objects'
   value: '[]'
-↓rowData [mobile.components.UICompVariable-1576508723354]: 
+↓rowData [ngx.components.UICompVariable-1576508723354]: 
   comment: 'Array of row { fieldName1: ''value1'', fieldName2: ''value2'', fieldName3: true, ...} objects'
   value: '[]'
-↓Tag [mobile.components.UIElement-1576595265364]: 
+↓Tag [ngx.components.UIElement-1576595265364]: 
   identifier: agGrid
   tagName: ag-grid-angular
-  ↓Attr [mobile.components.UIAttribute-1576595371290]: 
+  ↓Attr [ngx.components.UIAttribute-1576595371290]: 
     attrName: class
     attrValue: 
       - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params1576501532114.class
-  ↓Attr1 [mobile.components.UIAttribute-1576595487026]: 
+  ↓Attr1 [ngx.components.UIAttribute-1576595487026]: 
     attrName: style
     attrValue: 
       - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: 'plain:width: 100%'
-  ↓Attr8 [mobile.components.UIAttribute-1578673947226]: 
+  ↓Attr8 [ngx.components.UIAttribute-1578673947226]: 
     attrName: domLayout
     attrValue: 
       - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: plain:autoHeight
     comment: 'Don''t use Grid Auto Height when displaying large numbers of rows: eg >1,000 rows'
-  ↓Attr2 [mobile.components.UIAttribute-1576595635882]: 
+  ↓Attr2 [ngx.components.UIAttribute-1576595635882]: 
     attrName: '[pagination]'
     attrValue: 
       - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params1576501532114.pagination
-  ↓Attr3 [mobile.components.UIAttribute-1576595700062]: 
+  ↓Attr3 [ngx.components.UIAttribute-1576595700062]: 
     attrName: '[paginationPageSize]'
     attrValue: 
       - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params1576501532114.paginationPageSize
-  ↓Attr7 [mobile.components.UIAttribute-1576675319255]: 
+  ↓Attr7 [ngx.components.UIAttribute-1576675319255]: 
     attrName: '[rowSelection]'
     attrValue: 
       - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params1576501532114.rowSelection
-  ↓Attr71 [mobile.components.UIAttribute-1576684915739]: 
+  ↓Attr71 [ngx.components.UIAttribute-1576684915739]: 
     attrName: '[rowDeselection]'
     attrValue: 
       - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params1576501532114.rowDeselection
-  ↓Attr6 [mobile.components.UIAttribute-1576595795699]: 
+  ↓Attr6 [ngx.components.UIAttribute-1576595795699]: 
     attrName: '[defaultColDef]'
     attrValue: 
       - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params1576501532114.defaultColDef
-  ↓Attr5 [mobile.components.UIAttribute-1576595764922]: 
+  ↓Attr5 [ngx.components.UIAttribute-1576595764922]: 
     attrName: '[columnDefs]'
     attrValue: 
       - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: script:[]
-  ↓Attr4 [mobile.components.UIAttribute-1576595735474]: 
+  ↓Attr4 [ngx.components.UIAttribute-1576595735474]: 
     attrName: '[rowData]'
     attrValue: 
       - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: script:[]
-  ↓Event [mobile.components.UIControlEvent-1576763247788]: 
+  ↓Event [ngx.components.UIControlEvent-1576763247788]: 
     attrName: (gridReady)
     eventName: (gridReady)
-    ↓Log [mobile.components.UIDynamicAction-1576763340494]: 
+    ↓Log [ngx.components.UIDynamicAction-1576763340494]: 
       beanData: '{"ionBean":"LogAction","message":"plain:gridReady event received"}'
-      ↓handleOnReady [mobile.components.UICustomAction-1576764238780]: 
+      ↓handleOnReady [ngx.components.UICustomAction-1576764238780]: 
         actionValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -130,70 +130,70 @@
                         
                 		resolve();
                 '
-        ↓columnDefs [mobile.components.UIControlVariable-1576774264164]: 
+        ↓columnDefs [ngx.components.UIControlVariable-1576774264164]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:params1576501532114.columnDefs
-        ↓rowData [mobile.components.UIControlVariable-1576774337881]: 
+        ↓rowData [ngx.components.UIControlVariable-1576774337881]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:params1576501532114.rowData
-        ↓width [mobile.components.UIControlVariable-1578908950357]: 
+        ↓width [ngx.components.UIControlVariable-1578908950357]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:params1576501532114.width
-        ↓height [mobile.components.UIControlVariable-1578909011438]: 
+        ↓height [ngx.components.UIControlVariable-1578909011438]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:params1576501532114.height
-  ↓Event1 [mobile.components.UIControlEvent-1576854126305]: 
+  ↓Event1 [ngx.components.UIControlEvent-1576854126305]: 
     attrName: (cellClicked)
     eventName: (cellClicked)
-    ↓publishAgGridCellClicked [mobile.components.UIDynamicAction-1576856544149]: 
+    ↓publishAgGridCellClicked [ngx.components.UIDynamicAction-1576856544149]: 
       beanData: |
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridCellClicked",
          "data": "script:$event"
         }'
-  ↓Event2 [mobile.components.UIControlEvent-1576858211435]: 
+  ↓Event2 [ngx.components.UIControlEvent-1576858211435]: 
     attrName: (rowClicked)
     eventName: (rowClicked)
-    ↓publishAgGridRowClicked [mobile.components.UIDynamicAction-1576858228077]: 
+    ↓publishAgGridRowClicked [ngx.components.UIDynamicAction-1576858228077]: 
       beanData: |
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridRowClicked",
          "data": "script:$event"
         }'
-  ↓Event3 [mobile.components.UIControlEvent-1576859282081]: 
+  ↓Event3 [ngx.components.UIControlEvent-1576859282081]: 
     attrName: (rowSelected)
     eventName: (rowSelected)
-    ↓publishAgGridRowSelected [mobile.components.UIDynamicAction-1576859408081]: 
+    ↓publishAgGridRowSelected [ngx.components.UIDynamicAction-1576859408081]: 
       beanData: |
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridRowSelected",
          "data": "script:$event"
         }'
-  ↓Event4 [mobile.components.UIControlEvent-1577091949093]: 
+  ↓Event4 [ngx.components.UIControlEvent-1577091949093]: 
     attrName: (sortChanged)
     eventName: (sortChanged)
-    ↓publishAgGridColumnSortChanged [mobile.components.UIDynamicAction-1577091972684]: 
+    ↓publishAgGridColumnSortChanged [ngx.components.UIDynamicAction-1577091972684]: 
       beanData: |
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridColumnSortChanged",
          "data": "script:$event"
         }'
-↓PageEvent [mobile.components.UIPageEvent-1576770503244]: 
+↓PageEvent [ngx.components.UIPageEvent-1576770503244]: 
   comment: Do not delete or disable !!
   viewEvent: onCanEnter
-  ↓initialization [mobile.components.UICustomAction-1576770512147]: 
+  ↓initialization [ngx.components.UICustomAction-1576770512147]: 
     actionValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -365,13 +365,13 @@
                 - ↑value: ag-grid-angular
               - java.lang.String: 
                 - ↑value: 22.1.1
-↓width [mobile.components.UICompVariable-1578908462766]: 
+↓width [ngx.components.UICompVariable-1578908462766]: 
   comment: width value in % or px
   value: '''100%'''
-↓height [mobile.components.UICompVariable-1578908488029]: 
+↓height [ngx.components.UICompVariable-1578908488029]: 
   comment: height is 'auto' or value in % or px
   value: '''auto'''
-↓class [mobile.components.UICompVariable-1587906728976]: 
+↓class [ngx.components.UICompVariable-1587906728976]: 
   comment: |
     'One of the themes provided here :
     

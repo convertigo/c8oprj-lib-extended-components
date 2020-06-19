@@ -16,22 +16,22 @@ scriptContent:
         '
 segment: path-to-testngxinput1
 title: testNgxInput1
-↓Header [mobile.components.UIDynamicElement-1578671960848]: 
+↓Header [ngx.components.UIDynamicElement-1578671960848]: 
   beanData: '{"ionBean":"Header"}'
   comment: Page header
   tagName: ion-header
-  ↓NavBar [mobile.components.UIDynamicElement-1578671960851]: 
-    beanData: '{"ionBean":"NavBar"}'
-    tagName: ion-navbar
-    ↓BarTitle [mobile.components.UIDynamicElement-1578671960854]: 
+  ↓NavBar [ngx.components.UIDynamicElement-1578671960851]: 
+    beanData: '{"ionBean":"DivTag"}'
+    tagName: div
+    ↓BarTitle [ngx.components.UIDynamicElement-1578671960854]: 
       beanData: '{"ionBean":"BarTitle"}'
       tagName: ion-title
-      ↓Text [mobile.components.UIText-1578671960857]: 
+      ↓Text [ngx.components.UIText-1578671960857]: 
         textValue: 
           - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
             - MobileSmartSourceType: plain:My First App
-    ↓Button [mobile.components.UIDynamicElement-1578671960860]: 
+    ↓Button [ngx.components.UIDynamicElement-1578671960860]: 
       beanData: |
         '{
          "ionBean": "Button",
@@ -40,27 +40,27 @@ title: testNgxInput1
         }'
       comment: A button to toggle the menu
       tagName: button
-      ↓Icon [mobile.components.UIDynamicElement-1578671960863]: 
+      ↓Icon [ngx.components.UIDynamicElement-1578671960863]: 
         beanData: '{"ionBean":"Icon","IconName":"plain:menu"}'
         tagName: ion-icon
-    ↓ButtonSet [mobile.components.UIDynamicElement-1578671960866]: 
+    ↓ButtonSet [ngx.components.UIDynamicElement-1578671960866]: 
       beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
       tagName: ion-buttons
-      ↓Button [mobile.components.UIDynamicElement-1578671960869]: 
+      ↓Button [ngx.components.UIDynamicElement-1578671960869]: 
         beanData: '{"ionBean":"Button","ButtonFormType":"plain:false"}'
         tagName: button
-        ↓Icon [mobile.components.UIDynamicElement-1578671960872]: 
+        ↓Icon [ngx.components.UIDynamicElement-1578671960872]: 
           beanData: '{"ionBean":"Icon","IconName":"plain:more"}'
           tagName: ion-icon
-↓Content [mobile.components.UIDynamicElement-1578565231494]: 
+↓Content [ngx.components.UIDynamicElement-1578565231494]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
-  ↓Form [mobile.components.UIForm-1578565592895]: 
+  ↓Form [ngx.components.UIForm-1578565592895]: 
     identifier: myForm
-    ↓Div [mobile.components.UIDynamicElement-1578498389567]: 
+    ↓Div [ngx.components.UIDynamicElement-1578498389567]: 
       beanData: '{"ionBean":"DivTag"}'
       tagName: div
-      ↓TextInput [mobile.components.UIDynamicElement-1578497327831]: 
+      ↓TextInput [ngx.components.UIDynamicElement-1578497327831]: 
         beanData: |
           '{
            "ionBean": "Input",
@@ -69,10 +69,10 @@ title: testNgxInput1
           }'
         identifier: myInput
         tagName: ion-input
-        ↓Event [mobile.components.UIControlEvent-1578578502842]: 
+        ↓Event [ngx.components.UIControlEvent-1578578502842]: 
           attrName: (keyup)
           eventName: (keyup)
-          ↓CustomAction [mobile.components.UICustomAction-1578578734547]: 
+          ↓CustomAction [ngx.components.UICustomAction-1578578734547]: 
             actionValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -88,48 +88,48 @@ title: testNgxInput1
                     		}
                     		resolve();
                     '
-      ↓UseSharedComponent3 [mobile.components.UIUseShared-1578497311688]: 
+      ↓UseSharedComponent3 [ngx.components.UIUseShared-1578497311688]: 
         sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ngxTagInput
-        ↓items [mobile.components.UIControlVariable-1578497311691]: 
+        ↓items [ngx.components.UIControlVariable-1578497311691]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: 'script:[{value: 0, display: ''Angular''}, {value: 1, display: ''React''}]'
-        ↓inputtext [mobile.components.UIControlVariable-1578501330307]: 
+        ↓inputtext [ngx.components.UIControlVariable-1578501330307]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:this.myInput.value
-        ↓theme [mobile.components.UIControlVariable-1578497311694]: 
+        ↓theme [ngx.components.UIControlVariable-1578497311694]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:'bootstrap3-info'
-  ↓Div [mobile.components.UIDynamicElement-1578566024502]: 
+  ↓Div [ngx.components.UIDynamicElement-1578566024502]: 
     beanData: '{"ionBean":"DivTag"}'
     isEnabled: false
     tagName: div
-    ↓Text [mobile.components.UIText-1578566038206]: 
+    ↓Text [ngx.components.UIText-1578566038206]: 
       i18n: false
       textValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: 'plain:form value : '
-    ↓Break [mobile.components.UIDynamicElement-1578653033275]: 
+    ↓Break [ngx.components.UIDynamicElement-1578653033275]: 
       beanData: '{"ionBean":"Break"}'
       selfClose: true
       tagName: br
-    ↓Text1 [mobile.components.UIText-1578566055951]: 
+    ↓Text1 [ngx.components.UIText-1578566055951]: 
       textValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:JSON.stringify(form1578565592895.value)
-↓Footer [mobile.components.UIDynamicElement-1578565223758]: 
+↓Footer [ngx.components.UIDynamicElement-1578565223758]: 
   beanData: '{"ionBean":"Footer"}'
   tagName: ion-footer
-↓Subscribe_Handler1 [mobile.components.UIEventSubscriber-1578560380979]: 
+↓Subscribe_Handler1 [ngx.components.UIEventSubscriber-1578560380979]: 
   topic: ngxTagInputFocused
-  ↓CustomAction [mobile.components.UICustomAction-1578567530143]: 
+  ↓CustomAction [ngx.components.UICustomAction-1578567530143]: 
     actionValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -139,9 +139,9 @@ title: testNgxInput1
             		console.log("form value: ", page["form1578565592895"].value);
             		resolve();
             '
-↓Subscribe_Handler2 [mobile.components.UIEventSubscriber-1578562617852]: 
+↓Subscribe_Handler2 [ngx.components.UIEventSubscriber-1578562617852]: 
   topic: ngxTagInputAdded
-  ↓CustomAction [mobile.components.UICustomAction-1578562642089]: 
+  ↓CustomAction [ngx.components.UICustomAction-1578562642089]: 
     actionValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent

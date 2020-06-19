@@ -1,4 +1,4 @@
-↑convertigo: 7.7.0.m006
+↑convertigo: 7.9.0.m006
 ↓lib_ExtendedComponents [core.Project]: 
   comment: |
     'Set of shared components you can use in your projects :
@@ -17,6 +17,4 @@
       comment: Android platform
     ↓iOS [mobileplatforms.IOs]: 
       comment: iOS platform
-    ↓Application [mobile.components.ApplicationComponent]: 🗏 mobileApplication.yaml
-  ↓Project_reference [references.ProjectSchemaReference]: 
-    projectName: mobilebuilder_tpl_7_7_0=git@github.com:convertigo/c8oprj-mobilebuilder-tpl.git:branch=mobilebuilder_tpl_7_7_0
+    ↓Application [ngx.components.ApplicationComponent]: 🗏 mobileApplication.yaml

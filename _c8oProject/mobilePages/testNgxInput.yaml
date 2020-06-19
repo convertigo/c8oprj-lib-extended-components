@@ -1,22 +1,22 @@
 comment: Page with different inputs
 segment: path-to-testngxinput
 title: testNgxInput
-↓Header [mobile.components.UIDynamicElement-1578671875826]: 
+↓Header [ngx.components.UIDynamicElement-1578671875826]: 
   beanData: '{"ionBean":"Header"}'
   comment: Page header
   tagName: ion-header
-  ↓NavBar [mobile.components.UIDynamicElement-1578671875829]: 
-    beanData: '{"ionBean":"NavBar"}'
-    tagName: ion-navbar
-    ↓BarTitle [mobile.components.UIDynamicElement-1578671875832]: 
+  ↓NavBar [ngx.components.UIDynamicElement-1578671875829]: 
+    beanData: '{"ionBean":"DivTag"}'
+    tagName: div
+    ↓BarTitle [ngx.components.UIDynamicElement-1578671875832]: 
       beanData: '{"ionBean":"BarTitle"}'
       tagName: ion-title
-      ↓Text [mobile.components.UIText-1578671875835]: 
+      ↓Text [ngx.components.UIText-1578671875835]: 
         textValue: 
           - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
             - MobileSmartSourceType: plain:My First App
-    ↓Button [mobile.components.UIDynamicElement-1578671875838]: 
+    ↓Button [ngx.components.UIDynamicElement-1578671875838]: 
       beanData: |
         '{
          "ionBean": "Button",
@@ -25,104 +25,104 @@ title: testNgxInput
         }'
       comment: A button to toggle the menu
       tagName: button
-      ↓Icon [mobile.components.UIDynamicElement-1578671875841]: 
+      ↓Icon [ngx.components.UIDynamicElement-1578671875841]: 
         beanData: '{"ionBean":"Icon","IconName":"plain:menu"}'
         tagName: ion-icon
-    ↓ButtonSet [mobile.components.UIDynamicElement-1578671875844]: 
+    ↓ButtonSet [ngx.components.UIDynamicElement-1578671875844]: 
       beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
       tagName: ion-buttons
-      ↓Button [mobile.components.UIDynamicElement-1578671875847]: 
+      ↓Button [ngx.components.UIDynamicElement-1578671875847]: 
         beanData: '{"ionBean":"Button","ButtonFormType":"plain:false"}'
         tagName: button
-        ↓Icon [mobile.components.UIDynamicElement-1578671875850]: 
+        ↓Icon [ngx.components.UIDynamicElement-1578671875850]: 
           beanData: '{"ionBean":"Icon","IconName":"plain:more"}'
           tagName: ion-icon
-↓Content [mobile.components.UIDynamicElement-1578672051003]: 
+↓Content [ngx.components.UIDynamicElement-1578672051003]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
-  ↓Form [mobile.components.UIForm-1577115337121]: 
-    ↓Div1 [mobile.components.UIDynamicElement-1578498374912]: 
+  ↓Form [ngx.components.UIForm-1577115337121]: 
+    ↓Div1 [ngx.components.UIDynamicElement-1578498374912]: 
       beanData: '{"ionBean":"DivTag"}'
       tagName: div
-      ↓UseSharedComponent [mobile.components.UIUseShared-1577114110541]: 
+      ↓UseSharedComponent [ngx.components.UIUseShared-1577114110541]: 
         sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ngxTagInput
-        ↓items [mobile.components.UIControlVariable-1577114114335]: 
+        ↓items [ngx.components.UIControlVariable-1577114114335]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: 'script:[{value: 0, display: ''Angular''}, {value: 1, display: ''React''}]'
-        ↓theme [mobile.components.UIControlVariable-1578496634632]: 
+        ↓theme [ngx.components.UIControlVariable-1578496634632]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:'bootstrap'
-        ↓editableTag [mobile.components.UIControlVariable-1577118756345]: 
+        ↓editableTag [ngx.components.UIControlVariable-1577118756345]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:true
-        ↓removableTag [mobile.components.UIControlVariable-1577118756347]: 
+        ↓removableTag [ngx.components.UIControlVariable-1577118756347]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:true
-        ↓placeholder [mobile.components.UIControlVariable-1578495955363]: 
+        ↓placeholder [ngx.components.UIControlVariable-1578495955363]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:'+Add new language'
-    ↓Div2 [mobile.components.UIDynamicElement-1578498384763]: 
+    ↓Div2 [ngx.components.UIDynamicElement-1578498384763]: 
       beanData: '{"ionBean":"DivTag"}'
       tagName: div
-      ↓UseSharedComponent2 [mobile.components.UIUseShared-1577118252945]: 
+      ↓UseSharedComponent2 [ngx.components.UIUseShared-1577118252945]: 
         sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ngxTagInput
-        ↓items [mobile.components.UIControlVariable-1577118252948]: 
+        ↓items [ngx.components.UIControlVariable-1577118252948]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: 'script:[{index: 0, name: ''Java''}, {index: 1, name: ''C++''}]'
-        ↓itemIdentifyBy [mobile.components.UIControlVariable-1577118285261]: 
+        ↓itemIdentifyBy [ngx.components.UIControlVariable-1577118285261]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:'index'
-        ↓itemDisplayBy [mobile.components.UIControlVariable-1577118285263]: 
+        ↓itemDisplayBy [ngx.components.UIControlVariable-1577118285263]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:'name'
-    ↓Div3 [mobile.components.UIDynamicElement-1578498387335]: 
+    ↓Div3 [ngx.components.UIDynamicElement-1578498387335]: 
       beanData: '{"ionBean":"DivTag"}'
       tagName: div
-      ↓UseSharedComponent1 [mobile.components.UIUseShared-1577116175478]: 
+      ↓UseSharedComponent1 [ngx.components.UIUseShared-1577116175478]: 
         sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ngxTagInput
-        ↓items [mobile.components.UIControlVariable-1577116175481]: 
+        ↓items [ngx.components.UIControlVariable-1577116175481]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:[]
-        ↓placeholder [mobile.components.UIControlVariable-1578496041201]: 
+        ↓placeholder [ngx.components.UIControlVariable-1578496041201]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:'+enter a value or select it'
-        ↓secondaryPlaceholder [mobile.components.UIControlVariable-1578498752776]: 
+        ↓secondaryPlaceholder [ngx.components.UIControlVariable-1578498752776]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:'+enter a value or select it'
-        ↓onlyFromAutocomplete [mobile.components.UIControlVariable-1577117845658]: 
+        ↓onlyFromAutocomplete [ngx.components.UIControlVariable-1577117845658]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:false
-        ↓autocompleteItems [mobile.components.UIControlVariable-1577116796771]: 
+        ↓autocompleteItems [ngx.components.UIControlVariable-1577116796771]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:['item1', 'item2', 'item3']
-        ↓showAutoCompleteDropdownIfEmpty [mobile.components.UIControlVariable-1577117845660]: 
+        ↓showAutoCompleteDropdownIfEmpty [ngx.components.UIControlVariable-1577117845660]: 
           varValue: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:true
