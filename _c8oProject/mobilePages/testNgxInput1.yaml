@@ -1,4 +1,5 @@
 comment: Page with standard input to add tags
+isEnabled: false
 scriptContent: 
   - xmlizable: 
     - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -32,12 +33,7 @@ title: testNgxInput1
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
             - MobileSmartSourceType: plain:My First App
     ↓Button [ngx.components.UIDynamicElement-1578671960860]: 
-      beanData: |
-        '{
-         "ionBean": "Button",
-         "ButtonFormType": "plain:false",
-         "MenuMode": "plain:menuToggle"
-        }'
+      beanData: '{"ionBean":"Button","ButtonFormType":"plain:false"}'
       comment: A button to toggle the menu
       tagName: button
       ↓Icon [ngx.components.UIDynamicElement-1578671960863]: 
@@ -64,7 +60,7 @@ title: testNgxInput1
         beanData: |
           '{
            "ionBean": "Input",
-           "FormControlName": "plain:myInput",
+           "Debounce": "plain:0",
            "Placeholder": "plain:standard input: please enter text, then click Enter"
           }'
         identifier: myInput

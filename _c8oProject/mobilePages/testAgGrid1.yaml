@@ -20,9 +20,12 @@ title: testAgGrid1
   beanData: '{"ionBean":"Header"}'
   comment: Page header
   tagName: ion-header
-  ↓NavBar [ngx.components.UIDynamicElement-1577112296953]: 
-    beanData: '{"ionBean":"DivTag"}'
-    tagName: div
+  ↓ToolBar [ngx.components.UIDynamicElement-1592843086020]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓MenuButton [ngx.components.UIDynamicElement-1592843134204]: 
+      beanData: '{"ionBean":"MenuButton"}'
+      tagName: ion-menu-button
     ↓BarTitle [ngx.components.UIDynamicElement-1577112296956]: 
       beanData: '{"ionBean":"BarTitle"}'
       tagName: ion-title
@@ -31,20 +34,8 @@ title: testAgGrid1
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
             - MobileSmartSourceType: plain:My First App
-    ↓Button [ngx.components.UIDynamicElement-1577112296962]: 
-      beanData: |
-        '{
-         "ionBean": "Button",
-         "ButtonFormType": "plain:false",
-         "MenuMode": "plain:menuToggle"
-        }'
-      comment: A button to toggle the menu
-      tagName: button
-      ↓Icon [ngx.components.UIDynamicElement-1577112296965]: 
-        beanData: '{"ionBean":"Icon","IconName":"plain:menu"}'
-        tagName: ion-icon
     ↓ButtonSet [ngx.components.UIDynamicElement-1577112296968]: 
-      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
       tagName: ion-buttons
       ↓Button [ngx.components.UIDynamicElement-1577112296971]: 
         beanData: '{"ionBean":"Button","ButtonFormType":"plain:false"}'

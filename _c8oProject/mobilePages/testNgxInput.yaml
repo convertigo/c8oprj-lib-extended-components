@@ -1,4 +1,5 @@
 comment: Page with different inputs
+isEnabled: false
 segment: path-to-testngxinput
 title: testNgxInput
 ↓Header [ngx.components.UIDynamicElement-1578671875826]: 
@@ -17,12 +18,7 @@ title: testNgxInput
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
             - MobileSmartSourceType: plain:My First App
     ↓Button [ngx.components.UIDynamicElement-1578671875838]: 
-      beanData: |
-        '{
-         "ionBean": "Button",
-         "ButtonFormType": "plain:false",
-         "MenuMode": "plain:menuToggle"
-        }'
+      beanData: '{"ionBean":"Button","ButtonFormType":"plain:false"}'
       comment: A button to toggle the menu
       tagName: button
       ↓Icon [ngx.components.UIDynamicElement-1578671875841]: 

@@ -158,7 +158,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridCellClicked",
-         "data": "script:$event"
+         "data": "script:out"
         }'
   ↓Event2 [ngx.components.UIControlEvent-1576858211435]: 
     attrName: (rowClicked)
@@ -168,7 +168,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridRowClicked",
-         "data": "script:$event"
+         "data": "script:out"
         }'
   ↓Event3 [ngx.components.UIControlEvent-1576859282081]: 
     attrName: (rowSelected)
@@ -178,7 +178,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridRowSelected",
-         "data": "script:$event"
+         "data": "script:out"
         }'
   ↓Event4 [ngx.components.UIControlEvent-1577091949093]: 
     attrName: (sortChanged)
@@ -188,11 +188,10 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridColumnSortChanged",
-         "data": "script:$event"
+         "data": "script:out"
         }'
 ↓PageEvent [ngx.components.UIPageEvent-1576770503244]: 
   comment: Do not delete or disable !!
-  viewEvent: onCanEnter
   ↓initialization [ngx.components.UICustomAction-1576770512147]: 
     actionValue: 
       - xmlizable: 
