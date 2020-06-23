@@ -23,9 +23,12 @@ title: testAgGrid1
   ↓ToolBar [ngx.components.UIDynamicElement-1592843086020]: 
     beanData: '{"ionBean":"ToolBar"}'
     tagName: ion-toolbar
-    ↓MenuButton [ngx.components.UIDynamicElement-1592843134204]: 
-      beanData: '{"ionBean":"MenuButton"}'
-      tagName: ion-menu-button
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1592929589664]: 
+      beanData: '{"ionBean":"ButtonSet"}'
+      tagName: ion-buttons
+      ↓MenuButton [ngx.components.UIDynamicElement-1592843134204]: 
+        beanData: '{"ionBean":"MenuButton"}'
+        tagName: ion-menu-button
     ↓BarTitle [ngx.components.UIDynamicElement-1577112296956]: 
       beanData: '{"ionBean":"BarTitle"}'
       tagName: ion-title

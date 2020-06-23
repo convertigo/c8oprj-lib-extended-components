@@ -121,7 +121,3 @@ title: testNgxInput
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:true
-  ↓H1 [ngx.components.UIDynamicElement-1592911595001]: 
-    beanData: '{"ionBean":"Heading1"}'
-    tagName: h1
-    ↓Text [ngx.components.UIText-1592911601616]: 
