@@ -1,39 +1,38 @@
 comment: Page with different inputs
-isEnabled: false
+preloadPriority: high
 segment: path-to-testngxinput
 title: testNgxInput
-↓Header [ngx.components.UIDynamicElement-1578671875826]: 
+↓Header1 [ngx.components.UIDynamicElement-1592911356116]: 
   beanData: '{"ionBean":"Header"}'
   comment: Page header
   tagName: ion-header
-  ↓NavBar [ngx.components.UIDynamicElement-1578671875829]: 
-    beanData: '{"ionBean":"DivTag"}'
-    tagName: div
-    ↓BarTitle [ngx.components.UIDynamicElement-1578671875832]: 
+  ↓ToolBar [ngx.components.UIDynamicElement-1592911356119]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1592911356122]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓MenuButton [ngx.components.UIDynamicElement-1592911356125]: 
+        beanData: '{"ionBean":"MenuButton"}'
+        tagName: ion-menu-button
+    ↓BarTitle [ngx.components.UIDynamicElement-1592911356128]: 
       beanData: '{"ionBean":"BarTitle"}'
       tagName: ion-title
-      ↓Text [ngx.components.UIText-1578671875835]: 
+      ↓Text [ngx.components.UIText-1592911356131]: 
         textValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: plain:My First App
-    ↓Button [ngx.components.UIDynamicElement-1578671875838]: 
-      beanData: '{"ionBean":"Button","ButtonFormType":"plain:false"}'
-      comment: A button to toggle the menu
-      tagName: button
-      ↓Icon [ngx.components.UIDynamicElement-1578671875841]: 
-        beanData: '{"ionBean":"Icon","IconName":"plain:menu"}'
-        tagName: ion-icon
-    ↓ButtonSet [ngx.components.UIDynamicElement-1578671875844]: 
-      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
+            - MobileSmartSourceType: plain:Text NGX Input
+    ↓ButtonSet [ngx.components.UIDynamicElement-1592911356134]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
       tagName: ion-buttons
-      ↓Button [ngx.components.UIDynamicElement-1578671875847]: 
+      ↓Button [ngx.components.UIDynamicElement-1592911356137]: 
         beanData: '{"ionBean":"Button","ButtonFormType":"plain:false"}'
         tagName: button
-        ↓Icon [ngx.components.UIDynamicElement-1578671875850]: 
-          beanData: '{"ionBean":"Icon","IconName":"plain:more"}'
+        ↓Icon [ngx.components.UIDynamicElement-1592911356140]: 
+          beanData: '{"ionBean":"Icon","IconName":"plain:ellipsis-vertical"}'
           tagName: ion-icon
-↓Content [ngx.components.UIDynamicElement-1578672051003]: 
+↓Content [ngx.components.UIDynamicElement-1592911534385]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
   ↓Form [ngx.components.UIForm-1577115337121]: 
@@ -122,3 +121,7 @@ title: testNgxInput
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:true
+  ↓H1 [ngx.components.UIDynamicElement-1592911595001]: 
+    beanData: '{"ionBean":"Heading1"}'
+    tagName: h1
+    ↓Text [ngx.components.UIText-1592911601616]: 

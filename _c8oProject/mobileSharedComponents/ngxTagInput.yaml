@@ -1,7 +1,6 @@
-isEnabled: false
 ↓PageEvent [ngx.components.UIPageEvent-1577113239868]: 
   comment: Do not delete or disable !!
-  viewEvent: onCanEnter
+  viewEvent: onWillEnter
   ↓initialization [ngx.components.UICustomAction-1577113262452]: 
     comment: Do not delete or disable !!
     module_ng_imports: 
@@ -13,11 +12,6 @@ isEnabled: false
             - com.twinsoft.convertigo.beans.common.XMLVector: 
               - java.lang.String: 
                 - ↑value: TagInputModule
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-            - com.twinsoft.convertigo.beans.common.XMLVector: 
-              - java.lang.String: 
-                - ↑value: BrowserAnimationsModule 
     module_ts_imports: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -138,7 +132,7 @@ isEnabled: false
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputEdited",
-         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+         "data": "script:{event: out, ref:  params1577113184271.ref}"
         }'
   ↓Event1 [ngx.components.UIControlEvent-1578476895320]: 
     attrName: (onAdd)
@@ -148,7 +142,7 @@ isEnabled: false
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputAdded",
-         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+         "data": "script:{event: out, ref:  params1577113184271.ref}"
         }'
   ↓Event2 [ngx.components.UIControlEvent-1578476936409]: 
     attrName: (onRemove)
@@ -158,7 +152,7 @@ isEnabled: false
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputRemoved",
-         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+         "data": "script:{event: out, ref:  params1577113184271.ref}"
         }'
   ↓Event3 [ngx.components.UIControlEvent-1578476969204]: 
     attrName: (onSelect)
@@ -168,7 +162,7 @@ isEnabled: false
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputSelected",
-         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+         "data": "script:{event: out, ref:  params1577113184271.ref}"
         }'
   ↓Event4 [ngx.components.UIControlEvent-1578477001368]: 
     attrName: (onFocus)
@@ -178,7 +172,7 @@ isEnabled: false
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputFocused",
-         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+         "data": "script:{event: out, ref:  params1577113184271.ref}"
         }'
   ↓Event5 [ngx.components.UIControlEvent-1578477051957]: 
     attrName: (onBlur)
@@ -188,7 +182,7 @@ isEnabled: false
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputBlured",
-         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+         "data": "script:{event: out, ref:  params1577113184271.ref}"
         }'
   ↓Event6 [ngx.components.UIControlEvent-1578477155933]: 
     attrName: (onTextChange)
@@ -198,7 +192,7 @@ isEnabled: false
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputChanged",
-         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+         "data": "script:{event: out, ref:  params1577113184271.ref}"
         }'
   ↓Event7 [ngx.components.UIControlEvent-1578477210656]: 
     attrName: (onPaste)
@@ -208,7 +202,7 @@ isEnabled: false
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputPasted",
-         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+         "data": "script:{event: out, ref:  params1577113184271.ref}"
         }'
   ↓Event8 [ngx.components.UIControlEvent-1578477499388]: 
     attrName: (onValidationError)
@@ -218,7 +212,7 @@ isEnabled: false
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputValidationError",
-         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+         "data": "script:{event: out, ref:  params1577113184271.ref}"
         }'
   ↓Event81 [ngx.components.UIControlEvent-1582202540760]: 
     attrName: (ngModelChange)
@@ -228,7 +222,7 @@ isEnabled: false
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:ngxTagInputNgModelChange",
-         "data": "script:{event: $event, ref:  params1577113184271.ref}"
+         "data": "script:{event: out, ref:  params1577113184271.ref}"
         }'
 ↓items [ngx.components.UICompVariable-1577113952387]: 
   value: '[]'

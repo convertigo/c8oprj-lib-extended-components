@@ -1,7 +1,14 @@
 {
  "My_Menu": "My Menu",
- "First_page": "First page",
+ "testAgGrid1": "testAgGrid1",
  "My_First_App": "My First App",
  "Action_1": "Action 1",
- "Action_2": "Action 2"
+ "Action_2": "Action 2",
+ "testAgGrid2": "testAgGrid2",
+ "testNgxInput": "testNgxInput",
+ "Text_NGX_Input": "Text NGX Input",
+ "some_text": "some text",
+ "testNgxInput1": "testNgxInput1",
+ "form_value___": "form value : ",
+ "First_page": "First page"
 }
