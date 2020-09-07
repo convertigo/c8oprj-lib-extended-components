@@ -190,6 +190,12 @@
          "topic": "plain:agGridColumnSortChanged",
          "data": "script:out"
         }'
+  ↓Attr9 [ngx.components.UIAttribute-1599486121832]: 
+    attrName: '[rowClassRules]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1576501532114.rowClassRules
 ↓PageEvent [ngx.components.UIPageEvent-1576770503244]: 
   comment: Do not delete or disable !!
   ↓initialization [ngx.components.UICustomAction-1576770512147]: 
@@ -384,3 +390,10 @@
     
     '
   value: '''ag-theme-balham'''
+↓rowClassRules [ngx.components.UICompVariable-1599486092504]: 
+  comment: |
+    'Defines rules to apply a custom css class to rows with a callback function :
+    
+    rowClassRules: {
+      ''rag-green-outer'': function(params) { return params.data.year === 2008; },
+    }'
