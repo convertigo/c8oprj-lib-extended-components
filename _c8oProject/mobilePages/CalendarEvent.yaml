@@ -1,0 +1,277 @@
+scriptContent: 
+  - xmlizable: 
+    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+      →: |
+        '/*Begin_c8o_PageImport*/
+        //import __const_localeFr from ''@angular/common/locales/fr'';
+        //import * as __const_localeFr from ''@angular/common/locales/fr'';
+        /*End_c8o_PageImport*/
+        /*Begin_c8o_PageDeclaration*/
+        	public viewTitle = null;
+        	public selectedTime = null;
+        	public cantAddEvent = true;
+        	public eventSource = [
+        			{
+        				title: ''Grégory VORBE'',
+        				id: 1,
+        				startTime: new Date(Date.UTC(2020, 8, 10)),
+        				endTime: new Date(Date.UTC(2020, 8, 11)),
+        				allDay: true
+        			},
+        			{
+        				title: ''Dominique Osternaud'',
+        				id: 2,
+        				startTime: new Date(Date.UTC(2020, 8, 10)),
+        				endTime: new Date(Date.UTC(2020, 8, 11)),
+        				allDay: true
+        			}
+        		];
+        	public calendar = {
+        	        mode: ''month'',
+        	        currentDate: new Date(),
+        	        dateFormatter: {
+        	            formatMonthViewDay: function(date:Date) {
+        	                return date.getDate().toString();
+        	            },
+        	            formatMonthViewDayHeader: function(date:Date) {
+        	                return ''MonMH'';
+        	            },
+        	            formatMonthViewTitle: function(date:Date) {
+        	                return ''testMT'';
+        	            },
+        	            formatWeekViewDayHeader: function(date:Date) {
+        	                return ''MonWH'';
+        	            },
+        	            formatWeekViewTitle: function(date:Date) {
+        	                return ''testWT'';
+        	            },
+        	            formatWeekViewHourColumn: function(date:Date) {
+        	                return ''testWH'';
+        	            },
+        	            formatDayViewHourColumn: function(date:Date) {
+        	                return ''testDH'';
+        	            },
+        	            formatDayViewTitle: function(date:Date) {
+        	                return ''testDT'';
+        	            }
+        	        }
+        	    };
+        	/*End_c8o_PageDeclaration*/
+        /*Begin_c8o_PageConstructor*/
+        		/*End_c8o_PageConstructor*/
+        /*Begin_c8o_PageFunction*/
+        	/*End_c8o_PageFunction*/
+        '
+segment: path-to-calendarevent
+title: Title for CalendarEvent
+↓Header [ngx.components.UIDynamicElement-1600075490242]: 
+  beanData: '{"ionBean":"Header"}'
+  comment: Page header
+  tagName: ion-header
+  ↓ToolBar [ngx.components.UIDynamicElement-1600075490245]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1600075490248]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓MenuButton [ngx.components.UIDynamicElement-1600075490251]: 
+        beanData: '{"ionBean":"MenuButton"}'
+        tagName: ion-menu-button
+    ↓BarTitle [ngx.components.UIDynamicElement-1600075490254]: 
+      beanData: '{"ionBean":"BarTitle"}'
+      tagName: ion-title
+      ↓Text [ngx.components.UIText-1600075490257]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:IONIC2 CALENDAR
+    ↓ButtonSet2 [ngx.components.UIDynamicElement-1600075490260]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+      tagName: ion-buttons
+      ↓Button [ngx.components.UIDynamicElement-1600075490263]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Icon [ngx.components.UIDynamicElement-1600075490266]: 
+          beanData: '{"ionBean":"Icon","IconName":"plain:ellipsis-vertical"}'
+          tagName: ion-icon
+↓Content [ngx.components.UIDynamicElement-1600075490269]: 
+  beanData: '{"ionBean":"Content"}'
+  tagName: ion-content
+  ↓UseSharedComponent [ngx.components.UIUseShared-1600075490272]: 
+    sharedcomponent: Multiburo.MobileApplication.Application.ionic2Calendar
+    ↓allDayLabel [ngx.components.UIControlVariable-1600075490275]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'All Day'
+    ↓noEventsLabel [ngx.components.UIControlVariable-1600075490278]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'No Events'
+    ↓locale [ngx.components.UIControlVariable-1600075490281]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:fr-FR
+    ↓formatDayHeader [ngx.components.UIControlVariable-1600075490284]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'EEE'
+    ↓mode [ngx.components.UIControlVariable-1600075490287]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:month
+    ↓startingDayMonth [ngx.components.UIControlVariable-1600075490290]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:1
+    ↓formatDay [ngx.components.UIControlVariable-1600075490293]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'d'
+    ↓formatDayTitle [ngx.components.UIControlVariable-1600075490296]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'dd MMMM yyyy'
+    ↓formatWeekTitle [ngx.components.UIControlVariable-1600075490299]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'MM yyyy, \'Week\' w'
+    ↓formatMonthTitle [ngx.components.UIControlVariable-1600075490302]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'MMM yyyy'
+    ↓formatWeekViewDayHeader [ngx.components.UIControlVariable-1600075490305]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'EEE dd'
+    ↓formatHourColumn [ngx.components.UIControlVariable-1600075490308]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'HH\'h\'mm'
+    ↓showEventDetail [ngx.components.UIControlVariable-1600075490311]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:true
+    ↓startingDayWeek [ngx.components.UIControlVariable-1600075490314]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:1
+    ↓step [ngx.components.UIControlVariable-1600075490317]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:15
+    ↓queryMode [ngx.components.UIControlVariable-1600075490320]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'local'
+    ↓timeInterval [ngx.components.UIControlVariable-1600075490323]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:30
+    ↓autoSelect [ngx.components.UIControlVariable-1600075490326]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:true
+    ↓markDisabled [ngx.components.UIControlVariable-1600075490329]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:''
+    ↓dateFormatter [ngx.components.UIControlVariable-1600075490332]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:''
+    ↓dir [ngx.components.UIControlVariable-1600075490335]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:
+    ↓scrollToHour [ngx.components.UIControlVariable-1600075490338]: 
+      comment: Make weekview and dayview scroll to the specific hour after entering to the new view.
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:0
+    ↓preserveScrollPosition [ngx.components.UIControlVariable-1600075490341]: 
+      comment: Make weekview and dayview scroll to the specific hour after entering to the new view.
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:true
+    ↓lockSwipeToPrev [ngx.components.UIControlVariable-1600075490344]: 
+      comment: If set to true, swiping to previous view is disabled.
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:false
+    ↓lockSwipes [ngx.components.UIControlVariable-1600075490347]: 
+      comment: If set to true, swiping is disabled.
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:false
+    ↓startHour [ngx.components.UIControlVariable-1600075490350]: 
+      comment: If set to true, swiping is disabled.
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:9
+    ↓endHour [ngx.components.UIControlVariable-1600075490353]: 
+      comment: If set to true, swiping is disabled.
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:19
+    ↓sliderOptions [ngx.components.UIControlVariable-1600075490356]: 
+      comment: Options to pass to the underlying swiper instance. See http://idangero.us/swiper/api/ for valid options.
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:''
+↓Footer [ngx.components.UIDynamicElement-1600075490359]: 
+  beanData: '{"ionBean":"Footer"}'
+  tagName: ion-footer
+  ↓ToolBar [ngx.components.UIDynamicElement-1600075490362]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet [ngx.components.UIDynamicElement-1600075490365]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓Button1 [ngx.components.UIDynamicElement-1600075490368]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Text [ngx.components.UIText-1600075490371]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 1
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1600075490374]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+      tagName: ion-buttons
+      ↓Button2 [ngx.components.UIDynamicElement-1600075490377]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Text [ngx.components.UIText-1600075490380]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 2

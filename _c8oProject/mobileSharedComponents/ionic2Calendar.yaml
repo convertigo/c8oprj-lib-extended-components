@@ -1,0 +1,985 @@
+↓PageEvent [ngx.components.UIPageEvent-1600075462908]: 
+  ↓initCalendar [ngx.components.UICustomAction-1600075462913]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		
+            		page.local.viewTitle = null;
+            		page.local.selectedTime = null;
+            		page.local.cantAddEvent = true;
+            		page.local.eventSource = [];
+            		page.local.calendar = {
+            	        currentDate: new Date(),
+            	        dateFormatter: {
+            				formatMonthViewDay: function(date:Date) {
+            	                return ''testMD'';
+            	            },
+            	            formatMonthViewDayHeader: function(date:Date) {
+            	                return ''testMDH'';
+            	            },
+            	            formatMonthViewTitle: function(date:Date) {
+            	                return ''testMT'';
+            	            },
+            	            formatWeekViewDayHeader: function(date:Date) {
+            	                return ''testWDH'';
+            	            },
+            	            formatWeekViewTitle: function(date:Date) {
+            	                return ''testWT'';
+            	            },
+            	            formatWeekViewHourColumn: function(date:Date) {
+            	                return ''testWH'';
+            	            },
+            	            formatDayViewHourColumn: function(date:Date) {
+            	                return ''testDH'';
+            	            },
+            	            formatDayViewTitle: function(date:Date) {
+            	                return ''testDT'';
+            	            }
+            	        },
+            			markDisabled: (date: Date)=>{
+            				var current = new Date();
+                    		return date < current;
+            			},
+            			lockSwipes : false,
+            			lockSwipeToPrev : false,
+            			sliderOptions : {}
+            	    };
+            
+            		page.local.hasID = function(ev, id){
+            				let foundID = false;
+            				for(let i=0; i < ev.length; i++){
+            					if(ev[i].id == id){
+            						foundID = true;
+            						break;
+            					}
+            				}
+            				return foundID;
+            			}
+            		
+            		resolve();
+            '
+    module_ng_imports: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: NgCalendarModule
+    module_ts_imports: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: NgCalendarModule
+              - java.lang.String: 
+                - ↑value: ionic2-calendar
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: registerLocaleData
+              - java.lang.String: 
+                - ↑value: '@angular/common'
+    package_dependencies: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: ionic2-calendar
+              - java.lang.String: 
+                - ↑value: 0.6.6
+    page_ts_imports: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: NgCalendarModule
+              - java.lang.String: 
+                - ↑value: ionic2-calendar
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: registerLocaleData
+              - java.lang.String: 
+                - ↑value: '@angular/common'
+    ↓localeDE [ngx.components.UICustomAction-1600075462916]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+              		
+              		registerLocaleData(localeDe.default, ''de-DE'');
+              		
+              		resolve();
+              '
+      module_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as localeDe'
+                - java.lang.String: 
+                  - ↑value: '@angular/common/locales/de'
+      page_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as localeDe'
+                - java.lang.String: 
+                  - ↑value: '@angular/common/locales/de'
+    ↓localeES [ngx.components.UICustomAction-1600075462919]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+              		
+              		registerLocaleData(localeEs.default, ''es-ES'');
+              		
+              		resolve();
+              '
+      module_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as localeEs'
+                - java.lang.String: 
+                  - ↑value: '@angular/common/locales/es'
+      page_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as localeEs'
+                - java.lang.String: 
+                  - ↑value: '@angular/common/locales/es'
+    ↓localeFR [ngx.components.UICustomAction-1600075462922]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+              		
+              		registerLocaleData(localeFr.default, ''fr'');
+              		
+              		resolve();
+              '
+      module_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as localeFr'
+                - java.lang.String: 
+                  - ↑value: '@angular/common/locales/fr'
+      page_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as localeFr'
+                - java.lang.String: 
+                  - ↑value: '@angular/common/locales/fr'
+    ↓localeIT [ngx.components.UICustomAction-1600075462925]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+              		
+              		registerLocaleData(localeIt.default, ''it-IT'');
+              		
+              		resolve();
+              '
+      module_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as localeIt'
+                - java.lang.String: 
+                  - ↑value: '@angular/common/locales/it'
+      page_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as localeIt'
+                - java.lang.String: 
+                  - ↑value: '@angular/common/locales/it'
+    ↓localePT [ngx.components.UICustomAction-1600075462928]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+              		
+              		registerLocaleData(localePt.default, ''pt-PT'');
+              		
+              		resolve();
+              '
+      module_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as localePt'
+                - java.lang.String: 
+                  - ↑value: '@angular/common/locales/pt-PT'
+      page_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as localePt'
+                - java.lang.String: 
+                  - ↑value: '@angular/common/locales/pt-PT'
+    ↓sampleData [ngx.components.UICustomAction-1600075462931]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+              		
+              		let date = new Date();
+              		//Tomorrow
+              		let dateUTC1 = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()+1));
+              		// After tomorrow
+              		let dateUTC2 = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()+2));
+              		
+              		page.local.eventSource = [
+              			{
+              				title: ''Grégory VORBE'',
+              				id: 1,
+              				startTime: dateUTC1,
+              				endTime: dateUTC2,
+              				allDay: true
+              			},
+              			{
+              				title: ''Dominique Osternaud'',
+              				id: 2,
+              				startTime: dateUTC1,
+              				endTime: dateUTC2,
+              				allDay: true
+              			}
+              		];
+              		resolve();
+              '
+↓Directive [ngx.components.UIControlDirective-1600075462934]: 
+  directiveName: If
+  directiveSource: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+      - MobileSmartSourceType: script:this.local.calendar && this.local.eventSource
+  ↓Div [ngx.components.UIDynamicElement-1600075462937]: 
+    beanData: '{"ionBean":"DivTag"}'
+    tagName: div
+    ↓Grid [ngx.components.UIDynamicElement-1600075462940]: 
+      beanData: '{"ionBean":"Grid","Height":"plain"}'
+      tagName: ion-grid
+      ↓GridRow [ngx.components.UIDynamicElement-1600075462943]: 
+        beanData: '{"ionBean":"GridRow"}'
+        tagName: ion-row
+        ↓GridColPrev [ngx.components.UIDynamicElement-1600075462946]: 
+          beanData: |
+            '{
+             "ionBean": "GridCol",
+             "FlexAlignement": "plain:ion-align-self-center",
+             "Size": "plain:2"
+            }'
+          tagName: ion-col
+          ↓Button [ngx.components.UIDynamicElement-1600075462949]: 
+            beanData: |
+              '{
+               "ionBean": "Button",
+               "IonColor": "plain:dark",
+               "IonFill": "plain:clear",
+               "IonSize": "plain:small",
+               "IonStrong": "plain:false"
+              }'
+            tagName: ion-button
+            ↓Icon [ngx.components.UIDynamicElement-1600075462952]: 
+              beanData: '{"ionBean":"Icon","IconName":"plain:play"}'
+              tagName: ion-icon
+              ↓Mirroring [ngx.components.UIStyle-1600075462955]: 
+                styleContent: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                      →: |
+                        '	transform: scaleX(-1);
+                            -moz-transform: scaleX(-1);
+                            -webkit-transform: scaleX(-1);
+                            -ms-transform: scaleX(-1);
+                        '
+            ↓Event [ngx.components.UIControlEvent-1600075462958]: 
+              ↓slidePrev [ngx.components.UICustomAction-1600075462961]: 
+                actionValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                      →: |
+                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                        		
+                        		this[vars.calendarId].slidePrev();
+                        		
+                        		resolve();
+                        '
+                ↓calendarId [ngx.components.UIControlVariable-1600075462964]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:myCalendar
+          ↓Attr [ngx.components.UIAttribute-1600075462967]: 
+            attrName: class
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:ion-text-end
+        ↓GridColTitle [ngx.components.UIDynamicElement-1600075462970]: 
+          beanData: |
+            '{
+             "ionBean": "GridCol",
+             "FlexAlignement": "plain:ion-align-self-center",
+             "Size": "plain:8"
+            }'
+          tagName: ion-col
+          ↓Button [ngx.components.UIDynamicElement-1600075462973]: 
+            beanData: |
+              '{
+               "ionBean": "Button",
+               "IonColor": "plain:dark",
+               "IonExpand": "plain:block",
+               "IonFill": "plain:clear",
+               "IonStrong": "plain:true"
+              }'
+            tagName: ion-button
+            ↓Text [ngx.components.UIText-1600075462976]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.local.viewTitle
+            ↓Style [ngx.components.UIStyle-1600075462979]: 
+              styleContent: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                    →: |
+                      '/**
+                       * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                       * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                       * They are set using custom property notation, e.g.: --main-color: black;
+                       * and are accessed using the var() function, e.g.: color: var(--main-color);
+                       * You can find below your component''s properties you can customize within the page.
+                       * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                       * For more informations see https://ionicframework.com/docs/theming.
+                      **/
+                      //--background	//Background of the button
+                      //--background-activated	//Background of the button when pressed. Note: setting this will interfere with the Material Design ripple
+                      //--background-activated-opacity	//Opacity of the button when pressed
+                      //--background-focused	//Background of the button when focused with the tab key
+                      //--background-focused-opacity	//Opacity of the button when focused with the tab key
+                      //--background-hover	//Background of the button on hover
+                      //--background-hover-opacity	//Opacity of the background on hover
+                      //--border-color	//Border color of the button
+                      //--border-radius	//Border radius of the button
+                      //--border-style	//Border style of the button
+                      //--border-width	//Border width of the button
+                      //--box-shadow	//Box shadow of the button
+                      //--color	//Text color of the button
+                      //--color-activated	//Text color of the button when pressed
+                      //--color-focused	//Text color of the button when focused with the tab key
+                      //--color-hover	//Text color of the button when hover
+                      //--opacity	//Opacity of the button
+                      //--padding-bottom	//Bottom padding of the button
+                      //--padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button
+                      //--padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button
+                      //--padding-top	//Top padding of the button
+                      //--ripple-color	//Color of the button ripple effect
+                      //--transition	//Transition of the button
+                      '
+        ↓GridColNext [ngx.components.UIDynamicElement-1600075462982]: 
+          beanData: |
+            '{
+             "ionBean": "GridCol",
+             "FlexAlignement": "plain:ion-align-self-center",
+             "Size": "plain:2"
+            }'
+          tagName: ion-col
+          ↓Button [ngx.components.UIDynamicElement-1600075462985]: 
+            beanData: |
+              '{
+               "ionBean": "Button",
+               "IonColor": "plain:dark",
+               "IonFill": "plain:clear",
+               "IonSize": "plain:small",
+               "IonStrong": "plain:false"
+              }'
+            tagName: ion-button
+            ↓Icon [ngx.components.UIDynamicElement-1600075462988]: 
+              beanData: '{"ionBean":"Icon","IconName":"plain:play"}'
+              tagName: ion-icon
+            ↓Event [ngx.components.UIControlEvent-1600075462991]: 
+              ↓slideNext [ngx.components.UICustomAction-1600075462994]: 
+                actionValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                      →: |
+                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                        		
+                        		this[vars.calendarId].slideNext();
+                        		
+                        		resolve();
+                        '
+                ↓calendarId [ngx.components.UIControlVariable-1600075462997]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:myCalendar
+          ↓Attr [ngx.components.UIAttribute-1600075463000]: 
+            attrName: class
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:ion-text-start
+    ↓Tag [ngx.components.UIElement-1600075463003]: 
+      identifier: myCalendar
+      tagName: calendar
+      ↓Attr [ngx.components.UIAttribute-1600075463006]: 
+        attrName: '[calendarMode]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.mode
+      ↓Attr2 [ngx.components.UIAttribute-1600075463009]: 
+        attrName: '[currentDate]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:this.local.calendar.currentDate
+      ↓Event [ngx.components.UIControlEvent-1600075463012]: 
+        attrName: (onTitleChanged)
+        comment: The callback function triggered when the view title is changed.
+        eventName: (onTitleChanged)
+        ↓changeTitle [ngx.components.UICustomAction-1600075463015]: 
+          actionValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                  		page.c8o.log.debug(''Changed Title: '' + event);
+                  		page.local.viewTitle = event;
+                  		resolve();
+                  '
+      ↓Attr21 [ngx.components.UIAttribute-1600075463018]: 
+        attrName: '[eventSource]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:this.local.eventSource
+      ↓Event1 [ngx.components.UIControlEvent-1600075463021]: 
+        attrName: (onTimeSelected)
+        comment: |
+          The callback function triggered when a date is selected in the monthview.
+          The ev parameter contains two fields, selectedTime and events, if there's no event at the selected time, the events field will be either undefined or empty array
+        eventName: (onTimeSelected)
+        ↓selectTime [ngx.components.UICustomAction-1600075463024]: 
+          actionValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                  		page.c8o.log.debug(''Selected time: '' + JSON.stringify(event));
+                  		page.local.selectedTime = event.selectedTime;
+                  		if(event.events !== undefined && event.events.length < 7 && !page.local.hasID(event.events, 3)) {
+                  			page.local.cantAddEvent = false;
+                  		} else {
+                  			page.local.cantAddEvent = true;
+                  		}
+                  		
+                  		resolve();
+                  '
+      ↓Attr3 [ngx.components.UIAttribute-1600075463027]: 
+        attrName: '[allDayLabel]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.allDayLabel
+      ↓Attr31 [ngx.components.UIAttribute-1600075463030]: 
+        attrName: '[noEventsLabel]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.noEventsLabel
+      ↓Attr311 [ngx.components.UIAttribute-1600075463033]: 
+        attrName: '[locale]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.locale
+      ↓Attr3111 [ngx.components.UIAttribute-1600075463036]: 
+        attrName: '[formatDayHeader]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.formatDayHeader
+      ↓Attr31111 [ngx.components.UIAttribute-1600075463039]: 
+        attrName: '[startingDayMonth]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.startingDayMonth
+      ↓Attr31112 [ngx.components.UIAttribute-1600075463042]: 
+        attrName: '[formatDay]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.formatDay
+      ↓Attr311121 [ngx.components.UIAttribute-1600075463045]: 
+        attrName: '[formatDayTitle]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.formatDayTitle
+      ↓Attr3111211 [ngx.components.UIAttribute-1600075463048]: 
+        attrName: '[formatWeekTitle]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.formatWeekTitle
+      ↓Attr31112111 [ngx.components.UIAttribute-1600075463051]: 
+        attrName: '[formatMonthTitle]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.formatMonthTitle
+      ↓Attr31113 [ngx.components.UIAttribute-1600075463054]: 
+        attrName: '[formatWeekViewDayHeader]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.formatWeekViewDayHeader
+      ↓Attr311131 [ngx.components.UIAttribute-1600075463057]: 
+        attrName: '[formatHourColumn]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.formatHourColumn
+      ↓Attr4 [ngx.components.UIAttribute-1600075463060]: 
+        attrName: '[showEventDetail]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.showEventDetail
+      ↓Attr311111 [ngx.components.UIAttribute-1600075463063]: 
+        attrName: '[startingDayWeek]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.startingDayWeek
+      ↓Attr3112 [ngx.components.UIAttribute-1600075463066]: 
+        attrName: '[queryMode]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.queryMode
+      ↓Attr1 [ngx.components.UIAttribute-1600075463069]: 
+        attrName: '[step]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.step
+      ↓Calendar_CSS_Customization [ngx.components.UIStyle-1600075463072]: 
+        styleContent: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                	
+                	/// The date that is in current month and having events
+                	::ng-deep .monthview-primary-with-event {}
+                	
+                	/// The date that is in previous/next month and having events
+                	::ng-deep .monthview-secondary-with-event {}
+                	
+                	/// The selected date
+                	::ng-deep .monthview-selected {}
+                	
+                	/// The current date
+                	::ng-deep .monthview-current {}
+                	
+                	/// The disabled date
+                	::ng-deep .monthview-disabled {}
+                	
+                	/// The date having all day events, applied to the day header in week view
+                	::ng-deep .weekview-with-event {}
+                	
+                	/// The current date, applied to the day header in week view
+                	::ng-deep .week-view-current {}
+                	
+                	/// The selected date, applied to the day header in week view
+                	::ng-deep .weekview-selected {}
+                	
+                	/// Applied to the all day label in week view
+                	::ng-deep .weekview-allday-label {}
+                	
+                	/// Applied to the all day label in day view
+                	::ng-deep .dayview-allday-label {}
+                	
+                	/// Applied to the hour column in both weekview and day view
+                	::ng-deep .calendar-hour-column {}
+                
+      ↓Attr11 [ngx.components.UIAttribute-1600075463075]: 
+        attrName: '[timeInterval]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.timeInterval
+      ↓Attr111 [ngx.components.UIAttribute-1600075463078]: 
+        attrName: '[autoSelect]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.autoSelect
+      ↓Attr1111 [ngx.components.UIAttribute-1600075463081]: 
+        attrName: '[markDisabled]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.markDisabled
+      ↓Attr11111 [ngx.components.UIAttribute-1600075463084]: 
+        attrName: '[dateFormatter]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.dateFormatter
+      ↓Attr111111 [ngx.components.UIAttribute-1600075463087]: 
+        attrName: '[dir]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.dir
+      ↓Attr1111111 [ngx.components.UIAttribute-1600075463090]: 
+        attrName: '[scrollToHour]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.scrollToHour
+      ↓Attr11111111 [ngx.components.UIAttribute-1600075463093]: 
+        attrName: '[preserveScrollPosition]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.preserveScrollPosition
+      ↓Attr111111111 [ngx.components.UIAttribute-1600075463096]: 
+        attrName: '[lockSwipeToPrev]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:this.local.calendar.lockSwipeToPrev
+      ↓Event11 [ngx.components.UIControlEvent-1600075463099]: 
+        attrName: (onCurrentDateChanged)
+        comment: The callback function triggered when the date that is currently viewed changes.
+        eventName: (onCurrentDateChanged)
+        ↓changeDate [ngx.components.UICustomAction-1600075463102]: 
+          actionValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                  		page.c8o.log.debug(''Currently viewed date: '' + event);
+                  		setTimeout(()=>{
+                  			if(props.stack.root.scope.params1599584369810 === undefined)
+                  				return;
+                  			if(
+                  				props.stack.root.scope.params1599584369810.lockSwipes !== undefined
+                  				&& props.stack.root.scope.params1599584369810.lockSwipes != '''')
+                  				{
+                  					page.local.calendar.lockSwipes = props.stack.root.scope.params1599584369810.lockSwipes;
+                  				}
+                  			
+                  			if(
+                  				props.stack.root.scope.params1599584369810.lockSwipeToPrev !== undefined
+                  				&& props.stack.root.scope.params1599584369810.lockSwipeToPrev != '''')
+                  				{
+                  					page.local.calendar.lockSwipeToPrev = props.stack.root.scope.params1599584369810.lockSwipeToPrev;
+                  				}
+                  		}, 250);
+                  		
+                  		resolve();
+                  '
+      ↓Attr1111111111 [ngx.components.UIAttribute-1600075463105]: 
+        attrName: '[lockSwipes]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:this.local.calendar.lockSwipes
+      ↓Attr1111112 [ngx.components.UIAttribute-1600075463108]: 
+        attrName: '[startHour]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.startHour
+      ↓Attr11111121 [ngx.components.UIAttribute-1600075463111]: 
+        attrName: '[endHour]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.endHour
+      ↓Attr111111211 [ngx.components.UIAttribute-1600075463114]: 
+        attrName: '[sliderOptions]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1599584369810.sliderOptions
+      ↓Event2 [ngx.components.UIControlEvent-1600075463117]: 
+        attrName: (onRangeChanged)
+        comment: |
+          The callback function triggered when the range or mode is changed if the queryMode is set to 'remote'
+          The ev parameter contains two fields, startTime and endTime.
+        eventName: (onRangeChanged)
+        ↓changeRange [ngx.components.UICustomAction-1600075463120]: 
+          actionValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                  		page.c8o.log.debug(''range changed: '' + event.startTime + ''-'' + event.endTime);
+                  		resolve();
+                  '
+      ↓Event21 [ngx.components.UIControlEvent-1600075463123]: 
+        attrName: (onEventSelected)
+        comment: The callback function triggered when an event is clicked.
+        eventName: (onEventSelected)
+        ↓selectEvent [ngx.components.UICustomAction-1600075463126]: 
+          actionValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                  		page.c8o.log.debug(''Selected Event: '' + JSON.stringify(event));
+                  		resolve();
+                  '
+    ↓FabContainer [ngx.components.UIDynamicElement-1600075463129]: 
+      beanData: |
+        '{
+         "ionBean": "FabContainer",
+         "Horizontal": "plain:end",
+         "Vertical": "plain:bottom"
+        }'
+      tagName: ion-fab
+      ↓FabButton [ngx.components.UIDynamicElement-1600075463132]: 
+        beanData: '{"ionBean":"FabButton","Size":"plain:small"}'
+        tagName: ion-fab-button
+        ↓Icon [ngx.components.UIDynamicElement-1600075463135]: 
+          beanData: '{"ionBean":"Icon"}'
+          tagName: ion-icon
+        ↓Event [ngx.components.UIControlEvent-1600075463138]: 
+          ↓sampleData [ngx.components.UICustomAction-1600075463141]: 
+            actionValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                    		
+                    		page.local.eventSource.push({
+                    			title: ''John Doe'',
+                    			id: 3,
+                    			startTime: page.local.selectedTime,
+                    			endTime: page.local.selectedTime,
+                    			allDay: true
+                    		});
+                    		
+                    		/*let start = (page.local.selectedTime).setHours(10, 0, 0, 0);
+                    		let end = (page.local.selectedTime).setHours(19, 0, 0, 0);
+                    		page.local.eventSource.push({
+                    			title: ''Jane Doe'',
+                    			id: 4,
+                    			startTime: new Date(start),
+                    			endTime: new Date(end),
+                    			allDay: false
+                    		});*/
+                    		resolve();
+                    '
+            ↓addEvent [ngx.components.UICustomAction-1600075463144]: 
+              actionValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                    →: |
+                      '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                      		
+                      		// Disable Fab button
+                      		page.local.cantAddEvent = true;
+                      		
+                      		// Refresh Calendar
+                      		this[vars.calendarId].loadEvents();
+                      		resolve();
+                      '
+              ↓calendarId [ngx.components.UIControlVariable-1600075463147]: 
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:myCalendar
+        ↓Attr [ngx.components.UIAttribute-1600075463150]: 
+          attrName: '[disabled]'
+          attrValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:this.local.cantAddEvent
+    ↓Style [ngx.components.UIStyle-1600075463153]: 
+      styleContent: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '	height: 90%;
+              '
+↓allDayLabel [ngx.components.UICompVariable-1600075463156]: 
+  comment: The text displayed in the allDay column header.
+  value: '''All Day'''
+↓noEventsLabel [ngx.components.UICompVariable-1600075463159]: 
+  comment: The text displayed when there’s no event on the selected date in month view.
+  value: '''No Events'''
+↓locale [ngx.components.UICompVariable-1600075463162]: 
+  comment: The locale used to display text in the calendar.
+  value: '''en-US'''
+↓formatDay [ngx.components.UICompVariable-1600075463165]: 
+  comment: The format of the date displayed in the month view.
+  value: '''d'''
+↓formatDayHeader [ngx.components.UICompVariable-1600075463168]: 
+  comment: The format of the header displayed in the month view.
+  value: '''EEE'''
+↓formatDayTitle [ngx.components.UICompVariable-1600075463171]: 
+  comment: The format of the title displayed in the day view.
+  value: '''MMMM dd, yyyy'''
+↓mode [ngx.components.UICompVariable-1600075463174]: 
+  comment: The initial mode of the calendar.
+  value: '''month'''
+↓startingDayMonth [ngx.components.UICompVariable-1600075463177]: 
+  comment: Control month view starting from which day.
+  value: 0
+↓formatWeekTitle [ngx.components.UICompVariable-1600075463180]: 
+  comment: The format of the title displayed in the week view.
+  value: '''MMMM yyyy, \''Week\'' w'''
+↓formatMonthTitle [ngx.components.UICompVariable-1600075463183]: 
+  comment: The format of the title displayed in the month view.
+  value: '''MMMM yyyy'''
+↓formatWeekViewDayHeader [ngx.components.UICompVariable-1600075463186]: 
+  comment: The format of the header displayed in the week view.
+  value: '''EEE d'''
+↓formatHourColumn [ngx.components.UICompVariable-1600075463189]: 
+  comment: The format of the hour column displayed in the week and day view.
+  value: '''ha'''
+↓showEventDetail [ngx.components.UICompVariable-1600075463192]: 
+  comment: If set to true, when selecting the date in the month view, the events happened on that day will be shown below.
+  value: true
+↓startingDayWeek [ngx.components.UICompVariable-1600075463195]: 
+  comment: Control week view starting from which day.
+  value: 0
+↓queryMode [ngx.components.UICompVariable-1600075463198]: 
+  comment: |
+    If queryMode is set to 'local', when the range or mode is changed, the calendar will use the already bound eventSource to update the view
+    If queryMode is set to 'remote', when the range or mode is changed, the calendar will trigger a callback function rangeChanged.
+  value: '''local'''
+↓step [ngx.components.UICompVariable-1600075463201]: 
+  comment: It is used to display the event using more accurate time interval in weekview and dayview. For example, if set to 30, then the event will only occupy half of the row height (If timeInterval option uses default value). The unit is minute. It can be set to 15 or 30.
+  value: 60
+↓timeInterval [ngx.components.UICompVariable-1600075463204]: 
+  comment: It is used to display the rows using more accurate time interval in weekview and dayview. For example, if set to 30, then the time interval between each row is 30 mins. The unit is minute. It should be the factor or multiple of 60, which means 60%timeInterval=0 or timeInterval%60=0.
+  value: 60
+↓autoSelect [ngx.components.UICompVariable-1600075463207]: 
+  comment: If set to true, the current calendar date will be auto selected when calendar is loaded or swiped in the month and week view.
+  value: true
+↓markDisabled [ngx.components.UICompVariable-1600075463210]: 
+  comment: The callback function used to determine if the time should be marked as disabled.
+  value: this.local.calendar?.markDisabled
+↓dateFormatter [ngx.components.UICompVariable-1600075463213]: 
+  comment: |
+    The custom date formatter to transform date to text.
+    If the custom date formatter is not set, the default Angular DatePipe is used. The format method in dateFormatter is optional, if omitted, the default Angular DatePipe is used.
+  value: this.local.calendar?.dateFormatter
+↓dir [ngx.components.UICompVariable-1600075463216]: 
+  comment: If set to "rtl", the calendar supports RTL language.
+↓scrollToHour [ngx.components.UICompVariable-1600075463219]: 
+  comment: Make weekview and dayview scroll to the specific hour after entering to the new view.
+  value: 0
+↓preserveScrollPosition [ngx.components.UICompVariable-1600075463222]: 
+  comment: If set to true, the previous/next views in weekview and dayview will also scroll to the same position as the current active view.
+  value: false
+↓lockSwipeToPrev [ngx.components.UICompVariable-1600075463225]: 
+  comment: If set to true, swiping to previous view is disabled.
+  value: false
+↓lockSwipes [ngx.components.UICompVariable-1600075463228]: 
+  comment: If set to true, swiping is disabled.
+  value: false
+↓startHour [ngx.components.UICompVariable-1600075463231]: 
+  comment: Limit the weekview and dayview starts from which hour (0-23).
+  value: 0
+↓endHour [ngx.components.UICompVariable-1600075463234]: 
+  comment: Limit the weekview and dayview ends until which hour (1-24).
+  value: 24
+↓sliderOptions [ngx.components.UICompVariable-1600075463237]: 
+  comment: Options to pass to the underlying swiper instance. See http://idangero.us/swiper/api/ for valid options.
+  value: this.local.calendar?.sliderOptions
