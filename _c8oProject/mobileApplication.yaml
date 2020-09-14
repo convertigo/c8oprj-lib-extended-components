@@ -25,12 +25,18 @@ componentScriptContent:
         
 tplProjectName: mobilebuilder_tpl_7_7_0
 ↓Menu [mobile.components.UIDynamicMenu-1500890597895]: 🗏 mobileMenus/Menu.yaml
+↓cardIO_sa [mobile.components.UIActionStack-1595431416100]: 🗏 mobileSharedActions/cardIO_sa.yaml
+↓ZXing_sa [mobile.components.UIActionStack-1595431416151]: 🗏 mobileSharedActions/ZXing_sa.yaml
 ↓agGrid [mobile.components.UISharedComponent-1576501532114]: 🗏 mobileSharedComponents/agGrid.yaml
 ↓ngxTagInput [mobile.components.UISharedComponent-1577113184271]: 🗏 mobileSharedComponents/ngxTagInput.yaml
+↓cardIO_sc [mobile.components.UISharedComponent-1595431403877]: 🗏 mobileSharedComponents/cardIO_sc.yaml
+↓ZXing_sc [mobile.components.UISharedComponent-1595431403991]: 🗏 mobileSharedComponents/ZXing_sc.yaml
 ↓testAgGrid1 [mobile.components.PageComponent-1577112296926]: 🗏 mobilePages/testAgGrid1.yaml
 ↓testAgGrid2 [mobile.components.PageComponent-1500538678074]: 🗏 mobilePages/testAgGrid2.yaml
 ↓testNgxInput [mobile.components.PageComponent-1577114040810]: 🗏 mobilePages/testNgxInput.yaml
 ↓testNgxInput1 [mobile.components.PageComponent-1578565185309]: 🗏 mobilePages/testNgxInput1.yaml
+↓cardIO [mobile.components.PageComponent-1595431440350]: 🗏 mobilePages/cardIO.yaml
+↓ZXing [mobile.components.PageComponent-1595431440486]: 🗏 mobilePages/ZXing.yaml
 ↓Theme [mobile.components.UITheme-1491635018260]: 
   comment: Global color themes can be customized here
   styleContent: 

@@ -1,0 +1,190 @@
+comment: ZXing SharedComponent
+↓GenericItem [mobile.components.UIDynamicElement-1595431403994]: 
+  beanData: '{"ionBean":"GenericItem"}'
+  tagName: ion-item
+  ↓Label [mobile.components.UIDynamicElement-1595431403997]: 
+    beanData: '{"ionBean":"Label","Stacked":"plain:stacked"}'
+    tagName: ion-label
+    ↓Text [mobile.components.UIText-1595431404000]: 
+      textValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:QRC_BarC
+  ↓TextInput [mobile.components.UIDynamicElement-1595431404003]: 
+    beanData: '{"ionBean":"Input"}'
+    identifier: codeResult
+    tagName: ion-input
+  ↓Button [mobile.components.UIDynamicElement-1595431404006]: 
+    beanData: '{"ionBean":"Button","IonSize":"plain:small"}'
+    tagName: button
+    ↓Icon [mobile.components.UIDynamicElement-1595431404009]: 
+      beanData: '{"ionBean":"Icon","IconName":"plain:camera"}'
+      tagName: ion-icon
+    ↓Attr [mobile.components.UIAttribute-1595431404012]: 
+      attrName: 
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:item-right
+    ↓Event [mobile.components.UIControlEvent-1595431404015]: 
+      ↓cameraSource [mobile.components.UICustomAction-1595431404018]: 
+        actionValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                		page.local.zxing_source = ''video'';
+                		resolve();
+                '
+        ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1595431404021]: 
+          beanData: '{"ionBean":"InvokeAction"}'
+          stack: CardIO.MobileApplication.Application.ZXing_sa
+          ↓type [mobile.components.UIControlVariable-1595431404024]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:'video'
+          ↓resultId [mobile.components.UIControlVariable-1595431404027]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.codeResult
+          ↓videoId [mobile.components.UIControlVariable-1595431404030]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:'videoSource'
+          ↓Log [mobile.components.UIDynamicAction-1595431404033]: 
+            beanData: |
+              '{
+               "ionBean": "LogAction",
+               "message": "script:JSON.stringify(parent.out[1] || parent.out[0] || {error: ''unknown''})",
+               "level": "plain:debug"
+              }'
+    ↓Style [mobile.components.UIStyle-1595431404036]: 
+      styleContent: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '	margin-top: 27px !important;
+              '
+  ↓Button1 [mobile.components.UIDynamicElement-1595431404039]: 
+    beanData: '{"ionBean":"Button","IonSize":"plain:small"}'
+    tagName: button
+    ↓Icon [mobile.components.UIDynamicElement-1595431404042]: 
+      beanData: '{"ionBean":"Icon","IconName":"plain:document"}'
+      tagName: ion-icon
+    ↓Attr [mobile.components.UIAttribute-1595431404045]: 
+      attrName: 
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:item-right
+    ↓Event [mobile.components.UIControlEvent-1595431404048]: 
+      ↓fileSource [mobile.components.UICustomAction-1595431404051]: 
+        actionValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                		page.local.zxing_source = ''file'';
+                		resolve();
+                '
+    ↓Style [mobile.components.UIStyle-1595431404054]: 
+      styleContent: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '	margin-top: 27px !important;
+              '
+↓Directive [mobile.components.UIControlDirective-1595431404057]: 
+  directiveName: Switch
+  directiveSource: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+      - MobileSmartSourceType: script:this.local.zxing_source
+  ↓Directive [mobile.components.UIControlDirective-1595431404060]: 
+    directiveName: SwitchCase
+    directiveSource: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: plain:'file'
+    ↓Break [mobile.components.UIDynamicElement-1595431404063]: 
+      beanData: '{"ionBean":"Break"}'
+      selfClose: true
+      tagName: br
+    ↓Tag [mobile.components.UIElement-1595431404066]: 
+      selfClose: true
+      tagName: input
+      ↓Attr [mobile.components.UIAttribute-1595431404069]: 
+        attrName: type
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:file
+      ↓Event [mobile.components.UIControlEvent-1595431404072]: 
+        attrName: (change)
+        eventName: (change)
+        ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1595431404075]: 
+          beanData: '{"ionBean":"InvokeAction"}'
+          stack: CardIO.MobileApplication.Application.ZXing_sa
+          ↓type [mobile.components.UIControlVariable-1595431404078]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:'file'
+          ↓resultId [mobile.components.UIControlVariable-1595431404081]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.codeResult
+          ↓imgId [mobile.components.UIControlVariable-1595431404084]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.zxing_image_id
+          ↓zxing_topic [mobile.components.UIControlVariable-1595431404087]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:'zxing_result'
+    ↓Break1 [mobile.components.UIDynamicElement-1595431404090]: 
+      beanData: '{"ionBean":"Break"}'
+      selfClose: true
+      tagName: br
+    ↓Image [mobile.components.UIDynamicElement-1595431404093]: 
+      beanData: '{"ionBean":"Image","url":"plain"}'
+      identifier: zxing_image_id
+      selfClose: true
+      tagName: img
+  ↓Directive1 [mobile.components.UIControlDirective-1595431404096]: 
+    directiveName: SwitchCase
+    directiveSource: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: plain:'video'
+    ↓Break1 [mobile.components.UIDynamicElement-1595431404099]: 
+      beanData: '{"ionBean":"Break"}'
+      selfClose: true
+      tagName: br
+    ↓Tag1 [mobile.components.UIElement-1595431404102]: 
+      tagName: video
+      ↓Attr [mobile.components.UIAttribute-1595431404105]: 
+        attrName: id
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:videoSource
+      ↓Style [mobile.components.UIStyle-1595431404108]: 
+        styleContent: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '	border: 1px solid gray;
+                	width: 100%;
+                '
