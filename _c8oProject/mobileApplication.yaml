@@ -27,10 +27,12 @@ tplProjectName: mobilebuilder_tpl_7_7_0
 ↓Menu [mobile.components.UIDynamicMenu-1500890597895]: 🗏 mobileMenus/Menu.yaml
 ↓agGrid [mobile.components.UISharedComponent-1576501532114]: 🗏 mobileSharedComponents/agGrid.yaml
 ↓ngxTagInput [mobile.components.UISharedComponent-1577113184271]: 🗏 mobileSharedComponents/ngxTagInput.yaml
+↓angularxQRCode [mobile.components.UISharedComponent-1600099015160]: 🗏 mobileSharedComponents/angularxQRCode.yaml
 ↓testAgGrid1 [mobile.components.PageComponent-1577112296926]: 🗏 mobilePages/testAgGrid1.yaml
 ↓testAgGrid2 [mobile.components.PageComponent-1500538678074]: 🗏 mobilePages/testAgGrid2.yaml
 ↓testNgxInput [mobile.components.PageComponent-1577114040810]: 🗏 mobilePages/testNgxInput.yaml
 ↓testNgxInput1 [mobile.components.PageComponent-1578565185309]: 🗏 mobilePages/testNgxInput1.yaml
+↓angularxQRCode [mobile.components.PageComponent-1600099886448]: 🗏 mobilePages/angularxQRCode.yaml
 ↓Theme [mobile.components.UITheme-1491635018260]: 
   comment: Global color themes can be customized here
   styleContent: 
