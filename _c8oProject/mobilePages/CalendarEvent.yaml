@@ -99,7 +99,7 @@ title: Title for CalendarEvent
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
   ↓UseSharedComponent [ngx.components.UIUseShared-1600075490272]: 
-    sharedcomponent: Multiburo.MobileApplication.Application.ionic2Calendar
+    sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ionic2Calendar
     ↓allDayLabel [ngx.components.UIControlVariable-1600075490275]: 
       varValue: 
         - xmlizable: 
