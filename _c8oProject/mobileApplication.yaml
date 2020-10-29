@@ -28,6 +28,7 @@ tplProjectName: mobilebuilder_tpl_7_7_0
 ↓agGrid [mobile.components.UISharedComponent-1576501532114]: 🗏 mobileSharedComponents/agGrid.yaml
 ↓ngxTagInput [mobile.components.UISharedComponent-1577113184271]: 🗏 mobileSharedComponents/ngxTagInput.yaml
 ↓tinyMce [mobile.components.UISharedComponent-1584094766586]: 🗏 mobileSharedComponents/tinyMce.yaml
+↓angularxQRCode [mobile.components.UISharedComponent-1600099015160]: 🗏 mobileSharedComponents/angularxQRCode.yaml
 ↓testAgGrid1 [mobile.components.PageComponent-1577112296926]: 🗏 mobilePages/testAgGrid1.yaml
 ↓testAgGrid2 [mobile.components.PageComponent-1500538678074]: 🗏 mobilePages/testAgGrid2.yaml
 ↓testNgxInput [mobile.components.PageComponent-1577114040810]: 🗏 mobilePages/testNgxInput.yaml

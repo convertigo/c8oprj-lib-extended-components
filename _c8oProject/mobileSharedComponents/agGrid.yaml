@@ -27,7 +27,7 @@
     attrValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: plain:ag-theme-balham
+        - MobileSmartSourceType: script:params1576501532114.class
   ↓Attr1 [mobile.components.UIAttribute-1576595487026]: 
     attrName: style
     attrValue: 
@@ -371,3 +371,17 @@
 ↓height [mobile.components.UICompVariable-1578908488029]: 
   comment: height is 'auto' or value in % or px
   value: '''auto'''
+↓class [mobile.components.UICompVariable-1587906728976]: 
+  comment: |
+    'One of the themes provided here :
+    
+    https://www.ag-grid.com/javascript-grid-themes-provided/
+    
+    Also be shure to add the theme in the Theme object as :
+    
+    @import "../../node_modules/ag-grid-community/dist/styles/ag-theme-balham-dark/sass/ag-theme-balham-dark.scss";
+    
+    
+    
+    '
+  value: '''ag-theme-balham'''

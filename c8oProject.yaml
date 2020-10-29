@@ -8,7 +8,7 @@
     
     '
   corsOrigin: =Origin
-  version: 1.0.3
+  version: 1.0.4
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓MobileApplication [core.MobileApplication]: 
     comment: Describes the mobile application global properties
