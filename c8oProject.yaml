@@ -8,7 +8,7 @@
     
     '
   corsOrigin: =Origin
-  version: 1.0.4
+  version: 1.0.5
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓MobileApplication [core.MobileApplication]: 
     comment: Describes the mobile application global properties
@@ -19,4 +19,4 @@
       comment: iOS platform
     ↓Application [mobile.components.ApplicationComponent]: 🗏 mobileApplication.yaml
   ↓Project_reference [references.ProjectSchemaReference]: 
-    projectName: mobilebuilder_tpl_7_7_0=https://github.com/convertigo/c8oprj-mobilebuilder-tpl.git:branch=mobilebuilder_tpl_7_7_0
+    projectName: mobilebuilder_tpl_7_7_0=https://github.com/convertigo/c8oprj-mobilebuilder-tpl/archive/mobilebuilder_tpl_7_7_0.zip
