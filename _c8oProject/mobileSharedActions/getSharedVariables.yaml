@@ -19,5 +19,5 @@
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params.quagga_id
-↓quagga_id [mobile.components.UIStackVariable-1605201486032]: 
+        - MobileSmartSourceType: script:params.div_id
+↓div_id [mobile.components.UIStackVariable-1605201486032]: 

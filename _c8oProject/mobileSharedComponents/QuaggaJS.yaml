@@ -35,8 +35,8 @@
                 - ↑value: quagga
     ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1605201712990]: 
       beanData: '{"ionBean":"InvokeAction"}'
-      stack: lib_ExtendedComponents.MobileApplication.Application.QuaggaActions
-      ↓quagga_id [mobile.components.UIControlVariable-1605201719655]: 
+      stack: lib_ExtendedComponents.MobileApplication.Application.getSharedVariables
+      ↓div_id [mobile.components.UIControlVariable-1605201719655]: 
         varValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
@@ -52,6 +52,7 @@
         - com.twinsoft.convertigo.beans.common.FormatedContent: 
           →: |
             '	position: relative;
+            	width: 100%;
             	
             	canvas.drawing, canvas.drawingBuffer {
             		position : absolute;
@@ -119,7 +120,11 @@
                                   name : "Quagga_C8O_Mobile_Builder",
                                   type : page.local.quagga_scanner.type,
                                   //target: document.querySelector(''#QuaggaJSReader''),
-                                  target: page[''QuaggaJSReader''].nativeElement
+                                  target: page[''QuaggaJSReader''].nativeElement,
+                                  constraints: {
+                                      width: 640,
+                                      height: 480
+                                  }
                                 },
                                 decoder : {
                                     readers: page.local.quagga_scanner.decoders
@@ -140,6 +145,7 @@
                           }
                           page.local.quaggaIsRunning = true;
                           page.local.quaggaForceRunning = false;
+                          page.global.quagga_resultCode = undefined;
                       });
                       
                       page.local.quagga_handleProcessed = (data) =>{
@@ -158,6 +164,14 @@
                           }
                       };
                       Quagga.onDetected(page.local.quagga_handleDetected);
+                      
+                      page.local.median = arr => {
+                          if(arr.length ===0) return 1;
+                          if(arr.length ===1) return arr[0];
+                          const mid = Math.floor(arr.length / 2),
+                          nums = [...arr].sort((a, b) => a - b);
+                          return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+                        };
                       
               		resolve();
               '
@@ -245,6 +259,7 @@
           - com.twinsoft.convertigo.beans.common.FormatedContent: 
             →: |
               '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+              		page.global.quagga_resultCode = undefined;
               		Quagga.start();
               		resolve();
               '
@@ -261,8 +276,8 @@
                 '
         ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1605202859925]: 
           beanData: '{"ionBean":"InvokeAction"}'
-          stack: lib_ExtendedComponents.MobileApplication.Application.QuaggaActions
-          ↓quagga_id [mobile.components.UIControlVariable-1605202859928]: 
+          stack: lib_ExtendedComponents.MobileApplication.Application.getSharedVariables
+          ↓div_id [mobile.components.UIControlVariable-1605202859928]: 
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
@@ -333,15 +348,30 @@
             
             		if (data.codeResult && data.codeResult.code) {
             		    page.c8o.log.debug(''[Quagga] onDetected: ''+ data.codeResult.code);
-            		    page.global.quagga_resultCode = data.codeResult.code;
-            	        if(page.local.quagga_scanner && page.local.quagga_scanner.autoStop === true){
+            		    let acceptCode = false;
+            		    if(data.codeResult.decodedCodes){
+            		        let errors = data.codeResult.decodedCodes.filter(x => x.error !== undefined).map(x => x.error);
+            		        let accuracy = page.local.median(errors) < 0.1;
+            		        page.c8o.log.warn(''[Quagga] accuracy: ''+ accuracy);
+            		        if(accuracy){
+            		            page.global.quagga_resultCode = data.codeResult.code;
+            	                acceptCode = true;
+            		        }
+            		    }else{
+            		        page.global.quagga_resultCode = data.codeResult.code;
+            		        acceptCode = true;
+            		    }
+            	        if(page.local.quagga_scanner && page.local.quagga_scanner.autoStop === true && acceptCode === true){
             	            if(page.local.quagga_handleProcessed !== undefined){
-            	                Quagga.offProcessed(page.local.quagga_handleProcessed);
+                                Quagga.offProcessed(page.local.quagga_handleProcessed);
+                            }
+                            if(page.local.quagga_handleDetected !== undefined){
+                                Quagga.offDetected(page.local.quagga_handleDetected);
+                            }
+            	            setTimeout(() => {
+            	                page["actionBeans"].PublishEventAction(page,{"topic":"quagga:stop", "data": null}, null);
             	            }
-            	            if(page.local.quagga_handleDetected !== undefined){
-            	                Quagga.offDetected(page.local.quagga_handleDetected);
-            	            }
-            	            page["actionBeans"].PublishEventAction(page,{"topic":"quagga:stop", "data": null}, null);
+                            , 2000);
             	        }
                     }
             		

@@ -53,81 +53,49 @@ title: QuaggaJS
 ↓Content [mobile.components.UIDynamicElement-1605018004142]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
-  ↓UseSharedComponent [mobile.components.UIUseShared-1605018014231]: 
-    sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.QuaggaJS
-    ↓autoInit [mobile.components.UIControlVariable-1605203780752]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:true
-    ↓autoStart [mobile.components.UIControlVariable-1605203780754]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:true
-    ↓autoStop [mobile.components.UIControlVariable-1605219486148]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:false
-    ↓drawResultType [mobile.components.UIControlVariable-1605221746616]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:'text'
-    ↓colorProcessed [mobile.components.UIControlVariable-1605224532944]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:'#0F0'
-    ↓colorDetected [mobile.components.UIControlVariable-1605224532946]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:'#00F'
-    ↓colorResult [mobile.components.UIControlVariable-1605224532948]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:'#F00'
-    ↓decoders [mobile.components.UIControlVariable-1605226348824]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:'ean_reader'
-    ↓frequency [mobile.components.UIControlVariable-1605227761232]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:2
-  ↓Button [mobile.components.UIDynamicElement-1605200106749]: 
-    beanData: '{"ionBean":"Button"}'
-    tagName: button
-    ↓Text [mobile.components.UIText-1605200113212]: 
-      textValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: plain:stop
-    ↓Event [mobile.components.UIControlEvent-1605200118797]: 
-      ↓PublishEvent [mobile.components.UIDynamicAction-1605200263667]: 
-        beanData: '{"ionBean":"PublishEventAction","topic":"plain:quagga:stop"}'
-  ↓Button1 [mobile.components.UIDynamicElement-1605202337935]: 
-    beanData: '{"ionBean":"Button"}'
-    tagName: button
-    ↓Text [mobile.components.UIText-1605202337938]: 
-      textValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: plain:start
-    ↓Event [mobile.components.UIControlEvent-1605202337941]: 
-      ↓PublishEvent [mobile.components.UIDynamicAction-1605202337944]: 
-        beanData: '{"ionBean":"PublishEventAction","topic":"plain:quagga:start"}'
-↓Subscribe_Handler [mobile.components.UIEventSubscriber-1605197863042]: 
-  topic: quagga:ondetected
-  ↓Log [mobile.components.UIDynamicAction-1605197894932]: 
-    beanData: |
-      '{
-       "ionBean": "LogAction",
-       "message": "script:out.codeResult.code",
-       "level": "plain:warn"
-      }'
+  ↓GenericItem [mobile.components.UIDynamicElement-1605263668350]: 
+    beanData: '{"ionBean":"GenericItem"}'
+    tagName: ion-item
+    ↓Label [mobile.components.UIDynamicElement-1605263676277]: 
+      beanData: '{"ionBean":"Label"}'
+      tagName: ion-label
+      ↓Text [mobile.components.UIText-1605263695564]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:result
+    ↓TextInput [mobile.components.UIDynamicElement-1605263682523]: 
+      beanData: '{"ionBean":"Input","Value":"script:this.global.quagga_resultCode"}'
+      identifier: input_result
+      tagName: ion-input
+    ↓Button [mobile.components.UIDynamicElement-1605279650550]: 
+      beanData: |
+        '{
+         "ionBean": "Button",
+         "IonClear": "plain:clear",
+         "IconOnly": "plain:icon-only"
+        }'
+      tagName: button
+      ↓Icon [mobile.components.UIDynamicElement-1605279650553]: 
+        beanData: '{"ionBean":"Icon","IconName":"plain:barcode"}'
+        tagName: ion-icon
+      ↓Attr [mobile.components.UIAttribute-1605279650556]: 
+        attrName: 
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:item-end
+      ↓Style [mobile.components.UIStyle-1605279650559]: 
+        styleContent: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '	font-size: 1.4rem !important;
+                	position: relative !important;
+                /* 	top: 18px !important; */
+                	margin: 0 auto !important;
+                '
+      ↓Event [mobile.components.UIControlEvent-1605279650562]: 
+        ↓ModalPage [mobile.components.UIDynamicAction-1605279780045]: 
+          beanData: '{"ionBean":"ModalAction","page":"plain:lib_ExtendedComponents.MobileApplication.Application.modalQuaggaJS"}'
