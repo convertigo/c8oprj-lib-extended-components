@@ -1,0 +1,23 @@
+↓doDivAction [mobile.components.UICustomAction-1605201243558]: 
+  actionValue: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+        →: |
+          '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+          		if(vars.id && vars.id != ''''){
+          		    page[vars.id].nativeElement.dispatchEvent(new MouseEvent(''blur'', {
+          	            view: window,
+          	            bubbles: true,
+          	            cancelable: true
+          	        }));
+          		}
+          		
+          		resolve();
+          '
+  ↓id [mobile.components.UIControlVariable-1605201409534]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params.quagga_id
+↓quagga_id [mobile.components.UIStackVariable-1605201486032]: 

@@ -1,0 +1,370 @@
+↓PageEvent [mobile.components.UIPageEvent-1605017453004]: 
+  ↓declareQuaggaJS [mobile.components.UICustomAction-1605017462450]: 
+    module_ts_imports: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: '* as Quagga'
+              - java.lang.String: 
+                - ↑value: quagga
+    package_dependencies: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: quagga
+              - java.lang.String: 
+                - ↑value: 0.12.1
+    page_ts_imports: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: '* as Quagga'
+              - java.lang.String: 
+                - ↑value: quagga
+    ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1605201712990]: 
+      beanData: '{"ionBean":"InvokeAction"}'
+      stack: lib_ExtendedComponents.MobileApplication.Application.QuaggaActions
+      ↓quagga_id [mobile.components.UIControlVariable-1605201719655]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:'quagga_init'
+↓Div [mobile.components.UIDynamicElement-1605017949808]: 
+  beanData: '{"ionBean":"DivTag"}'
+  identifier: QuaggaJSReader
+  tagName: div
+  ↓Style [mobile.components.UIStyle-1605017959876]: 
+    styleContent: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '	position: relative;
+            	
+            	canvas.drawing, canvas.drawingBuffer {
+            		position : absolute;
+            		top: 0;
+            		left: 0;
+            	}
+            '
+  ↓Attr [mobile.components.UIAttribute-1605017975011]: 
+    attrName: id
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: plain:QuaggaJSReader
+↓autoInit [mobile.components.UICompVariable-1605030691892]: 
+  value: true
+↓autoStart [mobile.components.UICompVariable-1605030872038]: 
+  value: true
+↓Div_Init [mobile.components.UIDynamicElement-1605198349421]: 
+  beanData: '{"ionBean":"DivTag"}'
+  identifier: quagga_init
+  tagName: div
+  ↓Event [mobile.components.UIControlEvent-1605198407661]: 
+    attrName: (blur)
+    eventName: (blur)
+    ↓QuaggaInit [mobile.components.UICustomAction-1605029918929]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+              		let numWorkers = navigator.hardwareConcurrency || 0;
+                      let locate = true;
+                      
+                      let allDecoders = [
+                         "code_128_reader",
+                         "ean_reader",
+                         "ean_8_reader",
+                         "code_39_reader",
+                         "code_39_vin_reader",
+                         "codabar_reader",
+                         "upc_reader",
+                         "upc_e_reader",
+                         "i2of5_reader",
+                         "2of5_reader",
+                         "code_93_reader"
+                     ];
+                      
+                      page.local.quagga_scanner = {
+                              autoStart:      vars.autoStart,
+                              autoStop:       vars.autoStop,
+                              drawResultType: vars.drawResultType,
+                              colorProcessed: vars.colorProcessed,
+                              colorDetected:  vars.colorDetected,
+                              colorResult:    vars.colorResult,
+                              decoders:       vars.decoders == ''all'' ? allDecoders : vars.decoders.split('',''),
+                              frequency:      vars.frequency,
+                              type:           vars.type,
+                              numWorkers:     numWorkers,
+                              locate:         true
+                      }
+                      
+                      let configQGA = {
+                              inputStream : {
+                                  name : "Quagga_C8O_Mobile_Builder",
+                                  type : page.local.quagga_scanner.type,
+                                  //target: document.querySelector(''#QuaggaJSReader''),
+                                  target: page[''QuaggaJSReader''].nativeElement
+                                },
+                                decoder : {
+                                    readers: page.local.quagga_scanner.decoders
+                                },
+                                frequency: page.local.quagga_scanner.frequency,
+                                numWorkers: page.local.quagga_scanner.numWorkers,
+                                locate: page.local.quagga_scanner.locate
+                      };
+                      
+                      Quagga.init(configQGA, err => {
+                          if(err){
+                              page.c8o.log.debug(''[Quagga] ''+ JSON.stringify(err));
+                              return;
+                          }
+                          
+                          if(vars.autoStart !== undefined && vars.autoStart === true || page.local.quaggaForceRunning === true){
+                              Quagga.start();
+                          }
+                          page.local.quaggaIsRunning = true;
+                          page.local.quaggaForceRunning = false;
+                      });
+                      
+                      page.local.quagga_handleProcessed = (data) =>{
+                          page.c8o.log.debug(''[Quagga] onProcessed: ''+ JSON.stringify(data));
+                          if(data){
+                              page["actionBeans"].PublishEventAction(page,{"topic":"quagga:onprocessed", "data": data}, null);
+                          }
+                      };
+                      
+                      Quagga.onProcessed(page.local.quagga_handleProcessed);
+                      
+                      page.local.quagga_handleDetected = (data) =>{
+                          page.c8o.log.debug(''[Quagga] onDetected: ''+ JSON.stringify(data));
+                          if(data){
+                              page["actionBeans"].PublishEventAction(page,{"topic":"quagga:ondetected", "data": data}, null);
+                          }
+                      };
+                      Quagga.onDetected(page.local.quagga_handleDetected);
+                      
+              		resolve();
+              '
+      ↓autoInit [mobile.components.UIControlVariable-1605031599176]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.autoInit
+      ↓autoStart [mobile.components.UIControlVariable-1605203808648]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.autoStart
+      ↓autoStop [mobile.components.UIControlVariable-1605217117617]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.autoStop
+      ↓drawResultType [mobile.components.UIControlVariable-1605221452689]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.drawResultType
+      ↓colorProcessed [mobile.components.UIControlVariable-1605223695155]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.colorProcessed
+      ↓colorDetected [mobile.components.UIControlVariable-1605223728444]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.colorDetected
+      ↓colorResult [mobile.components.UIControlVariable-1605223731409]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.colorResult
+      ↓decoders [mobile.components.UIControlVariable-1605226188148]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.decoders
+      ↓frequency [mobile.components.UIControlVariable-1605227958933]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.frequency
+      ↓type [mobile.components.UIControlVariable-1605228851011]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.type
+↓PageEvent1 [mobile.components.UIPageEvent-1605198932593]: 
+  viewEvent: onWillLeave
+  ↓PublishEvent [mobile.components.UIDynamicAction-1605201388996]: 
+    beanData: '{"ionBean":"PublishEventAction","topic":"plain:quagga:stop"}'
+↓Subscribe_Handler [mobile.components.UIEventSubscriber-1605200163978]: 
+  topic: quagga:stop
+  ↓QuaggaStop [mobile.components.UICustomAction-1605200191532]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		var drawingCtx = Quagga.canvas.ctx.overlay,
+                    drawingCanvas = Quagga.canvas.dom.overlay;
+                    page.c8o.log.debug(''[Quagga] clear Canvas'');
+                    drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute(''width'')), parseInt(drawingCanvas.getAttribute(''height'')));
+                    page.c8o.log.debug(''[Quagga] stop Quagga'');
+                    Quagga.stop();
+            		page.local.quaggaIsRunning = false;
+            		page.local.quaggaForceRunning = false;
+            		resolve();
+            '
+↓Subscribe_Handler1 [mobile.components.UIEventSubscriber-1605202623974]: 
+  topic: quagga:start
+  ↓IfElse [mobile.components.UIDynamicIf-1605202714787]: 
+    beanData: '{"ionBean":"IfElseAction","condition":"script:this.local.quaggaIsRunning !== undefined && this.local.quaggaIsRunning == true"}'
+    ↓QuaggaStart [mobile.components.UICustomAction-1605202623977]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+              		Quagga.start();
+              		resolve();
+              '
+    ↓Else_Handler [mobile.components.UIActionElseEvent-1605202816422]: 
+      ↓forceRunningQuagga [mobile.components.UICustomAction-1605206008825]: 
+        actionValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                		page.local.quaggaForceRunning = true;
+                		resolve();
+                '
+        ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1605202859925]: 
+          beanData: '{"ionBean":"InvokeAction"}'
+          stack: lib_ExtendedComponents.MobileApplication.Application.QuaggaActions
+          ↓quagga_id [mobile.components.UIControlVariable-1605202859928]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:'quagga_init'
+↓Subscribe_Handler11 [mobile.components.UIEventSubscriber-1605203578769]: 
+  topic: quagga:onprocessed
+  ↓QuaggaOnProcessed [mobile.components.UICustomAction-1605206290439]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		var drawingCtx = Quagga.canvas.ctx.overlay,
+                    drawingCanvas = Quagga.canvas.dom.overlay;
+            		let data = vars.data;
+            		if(data.boxes){
+            		    drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+            		    data.boxes.filter(function (box) {
+                            return box !== data.box;
+                        }).forEach(function (box) {
+                            Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: page.local.quagga_scanner.colorProcessed, lineWidth: 2 });
+                        });
+            		}
+            		
+            		if (data.box) {
+            		    Quagga.ImageDebug.drawPath(data.box, { x: 0, y: 1 }, drawingCtx, { color: page.local.quagga_scanner.colorDetected, lineWidth: 2 });
+                    }
+            
+            		if (data.codeResult && data.codeResult.code) {
+            		    if(page.local.quagga_scanner){
+            		        switch(page.local.quagga_scanner.drawResultType){
+            		        case ''text'':
+            		            drawingCtx.font = "20px Arial";
+            		            let x = data.line[0].x + (data.line[1].x - data.line[0].x)/3;
+            		            let y = (data.line[0].y + data.line[1].y)/2;
+            		            drawingCtx.fillStyle = page.local.quagga_scanner.colorResult;
+            		            drawingCtx.fillText(data.codeResult.code, x, y);
+            		            break;
+            		        case ''none'':
+                                break;
+            		        default:
+            		            Quagga.ImageDebug.drawPath(data.line, { x: ''x'', y: ''y'' }, drawingCtx, { color: page.local.quagga_scanner.colorResult, lineWidth: 3 });
+                                break;
+            		        }
+            		    }
+                    }
+            		
+            		resolve();
+            '
+    ↓data [mobile.components.UIControlVariable-1605206565887]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:out
+↓Subscribe_Handler111 [mobile.components.UIEventSubscriber-1605212537975]: 
+  topic: quagga:ondetected
+  ↓QuaggaOnDetected [mobile.components.UICustomAction-1605212537978]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		var drawingCtx = Quagga.canvas.ctx.overlay,
+                    drawingCanvas = Quagga.canvas.dom.overlay;
+            		let data = vars.data;
+            
+            		if (data.codeResult && data.codeResult.code) {
+            		    page.c8o.log.debug(''[Quagga] onDetected: ''+ data.codeResult.code);
+            		    page.global.quagga_resultCode = data.codeResult.code;
+            	        if(page.local.quagga_scanner && page.local.quagga_scanner.autoStop === true){
+            	            if(page.local.quagga_handleProcessed !== undefined){
+            	                Quagga.offProcessed(page.local.quagga_handleProcessed);
+            	            }
+            	            if(page.local.quagga_handleDetected !== undefined){
+            	                Quagga.offDetected(page.local.quagga_handleDetected);
+            	            }
+            	            page["actionBeans"].PublishEventAction(page,{"topic":"quagga:stop", "data": null}, null);
+            	        }
+                    }
+            		
+            		resolve();
+            '
+    ↓data [mobile.components.UIControlVariable-1605212537981]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:out
+↓autoStop [mobile.components.UICompVariable-1605216313299]: 
+  value: true
+↓drawResultType [mobile.components.UICompVariable-1605221409014]: 
+  value: '''line'''
+↓colorProcessed [mobile.components.UICompVariable-1605223569396]: 
+  value: '''#0F0'''
+↓colorDetected [mobile.components.UICompVariable-1605223588767]: 
+  value: '''#00F'''
+↓colorResult [mobile.components.UICompVariable-1605223592492]: 
+  value: '''#F00'''
+↓decoders [mobile.components.UICompVariable-1605225672990]: 
+  value: '''all'''
+↓frequency [mobile.components.UICompVariable-1605227053449]: 
+  value: 10
+↓type [mobile.components.UICompVariable-1605228818272]: 
+  value: '''LiveStream'''

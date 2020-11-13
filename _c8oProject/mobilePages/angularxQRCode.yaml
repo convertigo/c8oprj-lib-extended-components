@@ -1,6 +1,6 @@
 comment: Page with different inputs
 segment: path-to-angularxqrcode
-title: Title for testNgxInput2
+title: angularx QR Code
 ↓Header [mobile.components.UIDynamicElement-1600099886513]: 
   beanData: '{"ionBean":"Header"}'
   comment: Page header
