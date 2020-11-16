@@ -88,9 +88,8 @@
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: 'script:params1605017375867.width == ''auto'' ? '''' : null'
-↓autoInit [mobile.components.UICompVariable-1605030691892]: 
-  value: true
 ↓autoStart [mobile.components.UICompVariable-1605030872038]: 
+  comment: 'Boolean. Automatically start scanning process? default: true'
   value: true
 ↓Div_Init [mobile.components.UIDynamicElement-1605198349421]: 
   beanData: '{"ionBean":"DivTag"}'
@@ -199,11 +198,6 @@
                       
               		resolve();
               '
-      ↓autoInit [mobile.components.UIControlVariable-1605031599176]: 
-        varValue: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-            - MobileSmartSourceType: script:params1605017375867.autoInit
       ↓autoStart [mobile.components.UIControlVariable-1605203808648]: 
         varValue: 
           - xmlizable: 
@@ -417,22 +411,32 @@
           - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
           - MobileSmartSourceType: script:out
 ↓autoStop [mobile.components.UICompVariable-1605216313299]: 
+  comment: 'Boolean. Automatically stop scanning process when code detected? default: true'
   value: true
 ↓drawResultType [mobile.components.UICompVariable-1605221409014]: 
+  comment: 'String. Can be ''line'', ''text'' or ''none''. Representation of the decoded code. Default: ''line'''
   value: '''line'''
 ↓colorProcessed [mobile.components.UICompVariable-1605223569396]: 
+  comment: String. Html Hex color of the rectangle border while scanning bar code. Default '#0F0'
   value: '''#0F0'''
 ↓colorDetected [mobile.components.UICompVariable-1605223588767]: 
+  comment: String. Html Hex color of the rectangle border when bar code detected. Default '#00F'
   value: '''#00F'''
 ↓colorResult [mobile.components.UICompVariable-1605223592492]: 
+  comment: String. Html Hex Color of the 'drawResultType' variable. Default '#F00'
   value: '''#F00'''
 ↓decoders [mobile.components.UICompVariable-1605225672990]: 
+  comment: String. Decoders format. See QuaggaJS documentation for possible values. Default 'all'
   value: '''all'''
 ↓frequency [mobile.components.UICompVariable-1605227053449]: 
+  comment: 'Integer. Defines the maximum number of scans per second. Default: 10'
   value: 10
 ↓type [mobile.components.UICompVariable-1605228818272]: 
+  comment: String. Stream format. Only supports 'LiveStream' (camera). Default 'LiveStream'
   value: '''LiveStream'''
 ↓width [mobile.components.UICompVariable-1605520309946]: 
+  comment: 'Integer/String. Media video width. Can be set to ''auto'' to be responsive and take 100% wide. Default: 640 (px)'
   value: 640
 ↓height [mobile.components.UICompVariable-1605520325508]: 
+  comment: 'Integer. Media video height. Default: 480 (px)'
   value: 480

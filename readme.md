@@ -5,6 +5,7 @@ Set of shared components you can use in your projects:
     - agGrid : Display & Edit tabular data
     - ngxTagInput : Display / remove Chips tags in input fields
     - angularxQRCode : QR Code component/module library to generate QR Codes (Quick Response)
+    - QuaggaJS : QuaggaJS is a barcode-scanner entirely written in JavaScript supporting real- time localization and decoding of various types of barcodes.
 
 SharedComponent can be dropped (CTRL + mouse click) in Mobile Builder page components to make use of it.
 
@@ -40,3 +41,29 @@ See it in action in **testNgxInput** and **testNgxInput1** Mobile Builder pages.
 | qrdata      | String | '' | String to encode |
 | size      | Number | 256     | Height / Width (any value) |
 | usesvg      | Boolean | false     | SVG Output |
+
+## QuaggaJS
+
+**QuaggaJS** shared component is based on **Quagga** package version 0.12.1
+**QuaggaJS** is a barcode-scanner entirely written in JavaScript supporting real- time localization and decoding of various types of barcodes.\
+Visit [QuaggaJS](https://serratus.github.io/quaggaJS/) for documentation and usage.\
+SharedComponent can be dropped (CTRL + mouse drag) in Mobile Builder page components to make use of it.\
+Currently, it only supports "LiveStream" output type.\
+
+### Parameters
+
+| Attribute        | Type           | Default | Description  |
+| ------------- |-------------| -----|------------|
+| autoStart      | Boolean | true     | Automatically start scanning process |
+| autoStop      | Boolean | true     | Automatically stop scanning process when code detected |
+| drawResultType      | String | 'line'     | Can be 'line', 'text' or 'none'. Representation of the decoded code |
+| colorProcessed | String | '#0F0'    | Html Hex color of the rectangle border while scanning bar code |
+| colorDetected | String | '#00F'    | Html Hex color of the rectangle border when bar code detected |
+| colorResult | String | '#F00'    | Html Hex Color of the 'drawResultType' variable |
+| decoders      | String | 'all' | Decoders format. See QuaggaJS documentation for possible values |
+| frequency      | Number | 10     | Defines the maximum number of scans per second |
+| type      | String | 'LiveStream' | Stream format. Only supports 'LiveStream' (camera) |
+| width      | Number/String | 640     | Media video width. Can be set to 'auto' to be responsive and take 100% wide |
+| height      | Number | 480     | Media video height |
+
+![QuaggaJS screenshot 1](./doc/images/ConvertigoStudio_QuaggaJS_LiveStream.png)
