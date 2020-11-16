@@ -53,7 +53,6 @@ title: QuaggaJS Modal
           tagName: ion-icon
 ↓Content [mobile.components.UIDynamicElement-1605279388855]: 
   beanData: '{"ionBean":"Content"}'
-  identifier: content
   tagName: ion-content
   ↓UseSharedComponent [mobile.components.UIUseShared-1605279388858]: 
     sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.QuaggaJS
@@ -102,6 +101,21 @@ title: QuaggaJS Modal
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
           - MobileSmartSourceType: script:2
+    ↓type [mobile.components.UIControlVariable-1605533195844]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'LiveStream'
+    ↓width [mobile.components.UIControlVariable-1605533195846]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'auto'
+    ↓height [mobile.components.UIControlVariable-1605533195848]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:480
   ↓ButtonStop [mobile.components.UIDynamicElement-1605279388888]: 
     beanData: '{"ionBean":"Button"}'
     tagName: button

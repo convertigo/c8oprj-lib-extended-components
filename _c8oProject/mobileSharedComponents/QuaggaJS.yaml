@@ -55,10 +55,16 @@
             	width: 100%;
             	
             	canvas.drawing, canvas.drawingBuffer {
-            		position : absolute;
+            		position: absolute;
             		top: 0;
             		left: 0;
             	}
+            	
+            }
+            
+            #QuaggaJSReader[full] video, #QuaggaJSReader[full] canvas {
+            		width: 100%;
+            		height: auto;
             '
   ↓Attr [mobile.components.UIAttribute-1605017975011]: 
     attrName: id
@@ -66,6 +72,22 @@
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: plain:QuaggaJSReader
+  ↓Tag [mobile.components.UIElement-1605534736338]: 
+    tagName: video
+  ↓Tag1 [mobile.components.UIElement-1605534772791]: 
+    tagName: canvas
+    ↓Attr [mobile.components.UIAttribute-1605534790278]: 
+      attrName: class
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:drawingBuffer
+  ↓Attr2 [mobile.components.UIAttribute-1605544425977]: 
+    attrName: '[attr.full]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: 'script:params1605017375867.width == ''auto'' ? '''' : null'
 ↓autoInit [mobile.components.UICompVariable-1605030691892]: 
   value: true
 ↓autoStart [mobile.components.UICompVariable-1605030872038]: 
@@ -112,7 +134,9 @@
                               frequency:      vars.frequency,
                               type:           vars.type,
                               numWorkers:     numWorkers,
-                              locate:         true
+                              locate:         true,
+                              width:          vars.width == ''auto'' ? 640 : vars.width,
+                              height:         vars.height || 480
                       }
                       
                       let configQGA = {
@@ -122,8 +146,8 @@
                                   //target: document.querySelector(''#QuaggaJSReader''),
                                   target: page[''QuaggaJSReader''].nativeElement,
                                   constraints: {
-                                      width: 640,
-                                      height: 480
+                                      width: page.local.quagga_scanner.width,
+                                      height: page.local.quagga_scanner.height
                                   }
                                 },
                                 decoder : {
@@ -149,7 +173,7 @@
                       });
                       
                       page.local.quagga_handleProcessed = (data) =>{
-                          page.c8o.log.debug(''[Quagga] onProcessed: ''+ JSON.stringify(data));
+                          page.c8o.log.trace(''[Quagga] onProcessed: ''+ JSON.stringify(data));
                           if(data){
                               page["actionBeans"].PublishEventAction(page,{"topic":"quagga:onprocessed", "data": data}, null);
                           }
@@ -158,7 +182,7 @@
                       Quagga.onProcessed(page.local.quagga_handleProcessed);
                       
                       page.local.quagga_handleDetected = (data) =>{
-                          page.c8o.log.debug(''[Quagga] onDetected: ''+ JSON.stringify(data));
+                          page.c8o.log.trace(''[Quagga] onDetected: ''+ JSON.stringify(data));
                           if(data){
                               page["actionBeans"].PublishEventAction(page,{"topic":"quagga:ondetected", "data": data}, null);
                           }
@@ -225,6 +249,16 @@
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
             - MobileSmartSourceType: script:params1605017375867.type
+      ↓width [mobile.components.UIControlVariable-1605520457449]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.width
+      ↓height [mobile.components.UIControlVariable-1605520479326]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1605017375867.height
 ↓PageEvent1 [mobile.components.UIPageEvent-1605198932593]: 
   viewEvent: onWillLeave
   ↓PublishEvent [mobile.components.UIDynamicAction-1605201388996]: 
@@ -290,7 +324,7 @@
         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
         - com.twinsoft.convertigo.beans.common.FormatedContent: 
           →: |
-            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            '		page.c8o.log.trace(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
             		var drawingCtx = Quagga.canvas.ctx.overlay,
                     drawingCanvas = Quagga.canvas.dom.overlay;
             		let data = vars.data;
@@ -398,3 +432,7 @@
   value: 10
 ↓type [mobile.components.UICompVariable-1605228818272]: 
   value: '''LiveStream'''
+↓width [mobile.components.UICompVariable-1605520309946]: 
+  value: 640
+↓height [mobile.components.UICompVariable-1605520325508]: 
+  value: 480
