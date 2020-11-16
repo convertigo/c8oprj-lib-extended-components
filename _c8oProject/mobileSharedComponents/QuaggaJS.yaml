@@ -380,7 +380,7 @@
             		    if(data.codeResult.decodedCodes){
             		        let errors = data.codeResult.decodedCodes.filter(x => x.error !== undefined).map(x => x.error);
             		        let accuracy = page.local.median(errors) < 0.1;
-            		        page.c8o.log.warn(''[Quagga] accuracy: ''+ accuracy);
+            		        page.c8o.log.debug(''[Quagga] accuracy: ''+ accuracy);
             		        if(accuracy){
             		            page.global.quagga_resultCode = data.codeResult.code;
             	                acceptCode = true;
