@@ -9,8 +9,10 @@ comment: ZXing SharedAction
       - com.twinsoft.convertigo.beans.common.FormatedContent: 
         →: |
           '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+          		
           		const codeReader = new BrowserMultiFormatReader();
           		codeReader.reset();
+          		
                   if(vars.type == ''file''){
                       if(event && event.target && event.target.files){
                           let file = event.target.files[0];
@@ -21,14 +23,17 @@ comment: ZXing SharedAction
                                       vars.imgId.src = reader["result"];
                                   }
                                   codeReader.decodeFromImage(undefined, reader["result"].toString())
-                                  .then(res => {
-                                      page.c8o.log.debug(''Success: '' + res["text"]);
+                                  .then(result => {
+                                      page.c8o.log.debug(''Success: '' + result["text"]);
                                       if(vars.resultId && vars.resultId != ""){
-                                          vars.resultId.value =  res["text"];
+                                          vars.resultId.value =  result["text"];
                                       }
-                                      page.local["zxing_result" + vars.local_zxing_suffix] = res;
-                                      page.local["local_zxing_suffix"] = vars.local_zxing_suffix;
-                                      resolve(res);
+                                      if(vars.isOutputEvent === true){
+                                          page.local[''zxing:''+vars.topic + vars.ref] = result;
+                                          page.local[''zxing:''+vars.ref] = vars.ref;
+                                      }
+                                      result["ref"] = vars.ref;
+                                      resolve(result);
                                   })
                                   .catch(err => {
                                       page.c8o.log.warn(''Error: '' + err);
@@ -55,9 +60,14 @@ comment: ZXing SharedAction
                               if(result){
                                   page.c8o.log.debug(''Success: '' + result["text"]);
                                   if(vars.resultId && vars.resultId != ""){
-                                      vars.resultId.value =  result["text"];
+                                      vars.resultId.value = result["text"];
                                   }
                                   codeReader.reset();
+                                  if(vars.isOutputEvent === true){
+                                      page.local[''zxing:''+vars.topic + vars.ref] = result;
+                                      page.local[''zxing:''+vars.ref] = vars.ref;
+                                  }
+                                  result["ref"] = vars.ref;
                                   resolve(result);
                               }
                               if(err && !(err instanceof NotFoundException)){
@@ -106,11 +116,6 @@ comment: ZXing SharedAction
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params.type
-  ↓resultId [mobile.components.UIControlVariable-1595431416163]: 
-    varValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params.resultId
   ↓imgId [mobile.components.UIControlVariable-1595431416166]: 
     varValue: 
       - xmlizable: 
@@ -121,20 +126,40 @@ comment: ZXing SharedAction
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params.videoId
-  ↓local_zxing_suffix [mobile.components.UIControlVariable-1595431416172]: 
+  ↓resultId [mobile.components.UIControlVariable-1595431416163]: 
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params.local_zxing_suffix
-  ↓If [mobile.components.UIDynamicAction-1595431416175]: 
-    beanData: '{"ionBean":"IfAction","condition":"script:params.zxing_topic && params.zxing_topic != '''' && !parent.out.error"}'
+        - MobileSmartSourceType: script:params.resultId
+  ↓If_OutputEvent [mobile.components.UIDynamicAction-1595431416175]: 
+    beanData: '{"ionBean":"IfAction","condition":"script:params.topic && params.topic != '''' && !parent.out.error"}'
     ↓PublishEvent [mobile.components.UIDynamicAction-1595431416178]: 
       beanData: |
         '{
          "ionBean": "PublishEventAction",
-         "topic": "script:params.zxing_topic",
+         "topic": "script:params.topic",
          "data": "script:stack[''initZxing''].out"
         }'
+  ↓isOutputEvent [mobile.components.UIControlVariable-1605714903883]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params.isOutputEvent
+  ↓topic [mobile.components.UIControlVariable-1605717554082]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params.topic
+  ↓isOutputLocal [mobile.components.UIControlVariable-1605714922585]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params.isOutputLocal
+  ↓ref [mobile.components.UIControlVariable-1595431416172]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params.ref
   ↓addResolveOutput [mobile.components.UICustomAction-1595431416181]: 
     actionValue: 
       - xmlizable: 
@@ -153,9 +178,16 @@ comment: ZXing SharedAction
   comment: Img tag identifier to output image file. Optional
 ↓videoId [mobile.components.UIStackVariable-1595431416190]: 
   comment: 'Video tag identifier to output video camera. Default: ''video''. Optional'
+  value: '''video'''
 ↓resultId [mobile.components.UIStackVariable-1595431416193]: 
   comment: Input tag identifier to set value to. Optional
-↓local_zxing_suffix [mobile.components.UIStackVariable-1595431416196]: 
-  comment: 'Suffix for local page variable in case of multiple ZXing package instances. Default: ''''. Optional'
-↓zxing_topic [mobile.components.UIStackVariable-1595431416199]: 
+↓topic [mobile.components.UIStackVariable-1595431416199]: 
   comment: Publish Topic name to use with a Subscribe component. Optional
+↓isOutputEvent [mobile.components.UIStackVariable-1605714736942]: 
+  comment: 'Publish scan result or not to the topic event. Default: true.'
+  value: true
+↓isOutputLocal [mobile.components.UIStackVariable-1605714753453]: 
+  comment: 'Insert or not the scan result in a local page variable. The variable is composed of ''zxing:'' + topic + ref variables. Default: true.'
+  value: true
+↓ref [mobile.components.UIStackVariable-1595431416196]: 
+  comment: 'In case of multiple ZXing package instances, set the variable to different values to distinguish the Publish data event and/or the local page variable. Default: ''''. Optional'

@@ -107,7 +107,7 @@ comment: CardIO SharedComponent
         ↓Event [mobile.components.UIControlEvent-1595431403940]: 
           ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1595431403943]: 
             beanData: '{"ionBean":"InvokeAction"}'
-            stack: CardIO.MobileApplication.Application.cardIO_sa
+            stack: lib_ExtendedComponents.MobileApplication.Application.cardIO_sa
             ↓ccn [mobile.components.UIControlVariable-1595431403946]: 
               varValue: 
                 - xmlizable: 
