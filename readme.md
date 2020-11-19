@@ -56,21 +56,21 @@ ZXing ("zebra crossing") is an open-source, multi-format 1D/2D barcode image pro
 
 The Mobile Builder **ZXing** page demonstrates the use of this library.
 
-**ZXing_sc**: SharedComponent component for sample UI.
-
 **ZXing_sa**: SharedAction component to launch barcode recognition process.
 
  - **Variables**
-   - **type**: Scan from file or video. Default: 'file'
+   - **type**: Scan from 'file' or 'video'. Default: 'file'
    - **imgId**: Img tag identifier to output image file. Optional
    - **videoId**: Video tag identifier to output video camera. Default: 'video'. Optional
    - **resultId**: Input tag identifier to set value to. Optional
-   - **local_zxing_suffix**: Suffix for local page variable in case of multiple ZXing package instances. Default: ''. Optional
-   - **zxing_topic**: Publish Topic name to use with a Subscribe component. Optional
+   - **topic**: Publish Topic name to use with a Subscribe component. Optional
+   - **isOuputEvent**: Publish scan result or not to the topic event. Default: true.
+   - **isOuputLocal**: Insert or not the scan result in a local page variable. The variable is composed of 'zxing:' + topic + ref variables. Default: true.
+   - **ref**: In case of multiple ZXing package instances, set the variable to different values to distinguish the Publish data event and/or the local page variable. Default: ''. Optional
 
  - **Outputs**
 
       Result of the scan are of the following:
     - `parent.out` directly under the **invoke ZXing_sa**
-    - **PublishEvent** to a topic if one was provided and a Subscribe component added.
-    - `zxing_result` local page variable eventually suffixed by **local_zxing_suffix**
+    - **PublishEvent** to a topic if one was provided and if **isOuputEvent** is set to *true*.
+    - `page.local["zxing:<topic><ref>"]` local page variable if **isOuputLocal** is set to *true*.
