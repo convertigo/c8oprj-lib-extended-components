@@ -10,53 +10,63 @@ comment: ZXing SharedAction
         →: |
           '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
           		
-          		const codeReader = new BrowserMultiFormatReader();
-          		codeReader.reset();
+          		page.global[''zxing:codeReader''] = new BrowserMultiFormatReader();
+          		page.global[''zxing:codeReader''].reset();
           		
                   if(vars.type == ''file''){
+                      let file = null;
                       if(event && event.target && event.target.files){
-                          let file = event.target.files[0];
+                          file = event.target.files[0];
+                      }
+                      if(Array.isArray(vars.file)){
+                          file = vars.file[0];
+                      }
+                      if(file != null){
                           var reader = new FileReader();
                           reader.onload = function() {
                               if(reader["result"]){
                                   if(vars.imgId && vars.imgId != ""){
                                       vars.imgId.src = reader["result"];
                                   }
-                                  codeReader.decodeFromImage(undefined, reader["result"].toString())
+                                  page.global[''zxing:codeReader''].decodeFromImage(undefined, reader["result"].toString())
                                   .then(result => {
                                       page.c8o.log.debug(''Success: '' + result["text"]);
                                       if(vars.resultId && vars.resultId != ""){
                                           vars.resultId.value =  result["text"];
                                       }
-                                      if(vars.isOutputEvent === true){
+                                      if(vars.isOutputLocal === true){
                                           page.local[''zxing:''+vars.topic + vars.ref] = result;
                                           page.local[''zxing:''+vars.ref] = vars.ref;
                                       }
+                                      delete page.global[''zxing:codeReader''];
                                       result["ref"] = vars.ref;
                                       resolve(result);
                                   })
                                   .catch(err => {
+                                      delete page.global[''zxing:codeReader''];
                                       page.c8o.log.warn(''Error: '' + err);
                                       resolve({error: err});
                                   });
           
                               } else {
+                                  delete page.global[''zxing:codeReader''];
                                   resolve({error: ''Can not read file''});
                               }
                           }
                           reader.readAsDataURL(file);
                       } else {
+                          delete page.global[''zxing:codeReader''];
                           page.c8o.log.warn(''Error: No file'');
                           resolve({error: ''No file''});
                       }
                   } else {
                       let selectedDeviceId;
                       //let ret = codeReader.addVideoSource(page["vidz"], null);
-                      codeReader.getVideoInputDevices()
+                      page.global[''zxing:codeReader''].getVideoInputDevices()
                       .then((videoInputDevices) => {
                           selectedDeviceId = videoInputDevices[0].deviceId;
                           let videoId = !vars.videoId || vars.videoId == "" ? ''video'' : vars.videoId;
-                          codeReader.decodeFromVideoDevice(selectedDeviceId, videoId, (result, err) => {
+                          /*codeReader.decodeFromVideoDevice(selectedDeviceId, videoId, (result, err) => {
                               if(result){
                                   page.c8o.log.debug(''Success: '' + result["text"]);
                                   if(vars.resultId && vars.resultId != ""){
@@ -74,11 +84,34 @@ comment: ZXing SharedAction
                                   page.c8o.log.warn(''Error: '' + err);
                                   resolve({error: err});
                               }
-                          });
+                          });*/
+                          page.global[''zxing:codeReader''].decodeFromInputVideoDevice(selectedDeviceId, videoId)
+                          .then((result) => {
+                              page.c8o.log.debug(''Success: '' + result["text"]);
+                              if(vars.resultId && vars.resultId != ""){
+                                  vars.resultId.value = result["text"];
+                              }
+                              page.global[''zxing:codeReader''].reset();
+                              delete page.global[''zxing:codeReader''];
+                              if(vars.isOutputLocal === true){
+                                  page.local[''zxing:''+vars.topic + vars.ref] = result;
+                                  page.local[''zxing:''+vars.ref] = vars.ref;
+                              }
+                              result["ref"] = vars.ref;
+                              resolve(result);
+                          })
+                          .catch((err) => {
+                              delete page.global[''zxing:codeReader''];
+                              page.c8o.log.warn(''Error: '' + err);
+                              resolve({error: err});
+                          })
                       })
                       .catch(err => {
-                          page.c8o.log.warn(''>>> Error: '' + err);
-                          resolve({error: err});
+                          delete page.global[''zxing:codeReader''];
+                          if(err && !(err instanceof NotFoundException)){
+                              page.c8o.log.warn(''>>> Error: '' + err);
+                              resolve({error: err});
+                          }
                       });
                   }
           '
@@ -92,7 +125,7 @@ comment: ZXing SharedAction
             - java.lang.String: 
               - ↑value: '@zxing/library'
             - java.lang.String: 
-              - ↑value: 0.17.0
+              - ↑value: 0.12.4
   page_ts_imports: 
     - xmlizable: 
       - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -126,13 +159,18 @@ comment: ZXing SharedAction
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params.videoId
+  ↓file [mobile.components.UIControlVariable-1605883183460]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params.file
   ↓resultId [mobile.components.UIControlVariable-1595431416163]: 
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params.resultId
   ↓If_OutputEvent [mobile.components.UIDynamicAction-1595431416175]: 
-    beanData: '{"ionBean":"IfAction","condition":"script:params.topic && params.topic != '''' && !parent.out.error"}'
+    beanData: '{"ionBean":"IfAction","condition":"script:params.isOutputEvent === true && params.topic && params.topic != '''' && !parent.out.error"}'
     ↓PublishEvent [mobile.components.UIDynamicAction-1595431416178]: 
       beanData: |
         '{
@@ -176,6 +214,7 @@ comment: ZXing SharedAction
           - MobileSmartSourceType: script:stack['initZxing'].out
 ↓imgId [mobile.components.UIStackVariable-1595431416187]: 
   comment: Img tag identifier to output image file. Optional
+↓file [mobile.components.UIStackVariable-1605883158644]: 
 ↓videoId [mobile.components.UIStackVariable-1595431416190]: 
   comment: 'Video tag identifier to output video camera. Default: ''video''. Optional'
   value: '''video'''

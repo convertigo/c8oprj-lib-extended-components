@@ -88,13 +88,6 @@
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params1600099015160.allowEmptyString
   ↓Style [mobile.components.UIStyle-1604013519909]: 
-    styleContent: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-        - com.twinsoft.convertigo.beans.common.FormatedContent: 
-          →: |
-            
-            
 ↓qrdata [mobile.components.UICompVariable-1600101469599]: 
 ↓size [mobile.components.UICompVariable-1600101477141]: 
   value: 256
