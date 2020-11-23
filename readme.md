@@ -2,10 +2,10 @@
 
 Set of shared components you can use in your projects:
     
-    - [agGrid](#aggrid) : Display & Edit tabular data
-    - [ngxTagInput](#ngxtaginput) : Display / remove Chips tags in input fields
-    - [CardIO](#cardio) : Cordova plugin to scan Credit Card
-    - [ZXing](#zxing) : Library to scan barcodes
+* [agGrid](#aggrid) : Display & Edit tabular data
+* [ngxTagInput](#ngxtaginput) : Display / remove Chips tags in input fields
+* [CardIO](#cardio) : Cordova plugin to scan Credit Card
+* [ZXing](#zxing) : Library to scan barcodes
 
 SharedComponent can be dropped (CTRL + mouse drag) in Mobile Builder page components to make use of it.
 
