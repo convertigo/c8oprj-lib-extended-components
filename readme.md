@@ -2,11 +2,11 @@
 
 Set of shared components you can use in your projects:
     
-    - agGrid : Display & Edit tabular data
-    - ngxTagInput : Display / remove Chips tags in input fields
-    - angularxQRCode : QR Code component/module library to generate QR Codes (Quick Response)
-    - CardIO : Cordova plugin to scan Credit Card
-    - ZXing : Library to scan barcodes
+    - [agGrid](#aggrid) : Display & Edit tabular data
+    - [ngxTagInput](#ngxtaginput) : Display / remove Chips tags in input fields
+    - [angularxQRCode](angularxqrcode) : QR Code component/module library to generate QR Codes (Quick Response)
+    - [CardIO](#cardio) : Cordova plugin to scan Credit Card
+    - [ZXing](#zxing) : Library to scan barcodes
 
 SharedComponent can be dropped (CTRL + mouse drag) in Mobile Builder page components to make use of it.
 
@@ -78,9 +78,10 @@ The Mobile Builder **ZXing** page demonstrates the use of this library.
 
  - **Variables**
    - **type**: Scan from 'file' or 'video'. Default: 'file'
+   - **file**: File object as Array (if not provided from an input type file).
    - **imgId**: Img tag identifier to output image file. Optional
    - **videoId**: Video tag identifier to output video camera. Default: 'video'. Optional
-   - **resultId**: Input tag identifier to set value to. Optional
+   - **resultId**: Input tag identifier (@ViewChild) or String id attribute to set value to. Optional
    - **topic**: Publish Topic name to use with a Subscribe component. Optional
    - **isOuputEvent**: Publish scan result or not to the topic event. Default: true.
    - **isOuputLocal**: Insert or not the scan result in a local page variable. The variable is composed of 'zxing:' + topic + ref variables. Default: true.
@@ -91,5 +92,4 @@ The Mobile Builder **ZXing** page demonstrates the use of this library.
       Result of the scan are of the following:
     - `parent.out` directly under the **invoke ZXing_sa**
     - **PublishEvent** to a topic if one was provided and if **isOuputEvent** is set to *true*.
-    - `page.local["zxing:<topic><ref>"]` local page variable if **isOuputLocal** is set to *true*.
-
+    - `page.global["zxing:<topic><ref>"]` global page variable if **isOuputLocal** is set to *true*.

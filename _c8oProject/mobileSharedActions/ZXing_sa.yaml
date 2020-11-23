@@ -11,14 +11,14 @@ comment: ZXing SharedAction
           '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
           		
           		page.global[''zxing:codeReader''] = new BrowserMultiFormatReader();
-          		page.global[''zxing:codeReader''].reset();
-          		
+                  page.global[''zxing:codeReader''].reset();
+                  
                   if(vars.type == ''file''){
                       let file = null;
                       if(event && event.target && event.target.files){
                           file = event.target.files[0];
                       }
-                      if(Array.isArray(vars.file)){
+                      else if(Array.isArray(vars.file)){
                           file = vars.file[0];
                       }
                       if(file != null){
@@ -32,11 +32,16 @@ comment: ZXing SharedAction
                                   .then(result => {
                                       page.c8o.log.debug(''Success: '' + result["text"]);
                                       if(vars.resultId && vars.resultId != ""){
-                                          vars.resultId.value =  result["text"];
+                                          if(vars.resultId instanceof Object){
+                                              vars.resultId.value =  result["text"];
+                                          }
+                                          else {
+                                              (<HTMLInputElement>document.querySelector("#idInputResult input")).value = result["text"];
+                                          }
                                       }
                                       if(vars.isOutputLocal === true){
-                                          page.local[''zxing:''+vars.topic + vars.ref] = result;
-                                          page.local[''zxing:''+vars.ref] = vars.ref;
+                                          page.global[''zxing:''+vars.topic + vars.ref] = result;
+                                          page.global[''zxing:''+vars.ref] = vars.ref;
                                       }
                                       delete page.global[''zxing:codeReader''];
                                       result["ref"] = vars.ref;
@@ -44,8 +49,10 @@ comment: ZXing SharedAction
                                   })
                                   .catch(err => {
                                       delete page.global[''zxing:codeReader''];
-                                      page.c8o.log.warn(''Error: '' + err);
-                                      resolve({error: err});
+                                      if(err && !(err instanceof NotFoundException)){
+                                          page.c8o.log.warn(''>>> Error: '' + err);
+                                          resolve({error: err});
+                                      }
                                   });
           
                               } else {
@@ -66,16 +73,22 @@ comment: ZXing SharedAction
                       .then((videoInputDevices) => {
                           selectedDeviceId = videoInputDevices[0].deviceId;
                           let videoId = !vars.videoId || vars.videoId == "" ? ''video'' : vars.videoId;
+                          // version 0.17.1
                           /*codeReader.decodeFromVideoDevice(selectedDeviceId, videoId, (result, err) => {
                               if(result){
                                   page.c8o.log.debug(''Success: '' + result["text"]);
                                   if(vars.resultId && vars.resultId != ""){
-                                      vars.resultId.value = result["text"];
+                                      if(vars.resultId instanceof Object){
+                                          vars.resultId.value =  result["text"];
+                                      }
+                                      else {
+                                          (<HTMLInputElement>document.querySelector("#idInputResult input")).value = result["text"];
+                                      }
                                   }
                                   codeReader.reset();
                                   if(vars.isOutputEvent === true){
-                                      page.local[''zxing:''+vars.topic + vars.ref] = result;
-                                      page.local[''zxing:''+vars.ref] = vars.ref;
+                                      page.global[''zxing:''+vars.topic + vars.ref] = result;
+                                      page.global[''zxing:''+vars.ref] = vars.ref;
                                   }
                                   result["ref"] = vars.ref;
                                   resolve(result);
@@ -85,25 +98,33 @@ comment: ZXing SharedAction
                                   resolve({error: err});
                               }
                           });*/
+                          // version 0.12.4
                           page.global[''zxing:codeReader''].decodeFromInputVideoDevice(selectedDeviceId, videoId)
                           .then((result) => {
                               page.c8o.log.debug(''Success: '' + result["text"]);
                               if(vars.resultId && vars.resultId != ""){
-                                  vars.resultId.value = result["text"];
+                                  if(vars.resultId instanceof Object){
+                                      vars.resultId.value =  result["text"];
+                                  }
+                                  else {
+                                      (<HTMLInputElement>document.querySelector("#idInputResult input")).value = result["text"];
+                                  }
                               }
                               page.global[''zxing:codeReader''].reset();
                               delete page.global[''zxing:codeReader''];
                               if(vars.isOutputLocal === true){
-                                  page.local[''zxing:''+vars.topic + vars.ref] = result;
-                                  page.local[''zxing:''+vars.ref] = vars.ref;
+                                  page.global[''zxing:''+vars.topic + vars.ref] = result;
+                                  page.global[''zxing:''+vars.ref] = vars.ref;
                               }
                               result["ref"] = vars.ref;
                               resolve(result);
                           })
                           .catch((err) => {
                               delete page.global[''zxing:codeReader''];
-                              page.c8o.log.warn(''Error: '' + err);
-                              resolve({error: err});
+                              if(err && !(err instanceof NotFoundException)){
+                                  page.c8o.log.warn(''>>> Error: '' + err);
+                                  resolve({error: err});
+                              }
                           })
                       })
                       .catch(err => {
@@ -125,7 +146,7 @@ comment: ZXing SharedAction
             - java.lang.String: 
               - ↑value: '@zxing/library'
             - java.lang.String: 
-              - ↑value: 0.12.4
+              - ↑value: 0.17.0
   page_ts_imports: 
     - xmlizable: 
       - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -149,6 +170,11 @@ comment: ZXing SharedAction
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params.type
+  ↓file [mobile.components.UIControlVariable-1606124134140]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params.file
   ↓imgId [mobile.components.UIControlVariable-1595431416166]: 
     varValue: 
       - xmlizable: 
@@ -159,18 +185,13 @@ comment: ZXing SharedAction
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params.videoId
-  ↓file [mobile.components.UIControlVariable-1605883183460]: 
-    varValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params.file
   ↓resultId [mobile.components.UIControlVariable-1595431416163]: 
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params.resultId
   ↓If_OutputEvent [mobile.components.UIDynamicAction-1595431416175]: 
-    beanData: '{"ionBean":"IfAction","condition":"script:params.isOutputEvent === true && params.topic && params.topic != '''' && !parent.out.error"}'
+    beanData: '{"ionBean":"IfAction","condition":"script:params.isOutputEvent == true && params.topic && params.topic != '''' && !parent.out.error"}'
     ↓PublishEvent [mobile.components.UIDynamicAction-1595431416178]: 
       beanData: |
         '{
@@ -212,9 +233,10 @@ comment: ZXing SharedAction
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
           - MobileSmartSourceType: script:stack['initZxing'].out
+↓file [mobile.components.UIStackVariable-1606124111567]: 
+  comment: File object as Array (if not provided from an input type file).
 ↓imgId [mobile.components.UIStackVariable-1595431416187]: 
   comment: Img tag identifier to output image file. Optional
-↓file [mobile.components.UIStackVariable-1605883158644]: 
 ↓videoId [mobile.components.UIStackVariable-1595431416190]: 
   comment: 'Video tag identifier to output video camera. Default: ''video''. Optional'
   value: '''video'''

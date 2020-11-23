@@ -51,6 +51,12 @@ title: ZXing
       beanData: '{"ionBean":"Input"}'
       identifier: codeResult
       tagName: ion-input
+      ↓id [mobile.components.UIAttribute-1606127068331]: 
+        attrName: id
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:idInputResult
     ↓Button [mobile.components.UIDynamicElement-1595431404006]: 
       beanData: '{"ionBean":"Button","IonSize":"plain:small"}'
       tagName: button
@@ -71,7 +77,7 @@ title: ZXing
               - com.twinsoft.convertigo.beans.common.FormatedContent: 
                 →: |
                   '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
-                  		page.local.zxing_source = ''video'';
+                  		page.local["zxing:source"] = ''video'';
                   		resolve();
                   '
           ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1595431404021]: 
@@ -147,7 +153,9 @@ title: ZXing
               - com.twinsoft.convertigo.beans.common.FormatedContent: 
                 →: |
                   '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
-                  		page.local.zxing_source = ''file'';
+                  		page.local["zxing:source"] = ''file'';
+                  		if(page.global[''zxing:codeReader''])
+                  		    page.global[''zxing:codeReader''].reset();
                   		resolve();
                   '
       ↓Style [mobile.components.UIStyle-1595431404054]: 
@@ -163,7 +171,7 @@ title: ZXing
     directiveSource: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:this.local.zxing_source
+        - MobileSmartSourceType: script:this.local["zxing:source"]
     ↓Directive [mobile.components.UIControlDirective-1595431404060]: 
       directiveName: SwitchCase
       directiveSource: 
@@ -198,7 +206,7 @@ title: ZXing
               varValue: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                  - MobileSmartSourceType: script:this.codeResult
+                  - MobileSmartSourceType: script:'idInputResult'
             ↓imgId [mobile.components.UIControlVariable-1595431404084]: 
               varValue: 
                 - xmlizable: 
@@ -288,14 +296,14 @@ title: ZXing
     beanData: |
       '{
        "ionBean": "LogAction",
-       "message": "script:\"Log scan video: \" + JSON.stringify(this.local[\"zxing:zxing_result_myVideo\"])",
+       "message": "script:\"Log scan video: \" + JSON.stringify(this.global[\"zxing:zxing_result_myVideo\"])",
        "level": "plain:warn"
       }'
   ↓Log_image [mobile.components.UIDynamicAction-1605725360085]: 
     beanData: |
       '{
        "ionBean": "LogAction",
-       "message": "script:\"Log scan Image: \" + JSON.stringify(this.local[\"zxing:zxing_result_myImage\"])",
+       "message": "script:\"Log scan Image: \" + JSON.stringify(this.global[\"zxing:zxing_result_myImage\"])",
        "level": "plain:warn"
       }'
   ↓close_zxing [mobile.components.UICustomAction-1605715146600]: 
@@ -307,7 +315,7 @@ title: ZXing
             '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
             		let out = props.out;
             		if(out.ref == vars.ref){
-            		    page.local.zxing_source = undefined;
+            		    page.local["zxing:source"] = undefined;
             		}
             		resolve();
             '
