@@ -3,5 +3,7 @@
  "First_page": "First page",
  "My_First_App": "My First App",
  "Action_1": "Action 1",
- "Action_2": "Action 2"
+ "Action_2": "Action 2",
+ "ZXing_plugin": "ZXing barcode scanner",
+ "QRC_BarC": "Result Code"
 }
