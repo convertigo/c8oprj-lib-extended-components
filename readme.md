@@ -74,4 +74,4 @@ The Mobile Builder **ZXing** page demonstrates the use of this library.
       Result of the scan are of the following:
     - `parent.out` directly under the **invoke ZXing_sa**
     - **PublishEvent** to a topic if one was provided and if **isOuputEvent** is set to *true*.
-    - `page.global["zxing:<topic><ref>"]` global page variable if **isOuputLocal** is set to *true*.
+    - `page.global["zxing:<topic><ref>"]` global page variable if **isOuputGlobal** is set to *true*.
