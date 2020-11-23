@@ -36,10 +36,10 @@ comment: ZXing SharedAction
                                               vars.resultId.value =  result["text"];
                                           }
                                           else {
-                                              (<HTMLInputElement>document.querySelector("#idInputResult input")).value = result["text"];
+                                              (<HTMLInputElement>document.querySelector("#" + vars.resultId + " input")).value = result["text"];
                                           }
                                       }
-                                      if(vars.isOutputLocal === true){
+                                      if(vars.isOutputGlobal === true){
                                           page.global[''zxing:''+vars.topic + vars.ref] = result;
                                           page.global[''zxing:''+vars.ref] = vars.ref;
                                       }
@@ -107,12 +107,12 @@ comment: ZXing SharedAction
                                       vars.resultId.value =  result["text"];
                                   }
                                   else {
-                                      (<HTMLInputElement>document.querySelector("#idInputResult input")).value = result["text"];
+                                      (<HTMLInputElement>document.querySelector("#" + vars.resultId + " input")).value = result["text"];
                                   }
                               }
                               page.global[''zxing:codeReader''].reset();
                               delete page.global[''zxing:codeReader''];
-                              if(vars.isOutputLocal === true){
+                              if(vars.isOutputGlobal === true){
                                   page.global[''zxing:''+vars.topic + vars.ref] = result;
                                   page.global[''zxing:''+vars.ref] = vars.ref;
                               }
@@ -209,11 +209,11 @@ comment: ZXing SharedAction
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: script:params.topic
-  ↓isOutputLocal [mobile.components.UIControlVariable-1605714922585]: 
+  ↓isOutputGlobal [mobile.components.UIControlVariable-1605714922585]: 
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params.isOutputLocal
+        - MobileSmartSourceType: script:params.isOutputGlobal
   ↓ref [mobile.components.UIControlVariable-1595431416172]: 
     varValue: 
       - xmlizable: 
@@ -247,8 +247,8 @@ comment: ZXing SharedAction
 ↓isOutputEvent [mobile.components.UIStackVariable-1605714736942]: 
   comment: 'Publish scan result or not to the topic event. Default: true.'
   value: true
-↓isOutputLocal [mobile.components.UIStackVariable-1605714753453]: 
-  comment: 'Insert or not the scan result in a local page variable. The variable is composed of ''zxing:'' + topic + ref variables. Default: true.'
+↓isOutputGlobal [mobile.components.UIStackVariable-1605714753453]: 
+  comment: 'Insert or not the scan result in a global page variable. The variable is composed of ''zxing:'' + topic + ref variables. Default: true.'
   value: true
 ↓ref [mobile.components.UIStackVariable-1595431416196]: 
   comment: 'In case of multiple ZXing package instances, set the variable to different values to distinguish the Publish data event and/or the local page variable. Default: ''''. Optional'
