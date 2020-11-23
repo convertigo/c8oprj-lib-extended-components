@@ -66,7 +66,7 @@ The Mobile Builder **ZXing** page demonstrates the use of this library.
    - **resultId**: Input tag identifier (@ViewChild) or String id attribute to set value to. Optional
    - **topic**: Publish Topic name to use with a Subscribe component. Optional
    - **isOuputEvent**: Publish scan result or not to the topic event. Default: true.
-   - **isOuputLocal**: Insert or not the scan result in a local page variable. The variable is composed of 'zxing:' + topic + ref variables. Default: true.
+   - **isOuputGlobal**: Insert or not the scan result in a global page variable. The variable is composed of 'zxing:' + topic + ref variables. Default: true.
    - **ref**: In case of multiple ZXing package instances, set the variable to different values to distinguish the Publish data event and/or the local page variable. Default: ''. Optional
 
  - **Outputs**
@@ -74,4 +74,4 @@ The Mobile Builder **ZXing** page demonstrates the use of this library.
       Result of the scan are of the following:
     - `parent.out` directly under the **invoke ZXing_sa**
     - **PublishEvent** to a topic if one was provided and if **isOuputEvent** is set to *true*.
-    - `page.global["zxing:<topic><ref>"]` local page variable if **isOuputLocal** is set to *true*.
+    - `page.global["zxing:<topic><ref>"]` global page variable if **isOuputLocal** is set to *true*.
