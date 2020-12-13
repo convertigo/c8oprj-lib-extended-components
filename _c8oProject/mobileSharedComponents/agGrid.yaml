@@ -107,16 +107,6 @@
                 	        }
                 			resolve();
                 '
-        ↓columnDefs [mobile.components.UIControlVariable-1576774264164]: 
-          varValue: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-              - MobileSmartSourceType: script:params1576501532114.columnDefs
-        ↓rowData [mobile.components.UIControlVariable-1576774337881]: 
-          varValue: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-              - MobileSmartSourceType: script:params1576501532114.rowData
         ↓width [mobile.components.UIControlVariable-1578908950357]: 
           varValue: 
             - xmlizable: 
@@ -186,26 +176,6 @@
               	        }
               			resolve();
               
-      ↓columnDefs [mobile.components.UIControlVariable-1607859231007]: 
-        varValue: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-            - MobileSmartSourceType: script:params1576501532114.columnDefs
-      ↓rowData [mobile.components.UIControlVariable-1607859231010]: 
-        varValue: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-            - MobileSmartSourceType: script:params1576501532114.rowData
-      ↓width [mobile.components.UIControlVariable-1607859231013]: 
-        varValue: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-            - MobileSmartSourceType: script:params1576501532114.width
-      ↓height [mobile.components.UIControlVariable-1607859231016]: 
-        varValue: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-            - MobileSmartSourceType: script:params1576501532114.height
 ↓PageEvent [mobile.components.UIPageEvent-1576770503244]: 
   comment: Do not delete or disable !!
   viewEvent: onCanEnter
