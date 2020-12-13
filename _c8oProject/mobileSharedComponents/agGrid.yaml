@@ -76,13 +76,13 @@
     attrValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:[]
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.columnDefs","prefix":"","suffix":"","custom":"","useCustom":false}}
   ↓Attr4 [mobile.components.UIAttribute-1576595735474]: 
     attrName: '[rowData]'
     attrValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:[]
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.rowData","prefix":"","suffix":"","custom":"","useCustom":false}}
   ↓Event [mobile.components.UIControlEvent-1576763247788]: 
     attrName: (gridReady)
     eventName: (gridReady)
@@ -94,41 +94,18 @@
             - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
             - com.twinsoft.convertigo.beans.common.FormatedContent: 
               →: |
-                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
-                
-                		//console.log(props);
-                		let grid = props.stack["root"].scope.agGrid; // page["agGrid"];
-                        if (grid !== undefined) {
-                            //console.log(grid.columnDefs);
-                            //console.log(grid.rowData);
-                            
-                            // Now setColumnDefs 
-                            // this fix wrong column order after grid initialization (when some column contains image)
-                            grid.api.setColumnDefs([])
-                            grid.api.setColumnDefs(vars.columnDefs);
-                            page.c8o.log.debug(''[MB] gridApi.setColumnDefs() done'');
-                                       
-                            // Now setRowData
-                            grid.api.setRowData(vars.rowData);
-                            page.c8o.log.debug(''[MB] gridApi.setRowData() done'');
-                            
-                            // Set grid width & height
-                            var height = vars.height;
-                            var width = vars.width;
-                            var autoHeight = height == "" || height == "auto";
-                            grid.api.setDomLayout(autoHeight ? "autoHeight":"normal");
-                            grid._nativeElement.style.height = autoHeight ? "" : height;
-                            grid._nativeElement.style.width = width;
-                            page.c8o.log.debug(''[MB] gridApi sizing done'');
-                            
-                            // sizeColumnsToFit
-                            setTimeout(function() {
-                                grid.api.sizeColumnsToFit();
-                                page.c8o.log.debug(''[MB] gridApi.sizeColumnsToFit() done'');
-                            }, 1000);
-                        }
-                        
-                		resolve();
+                '			let grid = props.stack["root"].scope.agGrid; // page["agGrid"];
+                	        if (grid !== undefined) {
+                	            // Set grid width & height
+                	            var height = vars.height;
+                	            var width = vars.width;
+                	            var autoHeight = height == "" || height == "auto";
+                	            grid.api.setDomLayout(autoHeight ? "autoHeight":"normal");
+                	            grid._nativeElement.style.height = autoHeight ? "" : height;
+                	            grid._nativeElement.style.width = width;
+                	            page.c8o.log.debug(''[MB] gridApi sizing done'');
+                	        }
+                			resolve();
                 '
         ↓columnDefs [mobile.components.UIControlVariable-1576774264164]: 
           varValue: 
@@ -190,6 +167,45 @@
          "topic": "plain:agGridColumnSortChanged",
          "data": "script:$event"
         }'
+  ↓Event5 [mobile.components.UIControlEvent-1607858792110]: 
+    attrName: (paginationChanged)
+    eventName: (paginationChanged)
+    ↓handleResizeCols [mobile.components.UICustomAction-1607859231004]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              			let grid = props.stack["root"].scope.agGrid; // page["agGrid"];
+              	        if (grid !== undefined) {
+              	            // sizeColumnsToFit
+              	            setTimeout(function() {
+              	                grid.api.sizeColumnsToFit();
+              	                page.c8o.log.debug('[MB] gridApi.sizeColumnsToFit() done');
+              	            }, 0);
+              	        }
+              			resolve();
+              
+      ↓columnDefs [mobile.components.UIControlVariable-1607859231007]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1576501532114.columnDefs
+      ↓rowData [mobile.components.UIControlVariable-1607859231010]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1576501532114.rowData
+      ↓width [mobile.components.UIControlVariable-1607859231013]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1576501532114.width
+      ↓height [mobile.components.UIControlVariable-1607859231016]: 
+        varValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1576501532114.height
 ↓PageEvent [mobile.components.UIPageEvent-1576770503244]: 
   comment: Do not delete or disable !!
   viewEvent: onCanEnter
