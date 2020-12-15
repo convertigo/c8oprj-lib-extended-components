@@ -57,46 +57,6 @@ title: testAgGrid2
   beanData: '{"ionBean":"Content"}'
   comment: Page content
   tagName: ion-content
-  ↓UseSharedComponent [mobile.components.UIUseShared-1576514849166]: 
-    isEnabled: false
-    sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.agGrid
-    ↓pagination [mobile.components.UIControlVariable-1576684820417]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:true
-    ↓paginationPageSize [mobile.components.UIControlVariable-1576684820419]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:10
-    ↓rowSelection [mobile.components.UIControlVariable-1576684820421]: 
-      comment: '''single'' or ''multiple'''
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:'single'
-    ↓rowDeselection [mobile.components.UIControlVariable-1576684820423]: 
-      comment: '''single'' or ''multiple'''
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:true
-    ↓defaultColDef [mobile.components.UIControlVariable-1576684820425]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: 'script:{hide: false, editable: true, sortable: true, resizable: true, filter: true, checkboxSelection: false, singleClickEdit: false}'
-    ↓columnDefs [mobile.components.UIControlVariable-1576684820427]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: 'script:[{headerName: ''Make'', field: ''make'', cellEditor: ''agSelectCellEditor'', cellEditorParams: {values: [''Toyota'',''Ford'',''Porshe'',''BMW'',''Renault'',''VW'']}}, {headerName: ''Model'', field: ''model'', filter: ''agTextColumnFilter'', filterParams: {resetButton: true,applyButton: true,debounceMs: 200}}, {headerName: ''Price'', field: ''price'', cellEditor: ''agPopupTextCellEditor''}]'
-    ↓rowData [mobile.components.UIControlVariable-1576684820429]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: 'script:[{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 },{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 },{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 },{ make: ''Toyota'', model: ''Celica'', price: 35000 },{ make: ''Ford'', model: ''Mondeo'', price: 32000 },{ make: ''Porsche'', model: ''Boxter'', price: 72000 }]'
   ↓UseSharedComponent1 [mobile.components.UIUseShared-1576667583952]: 
     sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.agGrid
     ↓pagination [mobile.components.UIControlVariable-1576667594456]: 
@@ -130,7 +90,15 @@ title: testAgGrid2
       varValue: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: 'script:[{headerName: ''Make'', field: ''make''}, {headerName: ''Model'', field: ''model''}, {headerName: ''Price'', field: ''price'', filter: ''agNumberColumnFilter''}, {headerName: '''', field: ''src'', headerClass: ''custom-header-weel'', cellRenderer: this.global[''agGridDisplayImage''], filter: false, sortable: true, maxWidth: 50}, {headerName: '''', field: ''valid'', checkboxSelection: true, headerCheckboxSelection: true, filter: false, sortable: false, maxWidth:40}]'
+          - MobileSmartSourceType: |
+              'script:[
+              	{headerName: ''Make'',  field: ''make''},
+              	{headerName: ''Model'', field: ''model''},
+              	{headerName: ''Price'',  field: ''price'', filter: ''agNumberColumnFilter''},
+              	{headerName: '''', field: ''src'', headerClass: ''custom-header-weel'', cellRenderer: this.global[''agGridDisplayImage''], filter: false, sortable: true, maxWidth: 50},
+              	{headerName: '''', field: ''valid'', checkboxSelection: true, headerCheckboxSelection: true, filter: false, sortable: false, maxWidth:40}
+              ]
+              '
     ↓rowData [mobile.components.UIControlVariable-1576667594464]: 
       varValue: 
         - xmlizable: 
