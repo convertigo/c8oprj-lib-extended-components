@@ -125,7 +125,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridCellClicked",
-         "data": "script:$event"
+         "data": "script:{event :$event, ref: params1576501532114.ref}"
         }'
   ↓Event2 [mobile.components.UIControlEvent-1576858211435]: 
     attrName: (rowClicked)
@@ -135,7 +135,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridRowClicked",
-         "data": "script:$event"
+         "data": "script:{event :$event, ref: params1576501532114.ref}"
         }'
   ↓Event3 [mobile.components.UIControlEvent-1576859282081]: 
     attrName: (rowSelected)
@@ -145,7 +145,7 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridRowSelected",
-         "data": "script:$event"
+         "data": "script:{event :$event, ref: params1576501532114.ref}"
         }'
   ↓Event4 [mobile.components.UIControlEvent-1577091949093]: 
     attrName: (sortChanged)
@@ -155,11 +155,12 @@
         '{
          "ionBean": "PublishEventAction",
          "topic": "plain:agGridColumnSortChanged",
-         "data": "script:$event"
+         "data": "script:{event :$event, ref: params1576501532114.ref}"
         }'
   ↓Event5 [mobile.components.UIControlEvent-1607858792110]: 
     attrName: (paginationChanged)
     eventName: (paginationChanged)
+    isEnabled: false
     ↓handleResizeCols [mobile.components.UICustomAction-1607859231004]: 
       actionValue: 
         - xmlizable: 
@@ -171,11 +172,51 @@
               	            // sizeColumnsToFit
               	            setTimeout(function() {
               	                grid.api.sizeColumnsToFit();
+              					grid.api.resetRowHeights();
               	                page.c8o.log.debug('[MB] gridApi.sizeColumnsToFit() done');
               	            }, 0);
               	        }
               			resolve();
               
+  ↓Attr9 [mobile.components.UIAttribute-1610008946563]: 
+    attrName: '[attr.id]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.id","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓Event6 [mobile.components.UIControlEvent-1610038161550]: 
+    attrName: (rowDataChanged)
+    eventName: (rowDataChanged)
+    ↓handleRowDataChanged [mobile.components.UICustomAction-1610039612138]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              		const grid = props.stack["root"].scope.agGrid
+              		if(grid != undefined){
+              			grid.api.sizeColumnsToFit();
+              				grid.api.resetRowHeights();
+              			setTimeout(()=>{
+              				grid.api.sizeColumnsToFit();
+              				grid.api.resetRowHeights();
+              				page.c8o.log.debug('[MB] gridApi.sizeColumnsToFit() and gridApi.resetRowHeights() done');
+              			}, 500)
+              		}
+              		resolve();
+              
+  ↓Attr10 [mobile.components.UIAttribute-1610102842417]: 
+    attrName: '[suppressCellSelection]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.suppressCellSelection","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓Attr101 [mobile.components.UIAttribute-1610103017057]: 
+    attrName: '[suppressRowClickSelection]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.suppressRowClickSelection","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓PageEvent [mobile.components.UIPageEvent-1576770503244]: 
   comment: Do not delete or disable !!
   viewEvent: onCanEnter
@@ -371,3 +412,9 @@
     
     '
   value: '''ag-theme-balham'''
+↓id [mobile.components.UICompVariable-1610007757895]: 
+↓suppressCellSelection [mobile.components.UICompVariable-1610102914464]: 
+  value: false
+↓suppressRowClickSelection [mobile.components.UICompVariable-1610103034912]: 
+  value: false
+↓ref [mobile.components.UICompVariable-1610105859105]: 
