@@ -217,6 +217,18 @@
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.suppressRowClickSelection","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓Attr11 [mobile.components.UIAttribute-1610135838582]: 
+    attrName: '[overlayNoRowsTemplate]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.overlayNoRowsTemplate","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓Attr12 [mobile.components.UIAttribute-1610136432111]: 
+    attrName: '[overlayLoadingTemplate]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.overlayLoadingTemplate","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓PageEvent [mobile.components.UIPageEvent-1576770503244]: 
   comment: Do not delete or disable !!
   viewEvent: onCanEnter
@@ -418,3 +430,5 @@
 ↓suppressRowClickSelection [mobile.components.UICompVariable-1610103034912]: 
   value: false
 ↓ref [mobile.components.UICompVariable-1610105859105]: 
+↓overlayLoadingTemplate [mobile.components.UICompVariable-1610136408428]: 
+↓overlayNoRowsTemplate [mobile.components.UICompVariable-1610136139893]: 
