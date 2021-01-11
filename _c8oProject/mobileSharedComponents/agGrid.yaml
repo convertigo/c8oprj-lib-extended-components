@@ -205,6 +205,13 @@
               		}
               		resolve();
               
+    ↓publishAgGridCellClicked [mobile.components.UIDynamicAction-1610376824436]: 
+      beanData: |
+        '{
+         "ionBean": "PublishEventAction",
+         "topic": "plain:agGridRowDataChanged",
+         "data": "script:{event :$event, ref: params1576501532114.ref}"
+        }'
   ↓Attr10 [mobile.components.UIAttribute-1610102842417]: 
     attrName: '[suppressCellSelection]'
     attrValue: 
