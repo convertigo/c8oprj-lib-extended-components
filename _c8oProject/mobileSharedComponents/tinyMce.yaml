@@ -40,7 +40,7 @@
               - java.lang.String: 
                 - ↑value: '@tinymce/tinymce-angular'
               - java.lang.String: 
-                - ↑value: 3.6.1
+                - ↑value: 3.5.0
 ↓ngModel [mobile.components.UICompVariable-1584094766604]: 
   value: null
 ↓init [mobile.components.UICompVariable-1584112503370]: 
