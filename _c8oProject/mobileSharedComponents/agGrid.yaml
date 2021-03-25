@@ -236,6 +236,12 @@
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
         - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.overlayLoadingTemplate","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓a [mobile.components.UIAttribute-1616703182297]: 
+    attrName: '[localeTextFunc]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: 'source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.localeTextFunc","prefix":"","suffix":"","custom":"params1576501532114?.localeTextFunc != null ? params1576501532114?.localeTextFunc : this.global?.agGridLocaleTextFunc","useCustom":true}}'
 ↓PageEvent [mobile.components.UIPageEvent-1576770503244]: 
   comment: Do not delete or disable !!
   viewEvent: onCanEnter
@@ -268,7 +274,11 @@
             	                return resultElement;
             	            }
             	        }
-            	        
+            			if (page.global["agGridLocaleTextFunc"] == undefined) {
+            	        	page.global["agGridLocaleTextFunc"] = function (key, defaultValue) {
+                  				return defaultValue ? defaultValue : '''';
+                			};
+            			}
             	        /*
             	        // headerComponent: ''header-class-name''
             	        if (page.global["agGridImageComponent"] == undefined) {
@@ -439,3 +449,5 @@
 ↓ref [mobile.components.UICompVariable-1610105859105]: 
 ↓overlayLoadingTemplate [mobile.components.UICompVariable-1610136408428]: 
 ↓overlayNoRowsTemplate [mobile.components.UICompVariable-1610136139893]: 
+↓localeTextFunc [mobile.components.UICompVariable-1616703385384]: 
+  value: null
