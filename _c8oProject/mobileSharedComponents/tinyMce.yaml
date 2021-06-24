@@ -2,6 +2,16 @@
   comment: Do not delete or disable !!
   viewEvent: onCanEnter
   ↓initialization [mobile.components.UICustomAction-1584094766592]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		this.global.secretC8OfunctionMerge = (arg1) =>{
+            			return {...arg1, ...{base_url: ''/tinymce'',suffix: ''.min''}};
+            		}
+            		resolve();
+            '
     comment: Do not delete or disable !!
     module_ng_imports: 
       - xmlizable: 
@@ -12,6 +22,15 @@
             - com.twinsoft.convertigo.beans.common.XMLVector: 
               - java.lang.String: 
                 - ↑value: EditorModule
+    module_ng_providers: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: '{ provide: TINYMCE_SCRIPT_SRC, useValue: ''tinymce/tinymce.min.js'' }'
     module_ts_imports: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -30,6 +49,13 @@
                 - ↑value: FormsModule
               - java.lang.String: 
                 - ↑value: '@angular/forms'
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: TINYMCE_SCRIPT_SRC
+              - java.lang.String: 
+                - ↑value: '@tinymce/tinymce-angular'
     package_dependencies: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -40,7 +66,14 @@
               - java.lang.String: 
                 - ↑value: '@tinymce/tinymce-angular'
               - java.lang.String: 
-                - ↑value: 3.5.0
+                - ↑value: 3.6.1
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: tinymce
+              - java.lang.String: 
+                - ↑value: 5.8.2
 ↓ngModel [mobile.components.UICompVariable-1584094766604]: 
   value: null
 ↓init [mobile.components.UICompVariable-1584112503370]: 
@@ -79,7 +112,7 @@
       attrValue: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:params1584094766586.init
+          - MobileSmartSourceType: script:this.global.secretC8OfunctionMerge(params1584094766586.init)
     ↓Attr2 [mobile.components.UIAttribute-1584115468148]: 
       attrName: apiKey
       attrValue: 
@@ -172,7 +205,7 @@
       attrValue: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:params1584094766586.init
+          - MobileSmartSourceType: script:this.global.secretC8OfunctionMerge(params1584094766586.init)
     ↓Attr2 [mobile.components.UIAttribute-1610985320380]: 
       attrName: apiKey
       attrValue: 
