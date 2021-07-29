@@ -8,7 +8,7 @@
         - com.twinsoft.convertigo.beans.common.FormatedContent: 
           →: |
             '		this.global.secretC8OfunctionMerge = (arg1) =>{
-            			return {...arg1, ...{base_url: ''/tinymce'',suffix: ''.min''}};
+            			return {...arg1, ...{suffix: ''.min''}};
             		}
             		resolve();
             '
@@ -287,3 +287,17 @@
            "topic": "script:''tinyMceBlur''",
            "data": "script:{event: $event, ref:  params1584094766586.ref}"
           }'
+    ↓Attr61 [mobile.components.UIAttribute-1625237901318]: 
+      attrName: toolbar
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:params1584094766586.toolbar
+      isEnabled: false
+    ↓Attr21 [mobile.components.UIAttribute-1625237952304]: 
+      attrName: ahhahha
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:params1584094766586.apiKey
+      isEnabled: false
