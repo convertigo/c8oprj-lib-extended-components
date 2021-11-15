@@ -1,0 +1,86 @@
+segment: path-to-testngnavigationbar
+title: ngNavigationBar
+↓Header [mobile.components.UIDynamicElement-1636974950711]: 
+  beanData: '{"ionBean":"Header"}'
+  comment: Page header
+  tagName: ion-header
+  ↓NavBar [mobile.components.UIDynamicElement-1636974950714]: 
+    beanData: '{"ionBean":"NavBar"}'
+    tagName: ion-navbar
+    ↓BarTitle [mobile.components.UIDynamicElement-1636974950717]: 
+      beanData: '{"ionBean":"BarTitle"}'
+      tagName: ion-title
+      ↓Text [mobile.components.UIText-1636974950720]: 
+        i18n: false
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:ngNavigationBar
+    ↓Button [mobile.components.UIDynamicElement-1636974950723]: 
+      beanData: '{"ionBean":"Button","MenuMode":"plain:menuToggle"}'
+      comment: A button to toggle the menu
+      tagName: button
+      ↓Icon [mobile.components.UIDynamicElement-1636974950726]: 
+        beanData: '{"ionBean":"Icon","IconName":"plain:menu"}'
+        tagName: ion-icon
+    ↓ButtonSet [mobile.components.UIDynamicElement-1636974950729]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
+      tagName: ion-buttons
+      ↓Button [mobile.components.UIDynamicElement-1636974950732]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: button
+        ↓Icon [mobile.components.UIDynamicElement-1636974950735]: 
+          beanData: '{"ionBean":"Icon","IconName":"plain:more"}'
+          tagName: ion-icon
+↓Content [mobile.components.UIDynamicElement-1636974950738]: 
+  beanData: '{"ionBean":"Content"}'
+  comment: Page content
+  tagName: ion-content
+  ↓UseSharedComponent [mobile.components.UIUseShared-1636974950741]: 
+    sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ngNavigationBar
+    ↓menuItems [mobile.components.UIControlVariable-1636974950744]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:[{ name: ''Appetizers'', children: [{ name: ''Fresco Salsa'', page: ''testNgNavigationBarTargetPage'', data: {dataMenu: ''Salad, Tomatoes, Goat, Honey''} }]}, { name: ''Main dishes'', children: [{ name: ''Beef'', page: ''testNgNavigationBarTargetPage'' }, { name: ''Burger'', page: ''testNgNavigationBarTargetPage'' }, { name: ''Vegetarian'', page: ''testNgNavigationBarTargetPage'' }], page: null }, { name: ''Side dishes'', children: [{ name: ''Baked potato'', page: ''testNgNavigationBarTargetPage'' }]}, { name: ''Salads'', children: [{ name: ''Taco Slaw'', page: ''testNgNavigationBarTargetPage'' }]}, { name: ''Desserts'', children: [{ name: ''Crepes'', page: ''testNgNavigationBarTargetPage'' }]}, { name: ''About'', page: ''testNgNavigationBarTargetPage'', type: ''root'' }]'
+  ↓UseSharedComponent1 [mobile.components.UIUseShared-1636981472590]: 
+    sharedcomponent: lib_ExtendedComponents.MobileApplication.Application.ngNavigationBar
+    ↓menuItems [mobile.components.UIControlVariable-1636981472593]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:[ {name: ''Platform'', children: [ {name: ''Features'', page: ''https://www.convertigo.com/features''}, {name: ''Pricing'', page: ''https://www.convertigo.com/home/pricing''}, {name: ''components'', page: ''https://www.convertigo.com/#from-back-end-enablement-to-no-code-app-development''}, {name: ''Convertigo Studio'', page: ''https://www.convertigo.com/mobile-application-development-studio/''}, {name: ''Convertigo No-Code Forms Builder'', page: ''https://www.convertigo.com/no-code-form-application-builder/''}, {name: ''Convertigo MBaaS'', page: ''https://www.convertigo.com/mbaas/''}, {name: ''Convertigo SDK'', page: ''https://www.convertigo.com/convertigo-sdk/''} ]}, {name: ''Why Convertigo'', page: ''https://www.convertigo.com/why-convertigo/'', children: [ {name: ''Introduction to Low-Code...'', page: ''https://www.convertigo.com/introduction-to-low-code/''} ]}, {name: ''Solutions'', children: [ {name: ''Manufacturing Solutions'', page: ''https://www.convertigo.com/manufacturing-solutions/''}, {name: ''Convertigo M-Banking Solutions'', page: ''https://www.convertigo.com/convertigo-m-banking-solutions/''}, {name: ''Retail'', page: ''https://www.convertigo.com/retail-page/''} ]}, {name: ''Get Started'', children: [ {name: ''Quick Start Videos'', page: ''https://www.convertigo.com/quick-start-videos/''}, {name: ''Documentation'', page: ''https://www.convertigo.com/documentation/latest/''} ]}, {name: ''Blog'', page: ''https://www.convertigo.com/technical-blog/''}, { name: ''About'', page: ''testNgNavigationBarTargetPage'', type: ''root'', data: {dataMenu : ''Grégory VORBE was here!''} } ]'
+    ↓class [mobile.components.UIControlVariable-1636981472596]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:'menubar2'
+↓Footer [mobile.components.UIDynamicElement-1636974950747]: 
+  beanData: '{"ionBean":"Footer"}'
+  comment: Page footer
+  tagName: ion-footer
+  ↓ToolBar [mobile.components.UIDynamicElement-1636974950750]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet [mobile.components.UIDynamicElement-1636974950753]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:left"}'
+      tagName: ion-buttons
+      ↓Button [mobile.components.UIDynamicElement-1636974950756]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: button
+        ↓Text [mobile.components.UIText-1636974950759]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 1
+    ↓ButtonSet1 [mobile.components.UIDynamicElement-1636974950762]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
+      tagName: ion-buttons
+      ↓Button [mobile.components.UIDynamicElement-1636974950765]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: button
+        ↓Text [mobile.components.UIText-1636974950768]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 2

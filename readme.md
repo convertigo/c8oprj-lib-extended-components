@@ -7,6 +7,7 @@ Set of shared components you can use in your projects:
 * [angularxQRCode](angularxqrcode) : QR Code component/module library to generate QR Codes (Quick Response)
 * [CardIO](#cardio) : Cordova plugin to scan Credit Card
 * [ZXing](#zxing) : Library to scan barcodes
+* [ngNavigationBar](#ngnavigationbar) : Create dynamic dropdown menus
 
 SharedComponent can be dropped (CTRL + mouse drag) in Mobile Builder page components to make use of it.
 
@@ -93,3 +94,19 @@ The Mobile Builder **ZXing** page demonstrates the use of this library.
     - `parent.out` directly under the **invoke ZXing_sa**
     - **PublishEvent** to a topic if one was provided and if **isOuputEvent** is set to *true*.
     - `page.global["zxing:<topic><ref>"]` global page variable if **isOuputGlobal** is set to *true*.
+
+
+## ngNavigationBar
+
+Convertigo Shared Component / Shared Action to create dropdown menus that can be linked to local Pages or Urls.
+
+### Usage
+
+The **ngNavigationBar** Shared Component accepts 2 variables:
+
+| Name        | Type           | Default | Description  |
+| ------------- |-------------| -----|------------|
+| menuItems      | Array of objects | [{name: 'Menu 1', page: 'targetPage', type: 'root'},{name:'Menu 2', children:[{name:'subMenu 1', page: 'targetPage'},{name:'subMenu 2', page: 'targetPage', type: 'root', data: {dataMenu: 'subMenu 2 data'}}]}]     | Each object must contain a **name** key to define the Menu title, it may contain a **page** key to link the Menu to a local page or an url, a **type** key ('root' \| 'push') for local Page, a **data** key to transmit some data to a loca Page and a **children** key which is an array of objects for sub-menus with same keys |
+| class      | String | 'menubar'     | CSS class to apply on Menus. Copy and edit the **ngNavigationBarStyle** Style component in **Styles** folder to customize your CSS |
+
+![ngNavigationBar screenshot 1](./doc/images/ConvertigoStudio_ngNavigationBar.gif)

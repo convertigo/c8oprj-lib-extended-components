@@ -1,0 +1,105 @@
+↓Tag [mobile.components.UIElement-1636974801341]: 
+  tagName: ul
+  ↓Attr [mobile.components.UIAttribute-1636974801344]: 
+    attrName: class
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1636974801338.class
+  ↓Directive [mobile.components.UIControlDirective-1636974801347]: 
+    directiveIndexName: menu_index
+    directiveItemName: menu_item
+    directiveSource: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1636974801338.menuItems
+    ↓Tag [mobile.components.UIElement-1636974801350]: 
+      tagName: li
+      ↓Tag [mobile.components.UIElement-1636974801353]: 
+        tagName: a
+        ↓Text [mobile.components.UIText-1636974801356]: 
+          i18n: false
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:menu_item.name
+        ↓Event [mobile.components.UIControlEvent-1636974801359]: 
+          ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1636974801362]: 
+            beanData: '{"ionBean":"InvokeAction"}'
+            stack: lib_ExtendedComponents.MobileApplication.Application.ngNavigationBarAction
+            ↓menuItem [mobile.components.UIControlVariable-1636974801365]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:menu_item
+            ↓parentItem [mobile.components.UIControlVariable-1636974801368]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:''
+        ↓Attr1 [mobile.components.UIAttribute-1636974801371]: 
+          attrName: '[ngClass]'
+          attrValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - MobileSmartSourceType: 'script:{''dropbtn'' : menu_item.children != null, ''hasPage'' : menu_item.page != null}'
+      ↓Attr [mobile.components.UIAttribute-1636974801374]: 
+        attrName: '[ngClass]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: 'script:menu_item.children != null ? ''dropdown'' : '''''
+      ↓Directive [mobile.components.UIControlDirective-1636974801377]: 
+        directiveName: If
+        directiveSource: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:menu_item.children
+        ↓Div [mobile.components.UIDynamicElement-1636974801380]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓Attr [mobile.components.UIAttribute-1636974801383]: 
+            attrName: class
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:dropdown-content
+          ↓Directive [mobile.components.UIControlDirective-1636974801386]: 
+            directiveIndexName: children_index
+            directiveItemName: children_item
+            directiveSource: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:menu_item.children
+            ↓Tag [mobile.components.UIElement-1636974801389]: 
+              tagName: a
+              ↓Text [mobile.components.UIText-1636974801392]: 
+                i18n: false
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:children_item.name
+              ↓Event [mobile.components.UIControlEvent-1636974801395]: 
+                ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1636974801398]: 
+                  beanData: '{"ionBean":"InvokeAction"}'
+                  stack: lib_ExtendedComponents.MobileApplication.Application.ngNavigationBarAction
+                  ↓menuItem [mobile.components.UIControlVariable-1636974801401]: 
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:children_item
+                  ↓parentItem [mobile.components.UIControlVariable-1636974801404]: 
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:menu_item.name
+              ↓Attr1 [mobile.components.UIAttribute-1636974801407]: 
+                attrName: '[ngClass]'
+                attrValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                    - MobileSmartSourceType: 'script:{''hasPage'' : children_item.page != null}'
+↓menuItems [mobile.components.UICompVariable-1636974801410]: 
+  value: '[{name: ''Menu 1'', page: ''testNgNavigationBarTargetPage'', type: ''root''},{name:''Menu 2'', children:[{name:''subMenu 1'', page: ''testNgNavigationBarTargetPage''},{name:''subMenu 2'', page: ''testNgNavigationBarTargetPage'', type: ''root'', data: {dataMenu: ''subMenu 2 data''}}]}]'
+↓class [mobile.components.UICompVariable-1636974801413]: 
+  value: '''menubar'''

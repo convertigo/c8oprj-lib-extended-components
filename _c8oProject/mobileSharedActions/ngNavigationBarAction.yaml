@@ -1,0 +1,43 @@
+↓Action [mobile.components.UICustomAction-1636974893702]: 
+  actionValue: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+        →: |
+          '		//page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+          		if(!(Object.keys(vars.menuItem).length === 0)){
+          			let name = vars.menuItem.name;
+          			let setPage = vars.menuItem.page;
+          			let setData = vars.menuItem.data != null && !(Object.keys(vars.menuItem.data).length === 0) ? vars.menuItem.data : {};;
+          			let type = vars.menuItem.type == null || vars.menuItem.type.toLowerCase() == ''push'' ? ''push'' : ''root'';
+          			if(setPage != null && setPage != ''''){
+          				if(setPage.indexOf("://") != -1){
+          					window.open(setPage, ''_blank'');
+          				} else {
+          					setData["parentName"] = vars.parentItem;
+          					setData["childName"] = name;
+          					setTimeout(()=>{
+          						if(type == ''push''){
+          							page.routerProvider.push(setPage, setData, null);
+          						}else {
+          							page.routerProvider.setRoot(setPage, setData, null);
+          						}
+          					}, 200);
+          				}
+          			}
+          		}
+          		resolve();
+          '
+  ↓menuItem [mobile.components.UIControlVariable-1636974893705]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params.menuItem
+  ↓parentItem [mobile.components.UIControlVariable-1636974893708]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params.parentItem
+↓menuItem [mobile.components.UIStackVariable-1636974893711]: 
+  value: '{}'
+↓parentItem [mobile.components.UIStackVariable-1636974893714]: 

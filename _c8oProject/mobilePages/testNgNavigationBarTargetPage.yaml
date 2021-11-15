@@ -1,0 +1,66 @@
+inAutoMenu: false
+segment: path-to-testngnavigationbartargetpage
+title: Title for targetPage
+↓Header [mobile.components.UIDynamicElement-1636974950840]: 
+  beanData: '{"ionBean":"Header"}'
+  comment: Page header
+  tagName: ion-header
+  ↓NavBar [mobile.components.UIDynamicElement-1636974950843]: 
+    beanData: '{"ionBean":"NavBar"}'
+    tagName: ion-navbar
+    ↓BarTitle [mobile.components.UIDynamicElement-1636974950846]: 
+      beanData: '{"ionBean":"BarTitle"}'
+      tagName: ion-title
+      ↓Text1 [mobile.components.UIText-1636974950849]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:this.navParams.data.parentName
+      ↓Text11 [mobile.components.UIText-1636974950852]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: 'script:this.navParams.data.parentName != null && this.navParams.data.parentName != '''' ? '' > '' : '''''
+      ↓Text [mobile.components.UIText-1636974950855]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: 'script:this.navParams.data.childName != null ? this.navParams.data.childName : ''Default Title'''
+    ↓Button [mobile.components.UIDynamicElement-1636974950858]: 
+      beanData: '{"ionBean":"Button","MenuMode":"plain:menuToggle"}'
+      comment: A button to toggle the menu
+      tagName: button
+      ↓Icon [mobile.components.UIDynamicElement-1636974950861]: 
+        beanData: '{"ionBean":"Icon","IconName":"plain:menu"}'
+        tagName: ion-icon
+    ↓ButtonSet [mobile.components.UIDynamicElement-1636974950864]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
+      tagName: ion-buttons
+      ↓Button [mobile.components.UIDynamicElement-1636974950867]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: button
+        ↓Icon [mobile.components.UIDynamicElement-1636974950870]: 
+          beanData: '{"ionBean":"Icon","IconName":"plain:more"}'
+          tagName: ion-icon
+↓Content [mobile.components.UIDynamicElement-1636974950873]: 
+  beanData: '{"ionBean":"Content"}'
+  tagName: ion-content
+  ↓Div [mobile.components.UIDynamicElement-1636974950876]: 
+    beanData: '{"ionBean":"DivTag"}'
+    tagName: div
+    ↓Text [mobile.components.UIText-1636974950879]: 
+      textValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:this.navParams.data.dataMenu != null ? this.navParams.data.dataMenu : ''No Page data provided!'''
+↓PageEvent [mobile.components.UIPageEvent-1636974950882]: 
+  ↓getPageData [mobile.components.UICustomAction-1636974950885]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		page.c8o.log.warn(''>>>'' + JSON.stringify(this.navParams.data));
+            		resolve();
+            '

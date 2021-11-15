@@ -27,17 +27,21 @@ tplProjectName: mobilebuilder_tpl_7_8_0
 ↓Menu [mobile.components.UIDynamicMenu-1500890597895]: 🗏 mobileMenus/Menu.yaml
 ↓cardIO_sa [mobile.components.UIActionStack-1595431416100]: 🗏 mobileSharedActions/cardIO_sa.yaml
 ↓ZXing_sa [mobile.components.UIActionStack-1595431416151]: 🗏 mobileSharedActions/ZXing_sa.yaml
+↓ngNavigationBarAction [mobile.components.UIActionStack-1636974893699]: 🗏 mobileSharedActions/ngNavigationBarAction.yaml
 ↓agGrid [mobile.components.UISharedComponent-1576501532114]: 🗏 mobileSharedComponents/agGrid.yaml
 ↓ngxTagInput [mobile.components.UISharedComponent-1577113184271]: 🗏 mobileSharedComponents/ngxTagInput.yaml
 ↓tinyMce [mobile.components.UISharedComponent-1584094766586]: 🗏 mobileSharedComponents/tinyMce.yaml
 ↓angularxQRCode [mobile.components.UISharedComponent-1600099015160]: 🗏 mobileSharedComponents/angularxQRCode.yaml
 ↓cardIO_sc [mobile.components.UISharedComponent-1595431403877]: 🗏 mobileSharedComponents/cardIO_sc.yaml
+↓ngNavigationBar [mobile.components.UISharedComponent-1636974801338]: 🗏 mobileSharedComponents/ngNavigationBar.yaml
 ↓testAgGrid1 [mobile.components.PageComponent-1577112296926]: 🗏 mobilePages/testAgGrid1.yaml
 ↓testAgGrid2 [mobile.components.PageComponent-1500538678074]: 🗏 mobilePages/testAgGrid2.yaml
 ↓testNgxInput [mobile.components.PageComponent-1577114040810]: 🗏 mobilePages/testNgxInput.yaml
 ↓testNgxInput1 [mobile.components.PageComponent-1578565185309]: 🗏 mobilePages/testNgxInput1.yaml
 ↓cardIO [mobile.components.PageComponent-1595431440350]: 🗏 mobilePages/cardIO.yaml
 ↓ZXing [mobile.components.PageComponent-1595431440486]: 🗏 mobilePages/ZXing.yaml
+↓testNgNavigationBar [mobile.components.PageComponent-1636974950681]: 🗏 mobilePages/testNgNavigationBar.yaml
+↓testNgNavigationBarTargetPage [mobile.components.PageComponent-1636974950837]: 🗏 mobilePages/testNgNavigationBarTargetPage.yaml
 ↓Theme [mobile.components.UITheme-1491635018260]: 
   comment: Global color themes can be customized here
   styleContent: 
@@ -139,4 +143,150 @@ tplProjectName: mobilebuilder_tpl_7_8_0
           }
           @import "../../node_modules/ag-grid-community/dist/styles/ag-grid.scss";
           @import "../../node_modules/ag-grid-community/dist/styles/ag-theme-balham/sass/ag-theme-balham.scss";
+          '
+↓ngNavigationBarStyle1 [mobile.components.UIStyle-1636981273625]: 
+  styleContent: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+        →: |
+          'ul.menubar {
+          	list-style-type: none;
+          	margin: 0;
+          	padding: 0;
+          	overflow: hidden;
+          	background-color: color($colors, dark);
+          	
+          	li {
+          		float: left;
+          	}
+          	
+          	li a, .dropbtn {
+          		display: inline-block;
+          		color: white;
+          		text-align: center;
+          		padding: 14px 16px;
+          		text-decoration: none;
+          	}
+          	
+          	li a:hover, .dropdown:hover .dropbtn {
+          		background-color: color($colors, danger);
+          		opacity: 1 !important;
+          	}
+          	
+          	li.dropdown {
+          		display: inline-block;
+          	}
+          	
+          	.dropdown-content {
+          		display: none;
+          		position: absolute;
+          		background-color: color($colors, light);
+          		min-width: 160px;
+          		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          		z-index: 1;
+          	}
+          	
+          	a.hasPage {
+          		cursor: pointer;
+          	}
+          	
+          	.dropdown-content a {
+          		color: color($colors, dark);
+          		padding: 12px 16px;
+          		text-decoration: none;
+          		display: block;
+          		text-align: left;
+          	}
+          	
+          	.dropdown-content a:hover {
+          		background-color: #dedede;
+          		opacity: 1 !important;
+          	}
+          	
+          	.dropdown:hover .dropdown-content {
+          		display: block;
+          	}
+          }
+          '
+↓ngNavigationBarStyle2 [mobile.components.UIStyle-1636981273628]: 
+  styleContent: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+        →: |
+          'ul.menubar2 {
+          	list-style-type: none;
+          	margin: 0;
+          	padding: 0;
+          	overflow: hidden;
+          	background-color: #fff;
+          	
+          	li {
+          		float: left;
+          	}
+          	
+          	li a, .dropbtn {
+          		display: inline-block;
+          		color: #444444;
+          		text-align: center;
+          		padding: 14px 16px;
+          		text-decoration: none;
+          	}
+          		
+          	li a.dropbtn::after {
+          		content: "▶";
+          		font-weight: bold;
+          		margin-right: 2px;
+          	}
+          	
+          	li:hover a.dropbtn::after {
+          		content: "▼";
+          		margin-right: 0px;
+          	}
+          	
+          	li a:hover, .dropdown:hover .dropbtn {
+          		opacity: 1 !important;
+          		color: color($colors, primary);
+          		border-bottom: 4px solid color($colors, primary);
+          		text-shadow: 0px 0px 1px color($colors, primary);
+          	}
+          	
+          	li.dropdown {
+          		display: inline-block;
+          	}
+          	
+          	a.hasPage {
+          		cursor: pointer;
+          	}
+          	
+          	.dropdown-content {
+          		display: none;
+          		position: absolute;
+          		background-color: #fff;
+          		min-width: 160px;
+          		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          		z-index: 1;
+          	}
+          	
+          	.dropdown-content a {
+          		color: color($colors, dark);
+          		padding: 12px 16px;
+          		text-decoration: none;
+          		display: block;
+          		text-align: left;
+          	}
+          	
+          	.dropdown-content a:hover {
+          		background-color: color($colors, primary);
+          		color: color($colors, light);
+          		text-shadow: 0px 0px 1px color($colors, light);
+          		opacity: 1 !important;
+          		border: none;
+          	}
+          	
+          	.dropdown:hover .dropdown-content {
+          		display: block;
+          	}
+          }
           '
