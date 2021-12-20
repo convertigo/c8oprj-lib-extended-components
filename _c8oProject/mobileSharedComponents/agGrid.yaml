@@ -19,229 +19,6 @@
 ↓rowData [mobile.components.UICompVariable-1576508723354]: 
   comment: 'Array of row { fieldName1: ''value1'', fieldName2: ''value2'', fieldName3: true, ...} objects'
   value: '[]'
-↓Tag [mobile.components.UIElement-1576595265364]: 
-  identifier: agGrid
-  tagName: ag-grid-angular
-  ↓Attr [mobile.components.UIAttribute-1576595371290]: 
-    attrName: class
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params1576501532114.class
-  ↓Attr1 [mobile.components.UIAttribute-1576595487026]: 
-    attrName: style
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: 'plain:width: 100%'
-  ↓Attr8 [mobile.components.UIAttribute-1578673947226]: 
-    attrName: domLayout
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: plain:autoHeight
-    comment: 'Don''t use Grid Auto Height when displaying large numbers of rows: eg >1,000 rows'
-  ↓Attr2 [mobile.components.UIAttribute-1576595635882]: 
-    attrName: '[pagination]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params1576501532114.pagination
-  ↓Attr3 [mobile.components.UIAttribute-1576595700062]: 
-    attrName: '[paginationPageSize]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params1576501532114.paginationPageSize
-  ↓Attr7 [mobile.components.UIAttribute-1576675319255]: 
-    attrName: '[rowSelection]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params1576501532114.rowSelection
-  ↓Attr71 [mobile.components.UIAttribute-1576684915739]: 
-    attrName: '[rowDeselection]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params1576501532114.rowDeselection
-  ↓Attr6 [mobile.components.UIAttribute-1576595795699]: 
-    attrName: '[defaultColDef]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params1576501532114.defaultColDef
-  ↓Attr5 [mobile.components.UIAttribute-1576595764922]: 
-    attrName: '[columnDefs]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.columnDefs","prefix":"","suffix":"","custom":"","useCustom":false}}
-  ↓Attr4 [mobile.components.UIAttribute-1576595735474]: 
-    attrName: '[rowData]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.rowData","prefix":"","suffix":"","custom":"","useCustom":false}}
-  ↓Event [mobile.components.UIControlEvent-1576763247788]: 
-    attrName: (gridReady)
-    eventName: (gridReady)
-    ↓Log [mobile.components.UIDynamicAction-1576763340494]: 
-      beanData: '{"ionBean":"LogAction","message":"plain:gridReady event received"}'
-      ↓handleOnReady [mobile.components.UICustomAction-1576764238780]: 
-        actionValue: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-            - com.twinsoft.convertigo.beans.common.FormatedContent: 
-              →: |
-                '			let grid = props.stack["root"].scope.agGrid; // page["agGrid"];
-                	        if (grid !== undefined) {
-                	            // Set grid width & height
-                	            var height = vars.height;
-                	            var width = vars.width;
-                	            var autoHeight = height == "" || height == "auto";
-                	            grid.api.setDomLayout(autoHeight ? "autoHeight":"normal");
-                	            grid._nativeElement.style.height = autoHeight ? "" : height;
-                	            grid._nativeElement.style.width = width;
-                	            page.c8o.log.debug(''[MB] gridApi sizing done'');
-                	        }
-                			resolve();
-                '
-        ↓width [mobile.components.UIControlVariable-1578908950357]: 
-          varValue: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-              - MobileSmartSourceType: script:params1576501532114.width
-        ↓height [mobile.components.UIControlVariable-1578909011438]: 
-          varValue: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-              - MobileSmartSourceType: script:params1576501532114.height
-  ↓Event1 [mobile.components.UIControlEvent-1576854126305]: 
-    attrName: (cellClicked)
-    eventName: (cellClicked)
-    ↓publishAgGridCellClicked [mobile.components.UIDynamicAction-1576856544149]: 
-      beanData: |
-        '{
-         "ionBean": "PublishEventAction",
-         "topic": "plain:agGridCellClicked",
-         "data": "script:{event :$event, ref: params1576501532114.ref}"
-        }'
-  ↓Event2 [mobile.components.UIControlEvent-1576858211435]: 
-    attrName: (rowClicked)
-    eventName: (rowClicked)
-    ↓publishAgGridRowClicked [mobile.components.UIDynamicAction-1576858228077]: 
-      beanData: |
-        '{
-         "ionBean": "PublishEventAction",
-         "topic": "plain:agGridRowClicked",
-         "data": "script:{event :$event, ref: params1576501532114.ref}"
-        }'
-  ↓Event3 [mobile.components.UIControlEvent-1576859282081]: 
-    attrName: (rowSelected)
-    eventName: (rowSelected)
-    ↓publishAgGridRowSelected [mobile.components.UIDynamicAction-1576859408081]: 
-      beanData: |
-        '{
-         "ionBean": "PublishEventAction",
-         "topic": "plain:agGridRowSelected",
-         "data": "script:{event :$event, ref: params1576501532114.ref}"
-        }'
-  ↓Event4 [mobile.components.UIControlEvent-1577091949093]: 
-    attrName: (sortChanged)
-    eventName: (sortChanged)
-    ↓publishAgGridColumnSortChanged [mobile.components.UIDynamicAction-1577091972684]: 
-      beanData: |
-        '{
-         "ionBean": "PublishEventAction",
-         "topic": "plain:agGridColumnSortChanged",
-         "data": "script:{event :$event, ref: params1576501532114.ref}"
-        }'
-  ↓Event5 [mobile.components.UIControlEvent-1607858792110]: 
-    attrName: (paginationChanged)
-    eventName: (paginationChanged)
-    isEnabled: false
-    ↓handleResizeCols [mobile.components.UICustomAction-1607859231004]: 
-      actionValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-          - com.twinsoft.convertigo.beans.common.FormatedContent: 
-            →: |
-              			let grid = props.stack["root"].scope.agGrid; // page["agGrid"];
-              	        if (grid !== undefined) {
-              	            // sizeColumnsToFit
-              	            setTimeout(function() {
-              	                grid.api.sizeColumnsToFit();
-              					grid.api.resetRowHeights();
-              	                page.c8o.log.debug('[MB] gridApi.sizeColumnsToFit() done');
-              	            }, 0);
-              	        }
-              			resolve();
-              
-  ↓Attr9 [mobile.components.UIAttribute-1610008946563]: 
-    attrName: '[attr.id]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.id","prefix":"","suffix":"","custom":"","useCustom":false}}
-  ↓Event6 [mobile.components.UIControlEvent-1610038161550]: 
-    attrName: (rowDataChanged)
-    eventName: (rowDataChanged)
-    ↓handleRowDataChanged [mobile.components.UICustomAction-1610039612138]: 
-      actionValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-          - com.twinsoft.convertigo.beans.common.FormatedContent: 
-            →: |
-              		const grid = props.stack["root"].scope.agGrid
-              		if(grid != undefined){
-              			grid.api.sizeColumnsToFit();
-              				grid.api.resetRowHeights();
-              			setTimeout(()=>{
-              				grid.api.sizeColumnsToFit();
-              				grid.api.resetRowHeights();
-              				page.c8o.log.debug('[MB] gridApi.sizeColumnsToFit() and gridApi.resetRowHeights() done');
-              			}, 500)
-              		}
-              		resolve();
-              
-    ↓publishAgGridCellClicked [mobile.components.UIDynamicAction-1610376824436]: 
-      beanData: |
-        '{
-         "ionBean": "PublishEventAction",
-         "topic": "plain:agGridRowDataChanged",
-         "data": "script:{event :$event, ref: params1576501532114.ref}"
-        }'
-  ↓Attr10 [mobile.components.UIAttribute-1610102842417]: 
-    attrName: '[suppressCellSelection]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.suppressCellSelection","prefix":"","suffix":"","custom":"","useCustom":false}}
-  ↓Attr101 [mobile.components.UIAttribute-1610103017057]: 
-    attrName: '[suppressRowClickSelection]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.suppressRowClickSelection","prefix":"","suffix":"","custom":"","useCustom":false}}
-  ↓Attr11 [mobile.components.UIAttribute-1610135838582]: 
-    attrName: '[overlayNoRowsTemplate]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.overlayNoRowsTemplate","prefix":"","suffix":"","custom":"","useCustom":false}}
-  ↓Attr12 [mobile.components.UIAttribute-1610136432111]: 
-    attrName: '[overlayLoadingTemplate]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.overlayLoadingTemplate","prefix":"","suffix":"","custom":"","useCustom":false}}
-  ↓a [mobile.components.UIAttribute-1616703182297]: 
-    attrName: '[localeTextFunc]'
-    attrValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-        - MobileSmartSourceType: 'source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.localeTextFunc","prefix":"","suffix":"","custom":"params1576501532114?.localeTextFunc != null ? params1576501532114?.localeTextFunc : this.global?.agGridLocaleTextFunc","useCustom":true}}'
 ↓PageEvent [mobile.components.UIPageEvent-1576770503244]: 
   comment: Do not delete or disable !!
   viewEvent: onCanEnter
@@ -451,3 +228,227 @@
 ↓overlayNoRowsTemplate [mobile.components.UICompVariable-1610136139893]: 
 ↓localeTextFunc [mobile.components.UICompVariable-1616703385384]: 
   value: null
+↓gridThemeWrapper [mobile.components.UIDynamicElement-1639423487350]: 
+  beanData: '{"ionBean":"DivTag"}'
+  tagName: div
+  ↓Attr [mobile.components.UIAttribute-1639423498205]: 
+    attrName: id
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: plain:grid-theme-wrapper
+  ↓Attr1 [mobile.components.UIAttribute-1639423512162]: 
+    attrName: style
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: 'plain:width: 100%'
+  ↓Attr2 [mobile.components.UIAttribute-1639423533652]: 
+    attrName: '[className]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1576501532114.wrapperClass
+  ↓Tag [mobile.components.UIElement-1576595265364]: 
+    identifier: agGrid
+    tagName: ag-grid-angular
+    ↓Attr [mobile.components.UIAttribute-1576595371290]: 
+      attrName: class
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:params1576501532114.class
+    ↓Attr1 [mobile.components.UIAttribute-1576595487026]: 
+      attrName: style
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'plain:width: 100%'
+    ↓Attr8 [mobile.components.UIAttribute-1578673947226]: 
+      attrName: domLayout
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:autoHeight
+      comment: 'Don''t use Grid Auto Height when displaying large numbers of rows: eg >1,000 rows'
+    ↓Attr2 [mobile.components.UIAttribute-1576595635882]: 
+      attrName: '[pagination]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:params1576501532114.pagination
+    ↓Attr3 [mobile.components.UIAttribute-1576595700062]: 
+      attrName: '[paginationPageSize]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:params1576501532114.paginationPageSize
+    ↓Attr7 [mobile.components.UIAttribute-1576675319255]: 
+      attrName: '[rowSelection]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:params1576501532114.rowSelection
+    ↓Attr71 [mobile.components.UIAttribute-1576684915739]: 
+      attrName: '[rowDeselection]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:params1576501532114.rowDeselection
+    ↓Attr6 [mobile.components.UIAttribute-1576595795699]: 
+      attrName: '[defaultColDef]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:params1576501532114.defaultColDef
+    ↓Attr5 [mobile.components.UIAttribute-1576595764922]: 
+      attrName: '[columnDefs]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.columnDefs","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓Attr4 [mobile.components.UIAttribute-1576595735474]: 
+      attrName: '[rowData]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.rowData","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓Event [mobile.components.UIControlEvent-1576763247788]: 
+      attrName: (gridReady)
+      eventName: (gridReady)
+      ↓Log [mobile.components.UIDynamicAction-1576763340494]: 
+        beanData: '{"ionBean":"LogAction","message":"plain:gridReady event received"}'
+        ↓handleOnReady [mobile.components.UICustomAction-1576764238780]: 
+          actionValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '			let grid = props.stack["root"].scope.agGrid; // page["agGrid"];
+                  	        if (grid !== undefined) {
+                  	            // Set grid width & height
+                  	            var height = vars.height;
+                  	            var width = vars.width;
+                  	            var autoHeight = height == "" || height == "auto";
+                  	            grid.api.setDomLayout(autoHeight ? "autoHeight":"normal");
+                  	            grid._nativeElement.style.height = autoHeight ? "" : height;
+                  	            grid._nativeElement.style.width = width;
+                  	            page.c8o.log.debug(''[MB] gridApi sizing done'');
+                  	        }
+                  			resolve();
+                  '
+          ↓width [mobile.components.UIControlVariable-1578908950357]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:params1576501532114.width
+          ↓height [mobile.components.UIControlVariable-1578909011438]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:params1576501532114.height
+    ↓Event1 [mobile.components.UIControlEvent-1576854126305]: 
+      attrName: (cellClicked)
+      eventName: (cellClicked)
+      ↓publishAgGridCellClicked [mobile.components.UIDynamicAction-1576856544149]: 
+        beanData: |
+          '{
+           "ionBean": "PublishEventAction",
+           "topic": "plain:agGridCellClicked",
+           "data": "script:{event :$event, ref: params1576501532114.ref}"
+          }'
+    ↓Event2 [mobile.components.UIControlEvent-1576858211435]: 
+      attrName: (rowClicked)
+      eventName: (rowClicked)
+      ↓publishAgGridRowClicked [mobile.components.UIDynamicAction-1576858228077]: 
+        beanData: |
+          '{
+           "ionBean": "PublishEventAction",
+           "topic": "plain:agGridRowClicked",
+           "data": "script:{event :$event, ref: params1576501532114.ref}"
+          }'
+    ↓Event3 [mobile.components.UIControlEvent-1576859282081]: 
+      attrName: (rowSelected)
+      eventName: (rowSelected)
+      ↓publishAgGridRowSelected [mobile.components.UIDynamicAction-1576859408081]: 
+        beanData: |
+          '{
+           "ionBean": "PublishEventAction",
+           "topic": "plain:agGridRowSelected",
+           "data": "script:{event :$event, ref: params1576501532114.ref}"
+          }'
+    ↓Event4 [mobile.components.UIControlEvent-1577091949093]: 
+      attrName: (sortChanged)
+      eventName: (sortChanged)
+      ↓publishAgGridColumnSortChanged [mobile.components.UIDynamicAction-1577091972684]: 
+        beanData: |
+          '{
+           "ionBean": "PublishEventAction",
+           "topic": "plain:agGridColumnSortChanged",
+           "data": "script:{event :$event, ref: params1576501532114.ref}"
+          }'
+    ↓Attr9 [mobile.components.UIAttribute-1610008946563]: 
+      attrName: '[attr.id]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.id","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓Event6 [mobile.components.UIControlEvent-1610038161550]: 
+      attrName: (rowDataChanged)
+      eventName: (rowDataChanged)
+      ↓handleRowDataChanged [mobile.components.UICustomAction-1610039612138]: 
+        actionValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                		const grid = props.stack["root"].scope.agGrid
+                		if(grid != undefined){
+                			grid.api.sizeColumnsToFit();
+                				grid.api.resetRowHeights();
+                			setTimeout(()=>{
+                				grid.api.sizeColumnsToFit();
+                				grid.api.resetRowHeights();
+                				page.c8o.log.debug('[MB] gridApi.sizeColumnsToFit() and gridApi.resetRowHeights() done');
+                			}, 500)
+                		}
+                		resolve();
+                
+      ↓publishAgGridRowDataChanged [mobile.components.UIDynamicAction-1610376824436]: 
+        beanData: |
+          '{
+           "ionBean": "PublishEventAction",
+           "topic": "plain:agGridRowDataChanged",
+           "data": "script:{event :$event, ref: params1576501532114.ref}"
+          }'
+    ↓Attr10 [mobile.components.UIAttribute-1610102842417]: 
+      attrName: '[suppressCellSelection]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.suppressCellSelection","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓Attr101 [mobile.components.UIAttribute-1610103017057]: 
+      attrName: '[suppressRowClickSelection]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.suppressRowClickSelection","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓Attr11 [mobile.components.UIAttribute-1610135838582]: 
+      attrName: '[overlayNoRowsTemplate]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.overlayNoRowsTemplate","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓Attr12 [mobile.components.UIAttribute-1610136432111]: 
+      attrName: '[overlayLoadingTemplate]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.overlayLoadingTemplate","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓a [mobile.components.UIAttribute-1616703182297]: 
+      attrName: '[localeTextFunc]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.localeTextFunc","prefix":"","suffix":"","custom":"params1576501532114?.localeTextFunc != null ? params1576501532114?.localeTextFunc : this.global?.agGridLocaleTextFunc","useCustom":true}}'
+↓wrapperClass [mobile.components.UICompVariable-1639423566990]: 
