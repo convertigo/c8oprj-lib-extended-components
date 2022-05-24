@@ -403,11 +403,24 @@
             - com.twinsoft.convertigo.beans.common.FormatedContent: 
               →: |
                 		const grid = props.stack["root"].scope.agGrid
+                		const sizeColumnsToFit = props.stack.root.scope.params1576501532114.sizeColumnsToFit;
                 		if(grid != undefined){
-                			grid.api.sizeColumnsToFit();
-                				grid.api.resetRowHeights();
+                			if(sizeColumnsToFit){
+                				grid.api.sizeColumnsToFit();	
+                			}
+                			else{
+                				//grid.api.autoSizeAllColumns();
+                			}	
+                			grid.api.resetRowHeights();
                 			setTimeout(()=>{
-                				grid.api.sizeColumnsToFit();
+                				console.log("props", );
+                				
+                				if(sizeColumnsToFit){
+                					grid.api.sizeColumnsToFit();	
+                				}
+                				else{
+                					//grid.api.autoSizeAllColumns();
+                				}
                 				grid.api.resetRowHeights();
                 				page.c8o.log.debug('[MB] gridApi.sizeColumnsToFit() and gridApi.resetRowHeights() done');
                 			}, 500)
@@ -452,3 +465,6 @@
           - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
           - MobileSmartSourceType: 'source:{"filter":"Shared","project":"lib_ExtendedComponents","input":"","model":{"data":[{"priority":1576501532114}],"path":"?.localeTextFunc","prefix":"","suffix":"","custom":"params1576501532114?.localeTextFunc != null ? params1576501532114?.localeTextFunc : this.global?.agGridLocaleTextFunc","useCustom":true}}'
 ↓wrapperClass [mobile.components.UICompVariable-1639423566990]: 
+↓sizeColumnsToFit [mobile.components.UICompVariable-1653385712300]: 
+  comment: 'boolean: true (default) or false'
+  value: true
