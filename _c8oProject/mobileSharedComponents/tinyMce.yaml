@@ -12,6 +12,15 @@
             - com.twinsoft.convertigo.beans.common.XMLVector: 
               - java.lang.String: 
                 - ↑value: EditorModule
+    module_ng_providers: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: '{ provide: TINYMCE_SCRIPT_SRC, useValue: ''tinymce/tinymce.min.js'' }'
     module_ts_imports: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -30,6 +39,13 @@
                 - ↑value: FormsModule
               - java.lang.String: 
                 - ↑value: '@angular/forms'
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: TINYMCE_SCRIPT_SRC 
+              - java.lang.String: 
+                - ↑value: '@tinymce/tinymce-angular'
     package_dependencies: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -41,6 +57,13 @@
                 - ↑value: '@tinymce/tinymce-angular'
               - java.lang.String: 
                 - ↑value: 3.5.0
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: tinymce
+              - java.lang.String: 
+                - ↑value: 5.10.9
 ↓ngModel [mobile.components.UICompVariable-1584094766604]: 
   value: null
 ↓init [mobile.components.UICompVariable-1584112503370]: 
